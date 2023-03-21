@@ -63,7 +63,7 @@
                                         <a href="product.html"><img src="source/assets/dest/images/products/1.jpg" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-title">Sample Product</p>
                                         <p class="single-item-price">
                                             <span>$34.55</span>
                                         </p>
@@ -83,7 +83,7 @@
                                         <a href="product.html"><img src="source/assets/dest/images/products/2.jpg" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-title">Sample Product</p>
                                         <p class="single-item-price">
                                             <span class="flash-del">$34.55</span>
                                             <span class="flash-sale">$33.55</span>
@@ -102,7 +102,7 @@
                                         <a href="product.html"><img src="source/assets/dest/images/products/3.jpg" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-title">Sample Product</p>
                                         <p class="single-item-price">
                                             <span>$34.55</span>
                                         </p>
@@ -120,7 +120,7 @@
                                         <a href="product.html"><img src="source/assets/dest/images/products/3.jpg" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-title">Sample Product</p>
                                         <p class="single-item-price">
                                             <span>$34.55</span>
                                         </p>
@@ -150,7 +150,7 @@
                                         <a href="product.html"><img src="source/assets/dest/images/products/1.jpg" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-title">Sample Product</p>
                                         <p class="single-item-price">
                                             <span>$34.55</span>
                                         </p>
@@ -170,7 +170,7 @@
                                         <a href="product.html"><img src="source/assets/dest/images/products/2.jpg" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-title">Sample Product</p>
                                         <p class="single-item-price">
                                             <span class="flash-del">$34.55</span>
                                             <span class="flash-sale">$33.55</span>
@@ -189,7 +189,7 @@
                                         <a href="product.html"><img src="source/assets/dest/images/products/3.jpg" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-title">Sample Product</p>
                                         <p class="single-item-price">
                                             <span>$34.55</span>
                                         </p>
@@ -207,7 +207,7 @@
                                         <a href="product.html"><img src="source/assets/dest/images/products/3.jpg" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-title">Sample Product</p>
                                         <p class="single-item-price">
                                             <span>$34.55</span>
                                         </p>
@@ -228,7 +228,7 @@
                                         <a href="product.html"><img src="source/assets/dest/images/products/1.jpg" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-title">Sample Product</p>
                                         <p class="single-item-price">
                                             <span>$34.55</span>
                                         </p>
@@ -248,7 +248,7 @@
                                         <a href="product.html"><img src="source/assets/dest/images/products/2.jpg" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-title">Sample Product</p>
                                         <p class="single-item-price">
                                             <span class="flash-del">$34.55</span>
                                             <span class="flash-sale">$33.55</span>
@@ -267,7 +267,7 @@
                                         <a href="product.html"><img src="source/assets/dest/images/products/3.jpg" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-title">Sample Product</p>
                                         <p class="single-item-price">
                                             <span>$34.55</span>
                                         </p>
@@ -285,7 +285,7 @@
                                         <a href="product.html"><img src="source/assets/dest/images/products/3.jpg" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <p class="single-item-title">Sample Woman Top</p>
+                                        <p class="single-item-title">Sample Product</p>
                                         <p class="single-item-price">
                                             <span>$34.55</span>
                                         </p>

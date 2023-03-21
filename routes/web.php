@@ -19,6 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', function(){
-    return view('page.home');
-});
+Route::get('index', [PageController::class,'getIndex']);
+
+Route::get('product_categories', [PageController::class,'getProductCategory']); 
+
+Route::get('product', [PageController::class,'getProduct']);
+
+Route::get('contact', [PageController::class,'getContact']);
+
+Route::get('about', [PageController::class,'getAbout']);
