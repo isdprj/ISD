@@ -3,11 +3,11 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h6 class="inner-title">Giới thiệu</h6>
+            <h6 class="inner-title">About us</h6>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-                <a href="index.html">Home</a> / <span>Giới thiệu</span>
+                <a href="index.html">Home</a> / <span>About us</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -166,7 +166,7 @@
             <div class="col-sm-2 col-sm-push-2">
                 <div class="beta-counter">
                     <p class="beta-counter-icon"><i class="fa fa-user"></i></p>
-                    <p class="beta-counter-value timer numbers" data-to="19855" data-speed="2000">19855</p>
+                    <p class="beta-counter-value timer numbers" data-to="19855" data-speed="2000">0</p>
                     <p class="beta-counter-title">Clients Satisfied</p>
                 </div>
             </div>
@@ -174,7 +174,7 @@
             <div class="col-sm-2 col-sm-push-2">
                 <div class="beta-counter">
                     <p class="beta-counter-icon"><i class="fa fa-picture-o"></i></p>
-                    <p class="beta-counter-value timer numbers" data-to="3568" data-speed="2000">3568</p>
+                    <p class="beta-counter-value timer numbers" data-to="3568" data-speed="2000">0</p>
                     <p class="beta-counter-title">Amazing Works</p>
                 </div>
             </div>
@@ -182,7 +182,7 @@
             <div class="col-sm-2 col-sm-push-2">
                 <div class="beta-counter">
                     <p class="beta-counter-icon"><i class="fa fa-clock-o"></i></p>
-                    <p class="beta-counter-value timer numbers" data-to="258934" data-speed="2000">258934</p>
+                    <p class="beta-counter-value timer numbers" data-to="258934" data-speed="2000">0</p>
                     <p class="beta-counter-title">Support Hours</p>
                 </div>
             </div>
@@ -190,7 +190,7 @@
             <div class="col-sm-2 col-sm-push-2">
                 <div class="beta-counter">
                     <p class="beta-counter-icon"><i class="fa fa-pencil"></i></p>
-                    <p class="beta-counter-value timer numbers" data-to="150" data-speed="2000">150</p>
+                    <p class="beta-counter-value timer numbers" data-to="150" data-speed="2000">0</p>
                     <p class="beta-counter-title">New Projects</p>
                 </div>
             </div>
@@ -212,7 +212,7 @@
                     <img class="pull-left" src="assets/dest/images/person2.jpg" alt="">
                 
                     <div class="media-body beta-person-body">
-                        <h5>Bob Robertson</h5>
+                        <h5>name</h5>
                         <p class="font-large">Founder</p>
                         <p>Nemo enim ipsam voluptatem quia voluptas sit asatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque por quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
                         <a href="single_type_gallery.html">View projects <i class="fa fa-chevron-right"></i></a>
@@ -225,7 +225,7 @@
                     <img class="pull-left" src="assets/dest/images/person3.jpg" alt="">
                 
                     <div class="media-body beta-person-body">
-                        <h5>Mike Greenwood</h5>
+                        <h5>name</h5>
                         <p class="font-large">Founder</p>
                         <p>Nemo enim ipsam voluptatem quia voluptas sit asatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque por quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
                         <a href="single_type_gallery.html">View projects <i class="fa fa-chevron-right"></i></a>
@@ -245,7 +245,7 @@
                     <img src="assets/dest/images/person1.jpg" alt="">
             </div>
                     <div class="beta-person-body">
-                        <h5>Mark Priston</h5>
+                        <h5>name</h5>
                         <p class="font-large">Web developer</p>
                         <p>Nemo enims voluptatem quia volupas sit aspe aut odit aut fugit, sed quia consequuntur magni dolores.</p>
                         <a href="single_type_gallery.html">View projects <i class="fa fa-chevron-right"></i></a>
@@ -258,7 +258,7 @@
                     <img src="assets/dest/images/person2.jpg" alt="">
                 </div>
                     <div class="beta-person-body">
-                        <h5>Bob Robertson</h5>
+                        <h5>name</h5>
                         <p class="font-large">Web developer</p>
                         <p>Nemo enims voluptatem quia volupas sit aspe aut odit aut fugit, sed quia consequuntur magni dolores.</p>
                         <a href="single_type_gallery.html">View projects <i class="fa fa-chevron-right"></i></a>
@@ -271,7 +271,7 @@
                     <img src="assets/dest/images/person3.jpg" alt="">
                 </div>
                     <div class="beta-person-body">
-                        <h5>Mike Greenwood</h5>
+                        <h5>name</h5>
                         <p class="font-large">Web developer</p>
                         <p>Nemo enims voluptatem quia volupas sit aspe aut odit aut fugit, sed quia consequuntur magni dolores.</p>
                         <a href="single_type_gallery.html">View projects <i class="fa fa-chevron-right"></i></a>
@@ -284,7 +284,7 @@
                     <img src="assets/dest/images/person4.jpg" alt="">
                 </div>
                     <div class="beta-person-body">
-                        <h5>David Black</h5>
+                        <h5>name</h5>
                         <p class="font-large">Web developer</p>
                         <p>Nemo enims voluptatem quia volupas sit aspe aut odit aut fugit, sed quia consequuntur magni dolores.</p>
                         <a href="single_type_gallery.html">View projects <i class="fa fa-chevron-right"></i></a>

@@ -9,9 +9,14 @@
             </div>
             <div class="pull-right auto-width-right">
                 <ul class="top-details menu-beta l-inline">
-                    <li><a href="#"><i class="fa fa-user"></i>Account</a></li>
-                    <li><a href="#">Register</a></li>
-                    <li><a href="#">Log in</a></li>
+                    <?php if(Auth::check()): ?>
+                        <li><a href="#"><i class="fa fa-user"></i>Hi <?php echo e(Auth::user()-> full_name); ?></a></li>
+                        <li><a href="<?php echo e(route('logout')); ?>">Log out</a></li>
+                    <?php else: ?>
+                        <li><a href="<?php echo e(route('register')); ?>">Register</a></li>
+                        <li><a href="<?php echo e(route('login')); ?>">Log in</a></li>   
+                    <?php endif; ?>
+
                 </ul>
             </div>
             <div class="clearfix"></div>
@@ -20,7 +25,7 @@
     <div class="header-body">
         <div class="container beta-relative">
             <div class="pull-left">
-                <a href="index.html" id="logo"><img src="source/assets/dest/images/logo-cake.png" width="200px" alt=""></a>
+                <a href="index.html" id="logo"><img src="source/assets/dest/images/AHK-logo.jpg" width="200px" alt=""></a>
             </div>
             <div class="pull-right beta-components space-left ov">
                 <div class="space10">&nbsp;</div>
@@ -39,7 +44,7 @@
                                 <div class="media">
                                     <a class="pull-left" href="#"><img src="source/assets/dest/images/products/cart/1.png" alt=""></a>
                                     <div class="media-body">
-                                        <span class="cart-item-title">Sample Woman Top</span>
+                                        <span class="cart-item-title">Sample Product</span>
                                         <span class="cart-item-options">Size: XS; Colar: Navy</span>
                                         <span class="cart-item-amount">1*<span>$49.50</span></span>
                                     </div>
@@ -50,7 +55,7 @@
                                 <div class="media">
                                     <a class="pull-left" href="#"><img src="source/assets/dest/images/products/cart/2.png" alt=""></a>
                                     <div class="media-body">
-                                        <span class="cart-item-title">Sample Woman Top</span>
+                                        <span class="cart-item-title">Sample Product</span>
                                         <span class="cart-item-options">Size: XS; Colar: Navy</span>
                                         <span class="cart-item-amount">1*<span>$49.50</span></span>
                                     </div>
@@ -61,7 +66,7 @@
                                 <div class="media">
                                     <a class="pull-left" href="#"><img src="source/assets/dest/images/products/cart/3.png" alt=""></a>
                                     <div class="media-body">
-                                        <span class="cart-item-title">Sample Woman Top</span>
+                                        <span class="cart-item-title">Sample Product</span>
                                         <span class="cart-item-options">Size: XS; Colar: Navy</span>
                                         <span class="cart-item-amount">1*<span>$49.50</span></span>
                                     </div>
@@ -84,22 +89,22 @@
             <div class="clearfix"></div>
         </div> <!-- .container -->
     </div> <!-- .header-body -->
-    <div class="header-bottom" style="background-color: #0277b8;">
+    <div class="header-bottom" style="background-color: #56a2dc;">
         <div class="container">
             <a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
             <div class="visible-xs clearfix"></div>
             <nav class="main-menu">
                 <ul class="l-inline ov">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Product</a>
+                    <li><a href="<?php echo e(route('index')); ?>">Home</a></li>
+                    <li><a href="<?php echo e(route('product_categories')); ?>">Product</a>
                         <ul class="sub-menu">
                             <li><a href="product_type.html">Product 1</a></li>
                             <li><a href="product_type.html">Product 2</a></li>
                             <li><a href="product_type.html">Product 3</a></li>
                         </ul>
                     </li>
-                    <li><a href="about.html">About us</a></li>
-                    <li><a href="contacts.html">Contact</a></li>
+                    <li><a href="<?php echo e(route('about')); ?>">About us</a></li>
+                    <li><a href="<?php echo e(route('contact')); ?>">Contact</a></li>
                 </ul>
                 <div class="clearfix"></div>
             </nav>

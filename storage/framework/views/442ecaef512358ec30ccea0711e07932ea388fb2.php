@@ -1,5 +1,17 @@
 
 <?php $__env->startSection('content'); ?>
+<?php if(Session::has('flag')): ?>
+<div class="alert alert-<?php echo e(Session::get('flag')); ?>">
+    <?php echo e(Session::get('message')); ?>
+
+</div> 
+<?php endif; ?>
+<?php if(Session::has('logoutMessage')): ?>
+<div class="alert alert-success">
+    <?php echo e(Session::get('logoutMessage')); ?>
+
+</div>
+<?php endif; ?>
 <div class="fullwidthbanner-container">
     <div class="fullwidthbanner">
         <div class="bannercontainer" >
@@ -50,7 +62,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="beta-products-list">
-                        <h4>New Products</h4>
+                        <h4><b>New Products</b></h4>
                         <div class="beta-products-details">
                             <p class="pull-left">438 styles found</p>
                             <div class="clearfix"></div>
@@ -138,7 +150,7 @@
                     <div class="space50">&nbsp;</div>
 
                     <div class="beta-products-list">
-                        <h4>Top Products</h4>
+                        <h4><b>Top Products</b></h4>
                         <div class="beta-products-details">
                             <p class="pull-left">438 styles found</p>
                             <div class="clearfix"></div>
@@ -301,8 +313,56 @@
                     </div> <!-- .beta-products-list -->
                 </div>
             </div> <!-- end section with sidebar and main content -->
+            <div class="space60">&nbsp;</div>
+            <div id="news" class="space-top-none">
+                <div class="row">
+                    <div class="col-sm-12 ">
+                        <h4><b>What's new?</b></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="news-section">
+                            <div class="news-box">
+                                <div class="news-img">
+                                    <a href="#"><img src="source/assets/dest/images/products/1.jpg" alt=""></a>
+                                </div>
+                                <div class="news-title">
+                                    <a href="#">Title 1</a>
+                                </div>
+                                <div class="news-content">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="news-section">
+                            <div class="news-box">
+                                <div class="news-img"> 
+                                    <a href=""><img src="source/assets/dest/images/products/1.jpg" alt=""></a>   
+                                </div>
+                                <div class="news-title">
+                                    <a href="#">Title 1</a>
+                                </div>
+                                <div class="news-content">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="news-section">
+                            <div class="news-box">
+                                <div class="news-img">
+                                    <a href=""><img src="source/assets/dest/images/products/1.jpg" alt=""></a>
 
-
+                                </div>
+                                <div class="news-title">
+                                    <a href="#">Title 1</a> 
+                                </div>
+                                <div class="news-content">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div> <!-- .main-content -->
     </div> <!-- #content -->
     <?php $__env->stopSection(); ?>

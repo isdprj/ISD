@@ -4,7 +4,13 @@
             <div class="col-sm-3">
                 <div class="widget">
                     <h4 class="widget-title">Social</h4>
-                    <div id="beta-instagram-feed"><div></div></div>
+                    <div id="social-lists"><div>
+                        <a href="#"><i class="social-size ti-facebook"></i></a>
+                        <a href="#"><i class="social-size ti-instagram"></i> </a>
+                        <a href="#"><i class="social-size ti-twitter"></i> </a>
+                        <a href="#"><i class="social-size ti-linkedin"></i> </a>
+                    </div>
+                </div>
                 </div>
             </div>
             <div class="col-sm-2">

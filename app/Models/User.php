@@ -17,6 +17,8 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = 'users';
+
     protected $fillable = [
         'name',
         'email',
@@ -38,7 +40,15 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    // protected $casts = [
+    //     'email_verified_at' => 'datetime',
+    // ];
+
+    // public function favourite(){
+    //     return $this -> hasMany(Favourite::class, 'id_user', 'id');
+    // }
+
+    // public function setPasswordAttribute($password){
+    //     $this->attributes['password'] = bcrypt($password);
+    // }
 }

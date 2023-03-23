@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,10 +12,10 @@ class BillDetail extends Model
     use HasFactory;
 
     public function product(){
-        return $this -> belongsTo('App\Product', 'id_product', 'id');
+        return $this -> belongsTo(Product::class, 'id_product', 'id');
     }
 
     public function customer(){
-        return $this -> belongsTo('App\Customer', 'id_customer', 'id');
+        return $this -> belongsTo(Customer::class, 'id_customer', 'id');
     }
 }

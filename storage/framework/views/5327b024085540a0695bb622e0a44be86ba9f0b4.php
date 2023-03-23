@@ -15,6 +15,8 @@
 	<link rel="stylesheet" title="style" href="source/assets/dest/css/style.css">
 	<link rel="stylesheet" href="source/assets/dest/css/animate.css">
 	<link rel="stylesheet" title="style" href="source/assets/dest/css/huong-style.css">
+	<link rel="stylesheet" href="source/assets/dest/css/supplement-style.css">
+	<link rel="stylesheet" href="source/assets/themify-icons/themify-icons.css">
 </head>
 <body>
 
@@ -26,7 +28,7 @@
 
 	<div class="copyright">
 		<div class="container">
-			<p class="pull-left">Privacy policy. (&copy;) 2014</p>
+			<p class="pull-left">Privacy policy. (&copy;) 2023</p>
 			<p class="pull-right pay-options">
 				<a href="#"><img src="source/assets/dest/images/pay/master.jpg" alt="" /></a>
 				<a href="#"><img src="source/assets/dest/images/pay/pay.jpg" alt="" /></a>
