@@ -40,6 +40,11 @@
                     <div class="cart">
                         <div class="beta-select"><i class="fa fa-shopping-cart"></i> Cart (None) <i class="fa fa-chevron-down"></i></div>
                         <div class="beta-dropdown cart-body">
+                            {{-- @if (Session::has('cart'))
+                               @foreach ($product_cart as $product) --}}
+                                   
+                               
+                            
                             <div class="cart-item">
                                 <div class="media">
                                     <a class="pull-left" href="#"><img src="source/assets/dest/images/products/cart/1.png" alt=""></a>
@@ -50,7 +55,8 @@
                                     </div>
                                 </div>
                             </div>
-
+                                {{-- @endforeach 
+                            @endif --}}
                             <div class="cart-item">
                                 <div class="media">
                                     <a class="pull-left" href="#"><img src="source/assets/dest/images/products/cart/2.png" alt=""></a>
@@ -96,11 +102,22 @@
             <nav class="main-menu">
                 <ul class="l-inline ov">
                     <li><a href="{{route('index')}}">Home</a></li>
-                    <li><a href="{{route('product_categories')}}">Product</a>
+                    <li><a href="#">Shoes</a>
                         <ul class="sub-menu">
-                            <li><a href="product_type.html">Product 1</a></li>
-                            <li><a href="product_type.html">Product 2</a></li>
-                            <li><a href="product_type.html">Product 3</a></li>
+                            <li><a href="product_type.html">Adidas</a></li>
+                            <li><a href="product_type.html">Nike</a></li>
+                            <li><a href="product_type.html">Mizuno</a></li>
+                            <li><a href="product_type.html">Kamito</a></li>
+                            <li><a href="product_type.html">Puma</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Ultilities</a>
+                        <ul class="sub-menu">
+                            <li><a href="product_type.html">Socks</a></li>
+                            <li><a href="product_type.html">Brassard</a></li>
+                            <li><a href="product_type.html">Clothes</a></li>
+                            <li><a href="product_type.html">Bags</a></li>
+                            <li><a href="product_type.html">Gloves</a></li>
                         </ul>
                     </li>
                     <li><a href="{{route('about')}}">About us</a></li>

@@ -18,6 +18,7 @@ class Product extends Model
         return $this -> hasMany(BillDetail::class, 'id_product', 'id');
     }
     public function favourite(){
+        $cid = auth()->guard('customers')->user()!=null ? auth()->guard('customers')->user()->id : null;
         return $this -> hasMany(Favourite::class, 'id_product', 'id');
     }
 }

@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Slider;
 use App\Models\User;
+use App\Models\Product;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -9,7 +12,8 @@ use Illuminate\Support\Facades\Auth;
 class PageController extends Controller
 {
     public function getIndex(){
-        return view('page.home');
+        $slider = Slider::all();
+        return view('page.home',compact('slider'));
     }
 
     public function getProductCategory(){

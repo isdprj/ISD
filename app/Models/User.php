@@ -44,9 +44,9 @@ class User extends Authenticatable
     //     'email_verified_at' => 'datetime',
     // ];
 
-    // public function favourite(){
-    //     return $this -> hasMany(Favourite::class, 'id_user', 'id');
-    // }
+    public function favourite(){
+        return $this -> hasMany(Favourite::class, 'id_user', 'id');
+    }
 
     // public function setPasswordAttribute($password){
     //     $this->attributes['password'] = bcrypt($password);

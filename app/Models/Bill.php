@@ -12,7 +12,7 @@ class Bill extends Model
     public function billDetail(){
         return $this -> hasMany(BillDetail::class, 'id_bill', 'id');
     }
-    public function bill(){
+    public function customer(){
         return $this -> belongsTo(Customer::class, 'id_customer', 'id');
     }
 }
