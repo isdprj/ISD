@@ -13,7 +13,9 @@ class PageController extends Controller
 {
     public function getIndex(){
         $slider = Slider::all();
-        return view('page.home',compact('slider'));
+        $newProduct = Product::get()->sortByDesc('updated_at')->take(4);
+        $saleProduct = Product::where('promotion_price','<>',0)->paginate(4);
+        return view('page.home',compact('slider','newProduct','saleProduct'));
     }
 
     public function getProductCategory(){

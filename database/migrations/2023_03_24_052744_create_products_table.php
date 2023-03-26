@@ -20,9 +20,10 @@ class CreateProductsTable extends Migration
             $table->foreign('id_category')->references('id')->on('product_categories');
             $table->text('description');
             $table->double('unit_price');
-            $table->float('promotion_price');
+            $table->double('promotion_price');
             $table->string('image',200);
             $table->string('unit',200);
+            $table->integer('quantity');
             $table->timestamps();
         });
     }

@@ -25,7 +25,7 @@
     <div class="header-body">
         <div class="container beta-relative">
             <div class="pull-left">
-                <a href="index.html" id="logo"><img src="source/assets/dest/images/AHK-logo.jpg" width="200px" alt=""></a>
+                <a href="<?php echo e(route('index')); ?>" id="logo"><img src="source/assets/dest/images/AHK-logo.jpg" width="200px" alt=""></a>
             </div>
             <div class="pull-right beta-components space-left ov">
                 <div class="space10">&nbsp;</div>
@@ -106,7 +106,7 @@
                             <li><a href="product_type.html">Nike</a></li>
                             <li><a href="product_type.html">Mizuno</a></li>
                             <li><a href="product_type.html">Kamito</a></li>
-                            <li><a href="product_type.html">Wika</a></li>
+                            <li><a href="product_type.html">Puma</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Ultilities</a>
