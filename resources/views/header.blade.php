@@ -25,7 +25,6 @@
     <div class="header-body">
         <div class="container beta-relative">
             <div class="pull-left">
-                <a href="index.html" id="logo"><img src="source/assets/dest/images/AHK-logo.jpg" width="200px" alt=""></a>
                 <a href="{{route('index')}}" id="logo"><img src="source/assets/dest/images/AHK-logo.jpg" width="200px" alt=""></a>
             </div>
             <div class="pull-right beta-components space-left ov">
