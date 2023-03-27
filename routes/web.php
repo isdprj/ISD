@@ -39,3 +39,11 @@ Route::post('register',[PageController::class,'postRegister'])->name('register')
 Route::post('login', [PageController::class, 'postLogin']) -> name('login');
 
 Route::get('logout', [PageController::class, 'getLogout']) -> name('logout');
+
+Route::resource('reset-password', ForgotPasswordController::class);
+Route::resource('forget-password', ForgotPasswordController::class);
+
+Route::get('forget-password', [App\Http\Controllers\ForgotPasswordController::class, 'showForgetPasswordForm']) -> name('forget.password.get');
+Route::post('forget-password', [App\Http\Controllers\ForgotPasswordController::class, 'submitForgetPasswordForm']) -> name('forget.password.post');
+Route::get('reset-password/{token}', [App\Http\Controllers\ForgotPasswordController::class, 'showResetPasswordForm']) -> name('reset.password.get');
+Route::post('reset-password', [App\Http\Controllers\ForgotPasswordController::class, 'submitResetPasswordForm']) -> name('reset.password.post');
