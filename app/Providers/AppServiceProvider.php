@@ -26,8 +26,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // view()->composer('header', function($view){
-        //     $prdCate = ProductCategory::all();
+        view()->composer('header', function($view){
+            $shoeType = ProductCategory::get()->sortBy('id')->take(5);
+            $ultiType = ProductCategory::get()->sortByDesc('id')->take(5);
+
+            $view->with([
+                'shoeType' => $shoeType,
+                'ultiType' => $ultiType
+            ]);
         // if(Session('cart')){
         //     $oldCart = Session::get('cart');
         //     $cart = new Cart($oldCart);
@@ -36,7 +42,7 @@ class AppServiceProvider extends ServiceProvider
         //                  'product_cart'=>cart->items,
         //                  'totalPrice'=>$cart->totalPrc,
     //                      'totalQty'=>$cart->totalQty]);
-        // });
+        });
 
             
     }

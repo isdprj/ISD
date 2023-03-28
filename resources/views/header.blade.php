@@ -102,22 +102,20 @@
             <nav class="main-menu">
                 <ul class="l-inline ov">
                     <li><a href="{{route('index')}}">Home</a></li>
-                    <li><a href="#">Shoes</a>
+                    {{-- <li><a href="{{route('product_categories')}}">Our Products</a></li> --}}
+                    <li><a href="{{route('shoes')}}">Shoes</a>
                         <ul class="sub-menu">
-                            <li><a href="product_type.html">Adidas</a></li>
-                            <li><a href="product_type.html">Nike</a></li>
-                            <li><a href="product_type.html">Mizuno</a></li>
-                            <li><a href="product_type.html">Kamito</a></li>
-                            <li><a href="product_type.html">Puma</a></li>
+                            @foreach ($shoeType as $sType)
+                                <li><a href="{{route('product_categories',$sType->id)}}">{{$sType->name}}</a></li>
+                            @endforeach
+
                         </ul>
                     </li>
-                    <li><a href="#">Ultilities</a>
+                    <li><a href="{{route('ultility')}}">Ultilities</a>
                         <ul class="sub-menu">
-                            <li><a href="product_type.html">Socks</a></li>
-                            <li><a href="product_type.html">Brassard</a></li>
-                            <li><a href="product_type.html">Clothes</a></li>
-                            <li><a href="product_type.html">Bags</a></li>
-                            <li><a href="product_type.html">Gloves</a></li>
+                            @foreach ($ultiType as $uType)
+                                <li><a href="{{route('product_categories',$uType->id)}}">{{$uType->name}}</a></li> 
+                            @endforeach
                         </ul>
                     </li>
                     <li><a href="{{route('about')}}">About us</a></li>

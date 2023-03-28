@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Slider;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\ProductCategory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,8 +19,24 @@ class PageController extends Controller
         return view('page.home',compact('slider','newProduct','saleProduct'));
     }
 
-    public function getProductCategory(){
-        return view('page.product_categories');
+    public function getProductCategory($type){
+        $productType1 = ProductCategory::get()->sortBy('id')->take(5);
+        $productType2 = ProductCategory::get()->sortByDesc('id')->take(5);
+        $productOfType = Product::where('id_category',$type)->get();
+        return view('page.product_categories', compact('productOfType','productType1','productType2'));
+    }
+
+    public function getProductShoes(){
+        $productType1 = ProductCategory::get()->sortBy('id')->take(5);
+        $productType2 = ProductCategory::get()->sortByDesc('id')->take(5);
+        $productShoes = Product::where('id_category','<=',5)->get();
+        return view('page.shoes', compact('productShoes','productType1','productType2'));
+    }
+    public function getProductUltility(){
+        $productType1 = ProductCategory::get()->sortBy('id')->take(5);
+        $productType2 = ProductCategory::get()->sortByDesc('id')->take(5);
+        $productUltility = Product::where('id_category','>',5)->get();
+        return view('page.ultility', compact('productUltility','productType1','productType2'));
     }
 
     public function getProduct(){

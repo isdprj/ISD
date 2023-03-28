@@ -34,31 +34,31 @@
                     <div class="beta-products-list">
                         <h4>All Products</h4>
                         <div class="beta-products-details">
-                            <p class="pull-left">{{count($productOfType)}} found</p>
+                            <p class="pull-left">{{count($productUltility)}} found</p>
                             <div class="clearfix"></div>
                         </div>
 
                         <div class="row">
-                            @foreach($productOfType as $pot)
+                            @foreach($productUltility as $pu)
                             <div class="col-sm-4">
                                 <div class="single-item">
-                                    @if($pot->promotion_price!=0)
+                                    @if($pu->promotion_price!=0)
                                     <div class="ribbon-wrapper">
                                         <div class="ribbon sale">Sale</div>
                                     </div>
                                     @endif
                                 <div class="single-item">
                                     <div class="single-item-header">
-                                        <a href="product.html"><img src="source/image/product/{{$pot->image}}" alt=""></a>
+                                        <a href="product.html"><img src="source/image/product/{{$pu->image}}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <p class="single-item-title">{{$pot->name}}</p>
+                                        <p class="single-item-title">{{$pu->name}}</p>
                                         <p class="single-item-price">
-                                            @if ($pot->promotion_price == 0)
-                                            <span class="flash-sale"><i>{{$pot->unit_price}}</i> đ</span>
+                                            @if ($pu->promotion_price == 0)
+                                            <span class="flash-sale"><i>{{$pu->unit_price}}</i> đ</span>
                                             @else 
-                                            <span class="flash-del"><i>{{$pot->unit_price}}</i> đ</span>
-                                            <span class="flash-sale"><i>{{$pot->promotion_price}}</i> đ</span>
+                                            <span class="flash-del"><i>{{$pu->unit_price}}</i> đ</span>
+                                            <span class="flash-sale"><i>{{$pu->promotion_price}}</i> đ</span>
                                             @endif
                                         </p>
                                     </div>
@@ -69,13 +69,16 @@
                                     </div>
                                 </div>
                             </div>
-                            @endforeach
                         </div>
+                            @endforeach
+                        
                     </div> <!-- .beta-products-list -->
                     </div>
                     <div class="space50">&nbsp;</div>
                 </div>
             </div> <!-- end section with sidebar and main content -->
+
+
         </div> <!-- .main-content -->
     </div> <!-- #content -->
 </div> <!-- .container -->

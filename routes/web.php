@@ -3,6 +3,7 @@
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ForgotPasswordController;
 
 
 /*
@@ -22,7 +23,11 @@ Route::get('/', function () {
 
 Route::get('index', [PageController::class,'getIndex'])->name('index');
 
-Route::get('product_categories', [PageController::class,'getProductCategory'])-> name('product_categories'); 
+Route::get('ultility', [PageController::class,'getProductUltility'])-> name('ultility'); 
+
+Route::get('shoes', [PageController::class,'getProductShoes'])-> name('shoes'); 
+
+Route::get('product_categories/{type}', [PageController::class,'getProductCategory'])-> name('product_categories'); 
 
 Route::get('product', [PageController::class,'getProduct'])->name('product');
 
@@ -43,7 +48,7 @@ Route::get('logout', [PageController::class, 'getLogout']) -> name('logout');
 Route::resource('reset-password', ForgotPasswordController::class);
 Route::resource('forget-password', ForgotPasswordController::class);
 
-Route::get('forget-password', [App\Http\Controllers\ForgotPasswordController::class, 'showForgetPasswordForm']) -> name('forget.password.get');
-Route::post('forget-password', [App\Http\Controllers\ForgotPasswordController::class, 'submitForgetPasswordForm']) -> name('forget.password.post');
-Route::get('reset-password/{token}', [App\Http\Controllers\ForgotPasswordController::class, 'showResetPasswordForm']) -> name('reset.password.get');
-Route::post('reset-password', [App\Http\Controllers\ForgotPasswordController::class, 'submitResetPasswordForm']) -> name('reset.password.post');
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm']) -> name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm']) -> name('forget.password.post');
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm']) -> name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm']) -> name('reset.password.post');

@@ -2662,7 +2662,8 @@ border-bottom:none
 }
 
 .aside-menu li a {
-color:#3d3d3d
+    margin-left: 20px;
+    color:#3d3d3d
 }
 
 .aside-menu li a:hover {

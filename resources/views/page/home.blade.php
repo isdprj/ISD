@@ -92,6 +92,9 @@
                             @foreach($saleProduct as $sp)
                             <div class="col-sm-3">
                                 <div class="single-item">
+                                    <div class="ribbon-wrapper">
+                                        <div class="ribbon sale">Sale</div>
+                                    </div>
                                     <div class="single-item-header">
                                         <a href="product.html"><img src="source/image/product/{{$sp->image}}" alt=""></a>
                                     </div>
