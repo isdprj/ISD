@@ -55,7 +55,7 @@
                                     </div>
                                     @endif
                                     <div class="single-item-header">
-                                        <a href="#"><img src="./source/image/product/{{$new->image}}" alt=""></a>
+                                        <a href="{{route('product',$new->id)}}"><img src="./source/image/product/{{$new->image}}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$new->name}}</p>
@@ -96,7 +96,7 @@
                                         <div class="ribbon sale">Sale</div>
                                     </div>
                                     <div class="single-item-header">
-                                        <a href="product.html"><img src="source/image/product/{{$sp->image}}" alt=""></a>
+                                        <a href="{{route('product',$sp->id)}}"><img src="source/image/product/{{$sp->image}}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$sp->name}}</p>

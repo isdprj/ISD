@@ -39,8 +39,10 @@ class PageController extends Controller
         return view('page.ultility', compact('productUltility','productType1','productType2'));
     }
 
-    public function getProduct(){
-        return view('page.product');
+    public function getProduct(Request $req){
+        $product = Product::where('id',$req->id)->first();
+        $relatedProduct = Product::where('id_category',$product->id_category)->paginate(3);
+        return view('page.product',compact('product','relatedProduct'));
     }
 
     public function getContact(){

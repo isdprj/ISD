@@ -29,7 +29,7 @@ Route::get('shoes', [PageController::class,'getProductShoes'])-> name('shoes');
 
 Route::get('product_categories/{type}', [PageController::class,'getProductCategory'])-> name('product_categories'); 
 
-Route::get('product', [PageController::class,'getProduct'])->name('product');
+Route::get('product/{id}', [PageController::class,'getProduct'])->name('product');
 
 Route::get('contact', [PageController::class,'getContact'])->name('contact');
 
