@@ -20,7 +20,11 @@ class ForgotPasswordController extends Controller
     {
         return view('page.forget-password');
     }
-    
+     /**
+     * Validate token for forgot password
+     * @param token
+     * @return view
+     */
     public function forgotPasswordValidate($token)
     {
         $user = User::where('token', $token)->where('is_verified', 0)->first();
