@@ -36,7 +36,7 @@ class ResetPassword extends Mailable
         $user['name'] = $this->name;
         $user['token'] = $this->token;
 
-        return $this->from("isdgrpprj@gmail.com", "AHK")
+        return $this->from("smgames2099@gmail.com", "AHK")
         ->subject('Password Reset Link')
         ->view('page.reset-password', ['user' => $user]);
     }
