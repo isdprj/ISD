@@ -45,16 +45,12 @@ Route::post('login', [PageController::class, 'postLogin']) -> name('login');
 
 Route::get('logout', [PageController::class, 'getLogout']) -> name('logout');
 
-Route::resource('reset-password', ForgotPasswordController::class);
+Route::get('forgot-password', [ForgotPasswordController::class, 'forgotPassword'])->name('forgot-password');
 
-Route::resource('forget-password', ForgotPasswordController::class);
+Route::get('forgot-password/{token}', [ForgotPasswordController::class, 'forgotPasswordValidate']);
 
-Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm']) -> name('forget.password.get');
+Route::post('forgot-password', [ForgotPasswordController::class, 'resetPassword'])->name('forgot-password');
 
-Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm']) -> name('forget.password.post');
-
-Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm']) -> name('reset.password.get');
-
-Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm']) -> name('reset.password.post');
+Route::put('reset-password', [ForgotPasswordController::class, 'updatePassword'])->name('reset-password');
 
 Route::get('cart/{id}', [PageController::class, 'addCart'])->name('cart');
