@@ -32,10 +32,10 @@
                         <div class="single-item-body">
                             <p class="single-item-title">{{$product->name}}</p>
                             @if ($product->promotion_price == 0)
-                                <span class="flash-sale"><i>{{$product->unit_price}}</i> đ</span>
+                                <span class="flash-sale"><i>{{number_format($product->unit_price)}}</i> đ</span>
                             @else 
-                                <span class="flash-del"><i>{{$product->unit_price}}</i> đ</span>
-                                <span class="flash-sale"><i>{{$product->promotion_price}}</i> đ</span>
+                                <span class="flash-del"><i>{{number_format($product->unit_price)}}</i> đ</span>
+                                <span class="flash-sale"><i>{{number_format($product->promotion_price)}}</i> đ</span>
                             @endif
                         </div>
 
