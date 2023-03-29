@@ -22,10 +22,15 @@ class Cart{
             }
         }
         $cart['qty']++;
+        if($item->promotion_price == 0) {
+            $item->unit_or_promotion_price = $item->unit_price;
+           } else {
+            $item->unit_or_promotion_price = $item->promotion_price;
+           }
         $cart['price'] = $item->unit_price * $cart['qty'];
         $this->items[$id] = $cart;
         $this->totalQty++;
-        $this->totalPrc += $item->unit_price;
+        $this->totalPrc += $item->unit_or_promotion_price;;
     }
     public function reduceByOne($id){
         $this->items[$id]['qty']--;

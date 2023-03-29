@@ -58,3 +58,5 @@ Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showRese
 Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm']) -> name('reset.password.post');
 
 Route::get('cart/{id}', [PageController::class, 'addCart'])->name('cart');
+
+Route::get('del-cart/{id}',[PageController::class, 'delCart'])->name('del-cart');

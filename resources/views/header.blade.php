@@ -37,7 +37,6 @@
                 </div>
 
                 <div class="beta-comp">
-                    @if (Session::has('cart'))
                     <div class="cart">
                         <div class="beta-select">
                             <i class="fa fa-shopping-cart"></i> Cart (
@@ -48,17 +47,27 @@
                             )
                             <i class="fa fa-chevron-down"></i>
                         </div>
+                        @if (Session::has('cart'))
                         <div class="beta-dropdown cart-body">
-                            
                                @foreach ($product_cart as $product)                          
                             <div class="cart-item">
+                                <a href="{{route('del-cart',$product['item']['id'])}}" class="cart-item-delete">
+                                    <i class="fa fa-times"></i>
+                                </a>
                                 <div class="media">
                                     <a class="pull-left" href="#"><img src="source/image/product/{{$product['item']['image']}}" alt=""></a>
                                     <div class="media-body">
                                         <span class="cart-item-title">{{$product['item']['image']}}</span>
                                         {{-- <span class="cart-item-options">Size: XS; Colar: Navy</span> --}}
                                         <span class="cart-item-amount">{{$product['qty']}}*
-                                            <span>{{$product['item']['unit_price']}}</span>
+                                            <span>
+                                                @if($product['item']['promotion_price']==0)
+                                                    {{number_format($product['item']['unit_price'])}}
+                                                @else 
+                                                    {{number_format($product['item']['promotion_price'])}} 
+                                                @endif
+                                                đ
+                                            </span>
                                         </span>
                                     </div>
                                 </div>
@@ -69,7 +78,9 @@
 
                             <div class="cart-caption">
                                 <div class="cart-total text-right">Total: 
-                                    <span class="cart-total-value">{{Session('cart')->totalPrc}}</span>
+                                    <span class="cart-total-value">
+                                        {{number_format(Session('cart')->totalPrc)}} đ
+                                    </span>
                                 </div>
                                 <div class="clearfix"></div>
 
@@ -79,8 +90,8 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                     </div> <!-- .cart -->
-                    @endif
                 </div>
             </div>
             <div class="clearfix"></div>
