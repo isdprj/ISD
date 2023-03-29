@@ -42,6 +42,11 @@
                         <label for="phone">Password*</label>
                         <input type="password" name="password" required>
                     </div>
+                    <div class="form-group">
+                        <label class="label-agree-term"><span></span><span></span>
+                        <a href="{{ route('forgot-password') }}">Forgot your password?</a>
+                        </label>
+                    </div>
                     <div class="form-block">
                         <button type="submit" class="btn btn-primary">Login</button>
                     </div>

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit36fdb080e12c0674934cd1e033fede1e
+class ComposerStaticInitbdc83b75b46b0b6011362ef139b0ea68
 {
     public static $files = array (
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
@@ -320,8 +320,8 @@ class ComposerStaticInit36fdb080e12c0674934cd1e033fede1e
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -504,6 +504,7 @@ class ComposerStaticInit36fdb080e12c0674934cd1e033fede1e
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/ForgotPasswordController.php',
         'App\\Http\\Controllers\\PageController' => __DIR__ . '/../..' . '/app/Http/Controllers/PageController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -516,9 +517,11 @@ class ComposerStaticInit36fdb080e12c0674934cd1e033fede1e
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Bill' => __DIR__ . '/../..' . '/app/Models/Bill.php',
         'App\\Models\\BillDetail' => __DIR__ . '/../..' . '/app/Models/BillDetail.php',
+        'App\\Models\\Cart' => __DIR__ . '/../..' . '/app/Models/Cart.php',
         'App\\Models\\Customer' => __DIR__ . '/../..' . '/app/Models/Customer.php',
         'App\\Models\\Favourite' => __DIR__ . '/../..' . '/app/Models/Favourite.php',
         'App\\Models\\News' => __DIR__ . '/../..' . '/app/Models/News.php',
+        'App\\Models\\PasswordReset' => __DIR__ . '/../..' . '/app/Models/PasswordReset.php',
         'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
         'App\\Models\\ProductCategory' => __DIR__ . '/../..' . '/app/Models/ProductCategory.php',
         'App\\Models\\Slider' => __DIR__ . '/../..' . '/app/Models/Slider.php',
@@ -5455,10 +5458,10 @@ class ComposerStaticInit36fdb080e12c0674934cd1e033fede1e
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit36fdb080e12c0674934cd1e033fede1e::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit36fdb080e12c0674934cd1e033fede1e::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit36fdb080e12c0674934cd1e033fede1e::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit36fdb080e12c0674934cd1e033fede1e::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitbdc83b75b46b0b6011362ef139b0ea68::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitbdc83b75b46b0b6011362ef139b0ea68::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitbdc83b75b46b0b6011362ef139b0ea68::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitbdc83b75b46b0b6011362ef139b0ea68::$classMap;
 
         }, null, ClassLoader::class);
     }
