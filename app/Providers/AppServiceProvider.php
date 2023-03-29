@@ -29,21 +29,21 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('header', function($view){
             $shoeType = ProductCategory::get()->sortBy('id')->take(5);
             $ultiType = ProductCategory::get()->sortByDesc('id')->take(5);
-
             $view->with([
                 'shoeType' => $shoeType,
                 'ultiType' => $ultiType
             ]);
-        // if(Session('cart')){
-        //     $oldCart = Session::get('cart');
-        //     $cart = new Cart($oldCart);
-        // }
-        //     $view->with(['cart'=>Session::get('cart'),
-        //                  'product_cart'=>cart->items,
-        //                  'totalPrice'=>$cart->totalPrc,
-    //                      'totalQty'=>$cart->totalQty]);
         });
-
-            
+        view()->composer('header',function($view){
+            if(Session('cart')){
+                $oldCart = session()->get('cart');
+                $cart = new Cart($oldCart);
+                $view->with([
+                'cart'=>session()->get('cart'),
+                'product_cart'=>$cart->items,
+                'totalPrice'=>$cart->totalPrc,
+                'totalQty'=>$cart->totalQty]);
+            }
+        });        
     }
 }

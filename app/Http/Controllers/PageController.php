@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\Slider;
 use App\Models\User;
 use App\Models\Product;
@@ -9,6 +10,8 @@ use App\Models\ProductCategory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+
 
 class PageController extends Controller
 {
@@ -43,6 +46,15 @@ class PageController extends Controller
         $product = Product::where('id',$req->id)->first();
         $relatedProduct = Product::where('id_category',$product->id_category)->paginate(3);
         return view('page.product',compact('product','relatedProduct'));
+    }
+
+    public function addCart(Request $req ,$id){
+        $product = Product::find($id);
+        $oldCart = Session('cart')?Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->add($product,$id);
+        $req->session()->put('cart',$cart);
+        return redirect()->back();
     }
 
     public function getContact(){

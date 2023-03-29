@@ -49,7 +49,7 @@
                                     @endif
                                 <div class="single-item">
                                     <div class="single-item-header">
-                                        <a href="{{route('product',$sp->id)}}"><img src="source/image/product/{{$ps->image}}" alt=""></a>
+                                        <a href="{{route('product',$ps->id)}}"><img src="source/image/product/{{$ps->image}}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$ps->name}}</p>
