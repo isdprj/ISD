@@ -54,3 +54,5 @@ Route::post('forgot-password', [ForgotPasswordController::class, 'resetPassword'
 Route::put('reset-password', [ForgotPasswordController::class, 'updatePassword'])->name('reset-password');
 
 Route::get('cart/{id}', [PageController::class, 'addCart'])->name('cart');
+
+Route::get('del-cart/{id}',[PageController::class, 'delCart'])->name('del-cart');
