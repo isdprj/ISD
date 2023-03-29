@@ -1,5 +1,6 @@
 @extends('base')
 @section('content')
+<div class="space25">&nbsp;</div>
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
