@@ -7,7 +7,7 @@
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-                <a href="index.html">Home</a> / <span>About us</span>
+                <a href="{{route('index')}}">Home</a> / <span>About us</span>
             </div>
         </div>
         <div class="clearfix"></div>

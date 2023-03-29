@@ -9,7 +9,7 @@
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb">
-                <a href="index.html">Home</a> / <span>Đăng nhập</span>
+                <a href="{{route('index')}}">Home</a> / <span>Đăng nhập</span>
             </div>
         </div>
         <div class="clearfix"></div>
