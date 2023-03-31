@@ -1,52 +1,46 @@
 @extends('base')
 @section('content')
 <div class="space50">&nbsp;</div>
-    <table role="presentation"
-        style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background:#ffffff;">
-        <tr>
-            <td align="center" style="padding:0;">
-                <table role="presentation"
-                    style="width:600px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;">
-                    <tr style="border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;">
-                        <td align="left" style="padding:10px 25px;background:#fff; display: flex; align-items: center;">
-                             <span style="font-weight: bold; padding-top: 10px;"> Programming Fields </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding:36px 30px 42px 30px;">
-                            <table role="presentation"
-                                style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
-                                <tr>
-                                    <td style="padding:0 0 36px 0;color:#153643;">
-                                        <p style="font-weight:bold;margin:0 0 20px 0;font-family:Arial,sans-serif;">
-                                            Hello {{ $user ? $user['name'] : '' }},</h1>
-                                        <p
-                                            style="margin:0 0 12px 0;font-size:14px;line-height:24px;font-family:Arial,sans-serif;">
-                                            We've received a request to reset the password.
-                                            </p>
-                                        <p
-                                            style="margin:10px 0 12px 0;font-size:14px;line-height:24px;font-family:Arial,sans-serif;">
-                                            You can reset your password by clicking the button below:
-                                        </p>
+<h2>Forgot password</h2>
+    @if ($errors->any())
+        <div>
+            <div>Something went wrong!</div>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    @if (session('status'))
+    <div class="mb-4 font-medium text-sm text-green-600">
+        {{ session('status') }}
+    </div>
+@endif
 
-                                        <p style="text-align: center;">
-                                            <a href="{{'http://localhost:8000/forgot-password/'.$user['token']}}" class="btn">Reset your password</a>
-                                        </p>
+<form action="/reset-password" method="POST">
+    @csrf
 
+    <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
-                                        <p style="margin:100px 0 12px 0;font-size:14px;font-family:Arial,sans-serif;">
-                                            Thank
-                                            you, </p>
-                                        <p style="margin:0 0 12px 0;font-size:14px;font-family:Arial,sans-serif;">
-                                            Programming Fields </p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
+    <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value="{{ old('email', $request->email) }}" autofocus>
+    </div>
+
+    <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+    </div>
+
+    <div>
+        <label for="password_confirmation">Password Confirmation</label>
+        <input type="password" id="password_confirmation" name="password_confirmation">
+    </div>
+
+    <div>
+        <button>Reset Password</button>
+    </div>
+</form>
     <div class="space50">&nbsp;</div>
 @endsection
