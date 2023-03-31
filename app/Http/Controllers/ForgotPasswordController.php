@@ -2,89 +2,46 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\ResetPassword;
-use App\Models\User;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Password;
 
 class ForgotPasswordController extends Controller
 {
-        /**
-     * Forgot password
-     * @param NA
-     * @return view
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
      */
-    public function forgotPassword()
+    public function create()
     {
         return view('page.forget-password');
     }
-     /**
-     * Validate token for forgot password
-     * @param token
-     * @return view
-     */
-    public function forgotPasswordValidate($token)
-    {
-        $user = User::where('token', $token)->where('is_verified', 0)->first();
-        if ($user) {
-            $email = $user->email;
-            return view('page.change-password', compact('email'));
-        }
-        return redirect()->route('forgot-password')->with('failed', 'Password reset link is expired');
-    }
 
     /**
-     * Reset password
-     * @param request
-     * @return response
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
-    public function resetPassword(Request $request)
+    public function store(Request $request)
     {
-        $this->validate($request, [
+        $request->validate([
             'email' => 'required|email',
         ]);
 
-        $user = User::where('email', $request->email)->first();
-        if (!$user) {
-            return back()->with('failed', 'Failed! email is not registered.');
-        }
+        // We will send the password reset link to this user. Once we have attempted
+        // to send the link, we will examine the response then see the message we
+        // need to show to the user. Finally, we'll send out a proper response.
+        $status = Password::sendResetLink(
+            $request->only('email')
+        );
 
-        $token = Str::random(60);
-
-        $user['token'] = $token;
-        $user['is_verified'] = 0;
-        $user->save();
-
-        Mail::to($request->email)->send(new ResetPassword($user->name, $token));
-
-        if(Mail::failures() != 0) {
-            return back()->with('success', 'Success! password reset link has been sent to your email');
-        }
-        return back()->with('failed', 'Failed! there is some issue with email provider');
+        return $status == Password::RESET_LINK_SENT
+                    ? back()->with('status', __($status))
+                    : back()->withInput($request->only('email'))
+                            ->withErrors(['email' => __($status)]);
     }
 
-    /**
-     * Change password
-     * @param request
-     * @return response
-     */
-    public function updatePassword(Request $request) {
-        $this->validate($request, [
-            'email' => 'required',
-            'password' => 'required|min:8',
-            'confirm_password' => 'required|same:password'
-        ]);
 
-        $user = User::where('email', $request->email)->first();
-        if ($user) {
-            $user['is_verified'] = 0;
-            $user['token'] = '';
-            $user['password'] = Hash::make($request->password);
-            $user->save();
-            return redirect()->route('login')->with('success', 'Success! password has been changed');
-        }
-        return redirect()->route('forgot-password')->with('failed', 'Failed! something went wrong');
-    }
 }

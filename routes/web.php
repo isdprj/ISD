@@ -4,6 +4,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\ResetPasswordController;
 
 
 /*
@@ -45,13 +46,20 @@ Route::post('login', [PageController::class, 'postLogin']) -> name('login');
 
 Route::get('logout', [PageController::class, 'getLogout']) -> name('logout');
 
-Route::get('forgot-password', [ForgotPasswordController::class, 'forgotPassword'])->name('forgot-password');
+Route::get('/forgot-password', [ForgotPasswordController::class, 'create'])
+                ->middleware('guest')
+                ->name('password.request');
 
-Route::get('forgot-password/{token}', [ForgotPasswordController::class, 'forgotPasswordValidate']);
+Route::post('/forgot-password', [ForgotPasswordController::class, 'store'])
+                ->middleware('guest')
+                ->name('password.email');
 
-Route::post('forgot-password', [ForgotPasswordController::class, 'resetPassword'])->name('forgot-password');
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'create'])
+                ->middleware('guest')
+                ->name('password.reset');
 
-Route::put('reset-password', [ForgotPasswordController::class, 'updatePassword'])->name('reset-password');
+Route::post('/reset-password', [ResetPasswordController::class, 'store'])
+                ->middleware('guest');
 
 Route::get('cart/{id}', [PageController::class, 'addCart'])->name('cart');
 

@@ -1,60 +1,38 @@
 @extends('base')
 @section('content')
 <div class="space25">&nbsp;</div>
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 m-auto">
-                <form action="{{ route('forgot-password') }}" method="post" autocomplete="off">
-                    @csrf
-                    <div class="card shadow">
+    <h2>Forgot password</h2>
 
-                        @if (Session::has("success"))
-                            <div class="alert alert-success alert-dismissible fade show">
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                {{ Session::get('success') }}
-                            </div>
-                        @elseif (Session::has("failed"))
-                            <div class="alert alert-danger alert-dismissible fade show">
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                {{ Session::get('failed') }}
-                            </div>
-                        @endif
-                        <div class="inner-header">
-                            <div class="container">
-                                <div class="pull-left">
-                                    <h6 class="inner-title"> Quên Mật Khẩu </h6>
-                                </div>
-                                <div class="pull-right">
-                                    <div class="beta-breadcrumb">
-                                        <a href="{{route('index')}}"> Trang chủ</a> / <span> Quên Mật Khẩu </span>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                        <div class="space20">&nbsp;</div>
-                        <div class="card-header">
-                            <h5 class="card-title"> Quên Mật Khẩu </h5>
-                        <div class="card-body px-4">
-                            <div class="form-group py-2">
-                                <label> Email </label>
-                                <input type="email" name="email" class="form-control {{$errors->first('email') ? 'is-invalid' : ''}}" value="{{ old('email') }}" placeholder="Your Email">
-                                    {!! $errors->first('email', '<div class="invalid-feedback">:message</div>') !!}
-                            </div>
+    @if ($errors->any())
+        <div>
+            <div>Something went wrong!</div>
 
-                            <div class="form-group text-end">
-                                <a href="{{ route('login') }}" class="nav-link"> Quay lại Đăng nhập </a>
-                            </div>
-                        </div>
-
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary"> Đổi Mật Khẩu </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
-    </div>
+    @endif
+
+    @if (session('status'))
+        <div class="mb-4 font-medium text-sm text-green-600">
+            {{ session('status') }}
+        </div>
+    @endif
+
+    <form action="/forgot-password" method="POST">
+        @csrf
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="{{ old('email') }}" autofocus>
+        </div>
+
+        <div>
+            <button>Email Password Reset Link</button>
+        </div>
+    </form>
+
     <div class="space25">&nbsp;</div>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
