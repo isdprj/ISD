@@ -40,7 +40,7 @@ return [
             'port' => env('MAIL_PORT', 465),
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => env('smgames2099@gmail.com'),
-            'password' => env('pritvknmluxooabr'),
+            'password' => env(''),
             'timeout' => null,
             'auth_mode' => null,
         ],

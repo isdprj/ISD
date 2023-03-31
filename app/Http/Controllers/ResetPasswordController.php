@@ -20,7 +20,7 @@ class ResetPasswordController extends Controller
      */
     public function create(Request $request)
     {
-        return view('page.reset-password', ['request' => $request]);
+        return response(view('page.reset-password', ['request' => $request]));
     }
 
     /**
@@ -55,10 +55,10 @@ class ResetPasswordController extends Controller
         // If the password was successfully reset, we will redirect the user back to
         // the application's home authenticated view. If there is an error we can
         // redirect them back to where they came from with their error message.
-        return $status == Password::PASSWORD_RESET
+        return response($status == Password::PASSWORD_RESET
                     ? redirect()->route('login')->with('status', __($status))
                     : back()->withInput($request->only('email'))
-                            ->withErrors(['email' => __($status)]);
+                            ->withErrors(['email' => __($status)]));
     }
 
 

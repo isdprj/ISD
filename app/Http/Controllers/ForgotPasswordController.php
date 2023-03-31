@@ -15,7 +15,7 @@ class ForgotPasswordController extends Controller
      */
     public function create()
     {
-        return view('page.forget-password');
+        return response (view('page.forget-password'));
     }
 
     /**
@@ -37,10 +37,10 @@ class ForgotPasswordController extends Controller
             $request->only('email')
         );
 
-        return $status == Password::RESET_LINK_SENT
+        return response ($status == Password::RESET_LINK_SENT
                     ? back()->with('status', __($status))
                     : back()->withInput($request->only('email'))
-                            ->withErrors(['email' => __($status)]);
+                            ->withErrors(['email' => __($status)]));
     }
 
 
