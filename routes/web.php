@@ -68,3 +68,5 @@ Route::get('del-cart/{id}',[PageController::class, 'delCart'])->name('del-cart')
 Route::get('like/{id}',[PageController::class, 'like'])->name('like');
 
 Route::get('unlike/{id}',[PageController::class, 'unlike'])->name('unlike');
+
+Route::get('favourite',[PageController::class, 'getFavourite'])->name('favourite');

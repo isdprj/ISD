@@ -30,6 +30,13 @@
             <div class="pull-right beta-components space-left ov">
                 <div class="space10">&nbsp;</div>
                 <div class="beta-comp">
+                    @if (Auth::check())
+                    <a href="{{route('favourite')}}" class="cart beta-select box-favourite">My Favourite
+                        ({{count($favouriteNumber)}})
+                    </a>                        
+                    @endif
+                </div>
+                <div class="beta-comp">
                     <form role="search" method="get" id="searchform" action="/">
                         <input type="text" value="" name="s" id="s" placeholder="Search for..." />
                         <button class="fa fa-search" type="submit" id="searchsubmit"></button>
