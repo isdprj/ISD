@@ -39,7 +39,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="beta-products-list">
-                        <h4><b>Các sản phẩm mới</b></h4>
+                        <h4><b>Sản phẩm hot</b></h4>
                         <div class="beta-products-details">
                             <p class="pull-left">{{count($newProduct)}} new products</p>
                             <div class="clearfix"></div>
