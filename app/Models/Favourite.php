@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Favourite extends Model
 {
-    protected $table = 'favourite';
+
+    protected $fillable = ['id_product','id_user'];
     use HasFactory;
 
     public function user(){
         $this->belongsTo(User::class,'id_user','id');
+
     }
 
     public function product(){
