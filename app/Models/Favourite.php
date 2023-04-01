@@ -4,11 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Favourite extends Model
 {
-    protected $fillable = ['id_product','id_user'];
+    protected $table = 'favourite';
     use HasFactory;
 
     public function user(){
@@ -17,5 +16,5 @@ class Favourite extends Model
 
     public function product(){
         $this->belongsTo(Product::class, 'id_product', 'id');
-    }    
+    }
 }
