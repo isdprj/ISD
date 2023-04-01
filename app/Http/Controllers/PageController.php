@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use App\Models\Favourite;
 
 
 class PageController extends Controller
@@ -105,6 +106,7 @@ class PageController extends Controller
         $user->password = Hash::make($request->password);
         $user->phone_number = $request->phone;
         $user->address = $request->address;
+        $user->token = null;
         $user->is_admin = false;
         $user->save();
         return redirect()->back()->with('echo', 'Account created successful');
@@ -134,6 +136,27 @@ class PageController extends Controller
     public function getLogout(){
         Auth::logout();
         return redirect('index')->with('logoutMessage', 'You have logged out');
+    }
+
+    public function like($pid){
+        if(Auth::check()){
+            $uid = Auth::user()->id;
+        }
+        if(!Favourite::where(['id_product'=>$pid,'id_user'=>$uid])->exists()){
+            Favourite::create(['id_product'=>$pid,'id_user'=>$uid]);
+        }
+
+        return redirect()->back();
+    }
+
+    public function unlike($pid){
+        if(Auth::check()){
+            $uid = Auth::user()->id;
+        }
+        if(Favourite::where(['id_product'=>$pid,'id_user'=>$uid])->exists()){
+            Favourite::where(['id_product'=>$pid,'id_user'=>$uid])->delete();
+        }
+        return redirect()->back();
     }
 }
 

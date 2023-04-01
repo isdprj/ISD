@@ -72,6 +72,22 @@
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" href="{{route('cart',$new->id)}}"><i class="fa fa-shopping-cart"></i></a>
                                         <a class="beta-btn primary" href="{{route('product',$new->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+                                        @if(Auth::check())
+                                            @if(!Session::has('like'))
+                                            <a href="{{route('like',$new->id)}}" class="btn alert-danger flex-fill">
+                                                <i class="ti-heart "></i>
+                                                @if($new->like)
+                                                <i class="ti-heart hidden"></i>
+                                                <i class="fa fa-heart"></i>
+                                            </a>
+                                            @else
+                                            <a href="{{route('unlike',$new->id)}}" class="btn alert-danger flex-fill">
+                                                <i class="fa fa-heart"></i>
+                                                @if($new->unlike)
+                                                <i class="ti-heart "></i>
+                                                <i class="fa fa-heart hidden"></i>
+                                            @endif                                            
+                                        @endif
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
