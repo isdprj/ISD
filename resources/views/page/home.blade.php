@@ -74,7 +74,7 @@
                                         <a class="beta-btn primary" href="{{route('product',$new->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                                         @if(Auth::check())
                                         @if(!session('liked.'.$new->id))
-                                        <a href="{{route('like',$new->id)}}" class="btn alert-danger flex-fill">
+                                        <a href="{{route('like',$new->id)}}" class="btn alert-danger flex-fill favourite">
                                             @if($new->like)                                            
                                             <i class="fa fa-heart"></i>
                                             @else
@@ -82,7 +82,7 @@
                                             @endif
                                         </a>
                                         @else
-                                        <a href="{{route('unlike',$new->id)}}" class="btn alert-danger flex-fill">
+                                        <a href="{{route('unlike',$new->id)}}" class="btn alert-danger flex-fill favourite">
                                             @if($new->unlike)
                                             <i class="ti-heart "></i>
                                             @else
@@ -91,7 +91,7 @@
                                         </a>
                                         @endif
                                         @else
-                                        <a href="{{route('login')}}" class="btn alert-danger flex-fill">
+                                        <a href="{{route('login')}}" class="btn alert-danger flex-fill favourite">
                                             <i class="ti-heart "></i>
                                         </a>                                             
                                         @endif
@@ -133,7 +133,7 @@
                                         <a class="beta-btn primary" href="{{route('product',$sp->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                                         @if(Auth::check())
                                         @if(!session('liked.'.$sp->id))
-                                        <a href="{{route('like',$sp->id)}}" class="btn alert-danger flex-fill">
+                                        <a href="{{route('like',$sp->id)}}" class="btn alert-danger flex-fill favourite">
                                             @if($sp->like)                                            
                                             <i class="fa fa-heart"></i>
                                             @else
@@ -141,7 +141,7 @@
                                             @endif
                                         </a>
                                         @else
-                                        <a href="{{route('unlike',$sp->id)}}" class="btn alert-danger flex-fill">
+                                        <a href="{{route('unlike',$sp->id)}}" class="btn alert-danger flex-fill favourite">
                                             @if($sp->unlike)
                                             <i class="ti-heart "></i>
                                             @else
@@ -150,7 +150,7 @@
                                         </a>
                                         @endif
                                         @else
-                                        <a href="{{route('login')}}" class="btn alert-danger flex-fill">
+                                        <a href="{{route('login')}}" class="btn alert-danger flex-fill favourite">
                                             <i class="ti-heart "></i>
                                         </a>                                       
                                         @endif                                       
