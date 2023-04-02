@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="col-sm-2">
-                <div class="widget">
+                {{-- <div class="widget"> --}}
                     {{-- <h4 class="widget-title">Information</h4>
                     <div>
                         <ul>
@@ -26,7 +26,7 @@
                             <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Illustrations</a></li>
                         </ul>
                     </div> --}}
-                </div>
+                {{-- </div> --}}
             </div>
             <div class="col-sm-4">
              <div class="col-sm-10">

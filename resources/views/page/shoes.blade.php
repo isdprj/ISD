@@ -3,7 +3,7 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h6 class="inner-title">Product</h6>
+            <h6 class="inner-title">Danh mục sản phẩm</h6>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
@@ -20,11 +20,11 @@
             <div class="row">
                 <div class="col-sm-3">
                     <ul class="aside-menu">
-                        <li><a href="{{route('shoes')}}">+ Shoes</a></li>
+                        <li><a href="{{route('shoes')}}">+ Giày bóng đá</a></li>
                         @foreach($productType1 as $pt1)
                         <li><a href="{{route('product_categories',$pt1->id)}}">- {{$pt1->name}}</a></li>
                         @endforeach
-                        <li><a href="{{route('ultility')}}">+ Ultility</a></li>
+                        <li><a href="{{route('ultility')}}">+ Phụ kiện</a></li>
                         @foreach($productType2 as $pt2)
                         <li><a href="{{route('product_categories',$pt2->id)}}">- {{$pt2->name}}</a></li>
                         @endforeach
@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-sm-9">
                     <div class="beta-products-list">
-                        <h4>All Products</h4>
+                        <h4>Tất cả sản phẩm</h4>
                         <div class="beta-products-details">
                             <p class="pull-left">{{count($productShoes)}} found</p>
                             <div class="clearfix"></div>

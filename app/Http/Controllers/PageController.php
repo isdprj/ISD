@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use App\Models\Favourite;
+use Illuminate\Support\Facades\DB;
 
 
 class PageController extends Controller
@@ -19,7 +21,8 @@ class PageController extends Controller
         $slider = Slider::all();
         $newProduct = Product::get()->sortByDesc('updated_at')->take(4);
         $saleProduct = Product::where('promotion_price','<>',0)->paginate(4);
-        return view('page.home',compact('slider','newProduct','saleProduct'));
+        $favouriteNumber = Favourite::get('id');
+        return view('page.home',compact('slider','newProduct','saleProduct','favouriteNumber'));
     }
 
     public function getProductCategory($type){
@@ -134,6 +137,35 @@ class PageController extends Controller
     public function getLogout(){
         Auth::logout();
         return redirect('index')->with('logoutMessage', 'You have logged out');
+    }
+    public function like($pid){
+        if(Auth::check()){
+            $uid = Auth::user()->id;
+        }
+        if(!Favourite::where(['id_product'=>$pid,'id_user'=>$uid])->exists()){
+            Favourite::create(['id_product'=>$pid,'id_user'=>$uid]);
+        }
+        session()->put('liked.'.$pid, true);
+        return redirect()->back();
+    }
+
+    public function unlike($pid){
+        if(Auth::check()){
+            $uid = Auth::user()->id;
+        }
+        if(Favourite::where(['id_product'=>$pid,'id_user'=>$uid])->exists()){
+            Favourite::where(['id_product'=>$pid,'id_user'=>$uid])->delete();
+        }
+        session()->forget('liked.'.$pid);
+        return redirect()->back();
+    }
+    public function getFavourite(){
+        $favouriteNumber = Favourite::get('id');
+        $favouriteProduct = DB::table('favourites')
+                            ->join('products','favourites.id_product', '=', 'products.id')
+                            ->join('users', 'favourites.id_user', '=', 'users.id')
+                            ->get();
+        return view('page.favourite',compact('favouriteProduct','favouriteNumber'));
     }
 }
 

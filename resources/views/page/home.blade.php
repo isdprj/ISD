@@ -39,7 +39,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="beta-products-list">
-                        <h4><b>Các sản phẩm mới</b></h4>
+                        <h4><b>Sản phẩm hot</b></h4>
                         <div class="beta-products-details">
                             <p class="pull-left">{{count($newProduct)}} new products</p>
                             <div class="clearfix"></div>
@@ -72,6 +72,29 @@
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" href="{{route('cart',$new->id)}}"><i class="fa fa-shopping-cart"></i></a>
                                         <a class="beta-btn primary" href="{{route('product',$new->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+                                        @if(Auth::check())
+                                        @if(!session('liked.'.$new->id))
+                                        <a href="{{route('like',$new->id)}}" class="btn alert-danger flex-fill favourite">
+                                            @if($new->like)                                            
+                                            <i class="fa fa-heart"></i>
+                                            @else
+                                            <i class="ti-heart "></i>
+                                            @endif
+                                        </a>
+                                        @else
+                                        <a href="{{route('unlike',$new->id)}}" class="btn alert-danger flex-fill favourite">
+                                            @if($new->unlike)
+                                            <i class="ti-heart "></i>
+                                            @else
+                                            <i class="fa fa-heart"></i>
+                                            @endif
+                                        </a>
+                                        @endif
+                                        @else
+                                        <a href="{{route('login')}}" class="btn alert-danger flex-fill favourite">
+                                            <i class="ti-heart "></i>
+                                        </a>                                             
+                                        @endif
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -108,6 +131,29 @@
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" href="{{route('cart',$sp->id)}}"><i class="fa fa-shopping-cart"></i></a>
                                         <a class="beta-btn primary" href="{{route('product',$sp->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+                                        @if(Auth::check())
+                                        @if(!session('liked.'.$sp->id))
+                                        <a href="{{route('like',$sp->id)}}" class="btn alert-danger flex-fill favourite">
+                                            @if($sp->like)                                            
+                                            <i class="fa fa-heart"></i>
+                                            @else
+                                            <i class="ti-heart "></i>
+                                            @endif
+                                        </a>
+                                        @else
+                                        <a href="{{route('unlike',$sp->id)}}" class="btn alert-danger flex-fill favourite">
+                                            @if($sp->unlike)
+                                            <i class="ti-heart "></i>
+                                            @else
+                                            <i class="fa fa-heart"></i>
+                                            @endif
+                                        </a>
+                                        @endif
+                                        @else
+                                        <a href="{{route('login')}}" class="btn alert-danger flex-fill favourite">
+                                            <i class="ti-heart "></i>
+                                        </a>                                       
+                                        @endif                                       
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
