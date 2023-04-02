@@ -7,7 +7,7 @@
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-                <a href="{{route('index')}}">Home</a> / <span>Product</span>
+                <a href="{{route('index')}}">Trang chủ</a> / <span>Sản phẩm</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -48,10 +48,10 @@
 
                         <div class="space20">&nbsp;</div>
 
-                        <p>Options:</p>
+                        <p>Chọn mẫu:</p>
                         <div class="single-item-options">
                             <select class="wc-select" name="size">
-                                <option>Size</option>
+                                <option>Kích cỡ</option>
                                 <option value="XS">XS</option>
                                 <option value="S">S</option>
                                 <option value="M">M</option>
@@ -59,7 +59,7 @@
                                 <option value="XL">XL</option>
                             </select>
                             <select class="wc-select" name="color">
-                                <option>Color</option>
+                                <option>Màu</option>
                                 <option value="Red">Red</option>
                                 <option value="Green">Green</option>
                                 <option value="Yellow">Yellow</option>
@@ -67,14 +67,14 @@
                                 <option value="White">White</option>
                             </select>
                             <select class="wc-select" name="color">
-                                <option>Qty</option>
+                                <option>Số lượng</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                             </select>
-                            <a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="add-to-cart" href="{{route('cart',$product->id)}}"><i class="fa fa-shopping-cart"></i></a>
                             <div class="clearfix"></div>
                         </div>
                     </div>
@@ -83,20 +83,20 @@
                 <div class="space40">&nbsp;</div>
                 <div class="woocommerce-tabs">
                     <ul class="tabs">
-                        <li><a href="#tab-description">Description</a></li>
-                        <li><a href="#tab-reviews">Reviews (0)</a></li>
+                        <li><a href="#tab-description">Mô tả</a></li>
+                        <li><a href="#tab-reviews">Đánh giá (0)</a></li>
                     </ul>
 
                     <div class="panel" id="tab-description">
                         <p>{{$product->stats}}</p>
                     </div>
                     <div class="panel" id="tab-reviews">
-                        <p>No Reviews</p>
+                        <p>Chưa có đánh giá nào</p>
                     </div>
                 </div>
                 <div class="space50">&nbsp;</div>
                 <div class="beta-products-list">
-                    <h4>Related Products</h4>
+                    <h4>Sản phẩm liên quan</h4>
 
                     <div class="row">
                         <div class="col-sm-4">
@@ -134,7 +134,7 @@
             </div>
             <div class="col-sm-3 aside">
                 <div class="widget">
-                    <h3 class="widget-title">Best Sellers</h3>
+                    <h3 class="widget-title">Bán chạy</h3>
                     <div class="widget-body">
                         <div class="beta-sales beta-lists">
                             <div class="media beta-sales-item">
@@ -168,7 +168,7 @@
                         </div>
                     </div>
                 </div> <!-- best sellers widget -->
-                <div class="widget">
+                {{-- <div class="widget">
                     <h3 class="widget-title">New Products</h3>
                     <div class="widget-body">
                         <div class="beta-sales beta-lists">
@@ -202,7 +202,7 @@
                             </div>
                         </div>
                     </div>
-                </div> <!-- best sellers widget -->
+                </div> <!-- best sellers widget --> --}}
             </div>
         </div>
     </div> <!-- #content -->
