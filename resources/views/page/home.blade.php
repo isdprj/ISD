@@ -89,7 +89,11 @@
                                             <i class="fa fa-heart"></i>
                                             @endif
                                         </a>
-                                        @endif                                            
+                                        @endif
+                                        @else
+                                        <a href="{{route('login')}}" class="btn alert-danger flex-fill">
+                                            <i class="ti-heart "></i>
+                                        </a>                                             
                                         @endif
                                         <div class="clearfix"></div>
                                     </div>
@@ -144,7 +148,11 @@
                                             <i class="fa fa-heart"></i>
                                             @endif
                                         </a>
-                                        @endif                                            
+                                        @endif
+                                        @else
+                                        <a href="{{route('login')}}" class="btn alert-danger flex-fill">
+                                            <i class="ti-heart "></i>
+                                        </a>                                       
                                         @endif                                       
                                         <div class="clearfix"></div>
                                     </div>
