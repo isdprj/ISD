@@ -54,11 +54,11 @@ Route::post('/forgot-password', [ForgotPasswordController::class, 'store'])
                 ->middleware('guest')
                 ->name('password.email');
 
-Route::get('/reset-password/{token}', [ResetPasswordController::class, 'create'])
+Route::get('reset-password/{token}', [ResetPasswordController::class, 'create'])
                 ->middleware('guest')
                 ->name('password.reset');
 
-Route::post('/reset-password', [ResetPasswordController::class, 'store'])
+Route::post('reset-password', [ResetPasswordController::class, 'store'])
                 ->middleware('guest');
 
 Route::get('cart/{id}', [PageController::class, 'addCart'])->name('cart');
