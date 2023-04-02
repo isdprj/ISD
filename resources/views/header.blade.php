@@ -3,18 +3,18 @@
         <div class="container">
             <div class="pull-left auto-width-left">
                 <ul class="top-menu menu-beta l-inline">
-                    <li><a href=""><i class="fa fa-home"></i> Address, City, Province</a></li>
-                    <li><a href=""><i class="fa fa-phone"></i> Phone Number</a></li>
+                    <li><a href="#"><i class="fa fa-home"></i> Địa chỉ</a></li>
+                    <li><a href="#"><i class="fa fa-phone"></i> Số điện thoại</a></li>
                 </ul>
             </div>
             <div class="pull-right auto-width-right">
                 <ul class="top-details menu-beta l-inline">
                     @if (Auth::check())
-                        <li><a href="#"><i class="fa fa-user"></i>Hi {{Auth::user()-> full_name}}</a></li>
-                        <li><a href="{{route('logout')}}">Log out</a></li>
+                        <li><a href="#"><i class="fa fa-user"></i>Chào {{Auth::user()-> full_name}}</a></li>
+                        <li><a href="{{route('logout')}}">Đăng xuất</a></li>
                     @else
-                        <li><a href="{{route('register')}}">Register</a></li>
-                        <li><a href="{{route('login')}}">Log in</a></li>   
+                        <li><a href="{{route('register')}}">Đăng ký</a></li>
+                        <li><a href="{{route('login')}}">Đăng nhập</a></li>   
                     @endif
 
                 </ul>
@@ -31,7 +31,7 @@
                 <div class="space10">&nbsp;</div>
                 <div class="beta-comp">
                     @if (Auth::check())
-                    <a href="{{route('favourite')}}" class="cart beta-select box-favourite">My Favourite
+                    <a href="{{route('favourite')}}" class="cart beta-select box-favourite">Yêu thích
                         ({{count($favouriteNumber)}})
                     </a>                        
                     @endif
@@ -46,10 +46,10 @@
                 <div class="beta-comp">
                     <div class="cart">
                         <div class="beta-select">
-                            <i class="fa fa-shopping-cart"></i> Cart (
+                            <i class="fa fa-shopping-cart"></i> Giỏ hàng (
                             @if(Session::has('cart'))
                             {{Session('cart')->totalQty}}
-                            @else None
+                            @else Trống
                             @endif
                             )
                             <i class="fa fa-chevron-down"></i>
@@ -84,7 +84,7 @@
 
 
                             <div class="cart-caption">
-                                <div class="cart-total text-right">Total: 
+                                <div class="cart-total text-right">Tổng cộng:
                                     <span class="cart-total-value">
                                         {{number_format(Session('cart')->totalPrc)}} đ
                                     </span>
@@ -93,7 +93,7 @@
 
                                 <div class="center">
                                     <div class="space10">&nbsp;</div>
-                                    <a href="checkout.html" class="beta-btn primary text-center">Order now <i class="fa fa-chevron-right"></i></a>
+                                    <a href="checkout.html" class="beta-btn primary text-center">Thanh toán<i class="fa fa-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -110,9 +110,9 @@
             <div class="visible-xs clearfix"></div>
             <nav class="main-menu">
                 <ul class="l-inline ov">
-                    <li><a href="{{route('index')}}">Home</a></li>
+                    <li><a href="{{route('index')}}">Trang chủ</a></li>
                     {{-- <li><a href="{{route('product_categories')}}">Our Products</a></li> --}}
-                    <li><a href="{{route('shoes')}}">Shoes</a>
+                    <li><a href="{{route('shoes')}}">Giày</a>
                         <ul class="sub-menu">
                             @foreach ($shoeType as $sType)
                                 <li><a href="{{route('product_categories',$sType->id)}}">{{$sType->name}}</a></li>
@@ -120,15 +120,15 @@
 
                         </ul>
                     </li>
-                    <li><a href="{{route('ultility')}}">Ultilities</a>
+                    <li><a href="{{route('ultility')}}">Phụ kiện</a>
                         <ul class="sub-menu">
                             @foreach ($ultiType as $uType)
                                 <li><a href="{{route('product_categories',$uType->id)}}">{{$uType->name}}</a></li> 
                             @endforeach
                         </ul>
                     </li>
-                    <li><a href="{{route('about')}}">About us</a></li>
-                    <li><a href="{{route('contact')}}">Contact</a></li>
+                    <li><a href="{{route('about')}}">Giới thiệu</a></li>
+                    <li><a href="{{route('contact')}}">Liên hệ</a></li>
                 </ul>
                 <div class="clearfix"></div>
             </nav>

@@ -4,11 +4,11 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h6 class="inner-title">Register</h6>
+            <h6 class="inner-title">Đăng ký</h6>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb">
-                <a href="{{route('index')}}">Home</a> / <span>Đăng kí</span>
+                <a href="{{route('index')}}">Trang chủ</a> / <span>Đăng ký</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -36,40 +36,40 @@
                     </div>
                 @endif
                 <div class="col-sm-6">  
-                    <h4>Register</h4>
+                    <h4>Đăng ký</h4>
                     <div class="space20">&nbsp;</div>
 
                     
                     <div class="form-block">
-                        <label for="email">Email address*</label>
+                        <label for="email">Địa chỉ email*</label>
                         <input type="email" name="email" required>
                     </div>
 
                     <div class="form-block">
-                        <label for="your_last_name">Fullname*</label>
+                        <label for="your_last_name">Họ và tên*</label>
                         <input type="text" name="fullname" required>
                     </div>
 
                     <div class="form-block">
-                        <label for="adress">Address*</label>
+                        <label for="adress">Địa chỉ*</label>
                         <input type="text" name="address" value="Street Address" required>
                     </div>
 
 
                     <div class="form-block">
-                        <label for="phone">Phone*</label>
+                        <label for="phone">Số điện thoại*</label>
                         <input type="text" name="phone" required>
                     </div>
                     <div class="form-block">
-                        <label for="phone">Password*</label>
+                        <label for="phone">Mật khẩu*</label>
                         <input type="password" name="password" required>
                     </div>
                     <div class="form-block">
-                        <label for="phone">Re_password*</label>
+                        <label for="phone">Xác nhận mật khẩu*</label>
                         <input type="password" name="re_password" required>
                     </div>
                     <div class="form-block">
-                        <button type="submit" class="btn btn-primary">Register</button>
+                        <button type="submit" class="btn btn-primary">Đăng ký</button>
                     </div>
                 </div>
                 <div class="col-sm-3"></div>

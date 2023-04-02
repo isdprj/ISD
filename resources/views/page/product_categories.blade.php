@@ -7,7 +7,7 @@
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-                <a href="{{route('index')}}">Home</a> / <span>Product</span>
+                <a href="{{route('index')}}">Trang chủ</a> / <span>Danh mục sản phẩm</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -34,7 +34,7 @@
                     <div class="beta-products-list">
                         <h4>Tất cả sản phẩm</h4>
                         <div class="beta-products-details">
-                            <p class="pull-left">{{count($productOfType)}} found</p>
+                            <p class="pull-left">Có {{count($productOfType)}} sản phẩm</p>
                             <div class="clearfix"></div>
                         </div>
 
