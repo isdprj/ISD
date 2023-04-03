@@ -167,6 +167,15 @@ class PageController extends Controller
                             ->get();
         return view('page.favourite',compact('favouriteProduct','favouriteNumber'));
     }
+
+    public function getSearch(Request $req){
+        $productType1 = ProductCategory::get()->sortBy('id')->take(5);
+        $productType2 = ProductCategory::get()->sortByDesc('id')->take(5);
+        $productSearch = Product::where('name', 'like', '%'.$req->key.'%')
+                            -> orWhere('unit_price',$req->key)
+                            ->get();
+        return view('page.search',compact('productSearch','productType1','productType2'));
+    }
 }
 
 
