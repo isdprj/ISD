@@ -49,14 +49,14 @@
                                     @endif
                                 <div class="single-item">
                                     <div class="single-item-header">
-                                        <a href="{{route('product',$ps->id)}}"><img src="source/image/product/{{$ps->image}}" alt=""></a>
+                                        <a href="{{route('product',$ps->id)}}"><img src="source/image/product/{{$ps->image}}" alt="" ></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{$ps->name}}</p>
                                         <p class="single-item-price">
                                             @if ($ps->promotion_price == 0)
                                             <span class="flash-sale"><i>{{$ps->unit_price}}</i> đ</span>
-                                            @else 
+                                            @else
                                             <span class="flash-del"><i>{{$ps->unit_price}}</i> đ</span>
                                             <span class="flash-sale"><i>{{$ps->promotion_price}}</i> đ</span>
                                             @endif
@@ -71,7 +71,7 @@
                             </div>
                         </div>
                             @endforeach
-                        
+
                     </div> <!-- .beta-products-list -->
                     </div>
                     <div class="space50">&nbsp;</div>
