@@ -72,3 +72,7 @@ Route::get('unlike/{id}',[PageController::class, 'unlike'])->name('unlike');
 Route::get('favourite',[PageController::class, 'getFavourite'])->name('favourite');
 
 Route::get('search',[PageController::class, 'getSearch'])->name('search');
+
+Route::get('checkout',[PageController::class,'getCheckout'])->name('checkout');
+
+Route::post('checkout',[PageController::class,'postCheckout'])->name('checkout');

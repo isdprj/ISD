@@ -95,7 +95,7 @@
 
                                 <div class="center">
                                     <div class="space10">&nbsp;</div>
-                                    <a href="checkout.html" class="beta-btn primary text-center">Thanh toán<i class="fa fa-chevron-right"></i></a>
+                                    <a href="{{route('checkout')}}" class="beta-btn primary text-center">Thanh toán<i class="fa fa-chevron-right"></i></a>
                                 </div>
                             </div>
                         </div>
