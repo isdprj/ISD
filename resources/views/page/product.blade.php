@@ -60,11 +60,11 @@
                             </select>
                             <select class="wc-select" name="color">
                                 <option>Màu</option>
-                                <option value="Red">Red</option>
-                                <option value="Green">Green</option>
-                                <option value="Yellow">Yellow</option>
-                                <option value="Black">Black</option>
-                                <option value="White">White</option>
+                                <option value="Red">Đỏ</option>
+                                <option value="Green">Xanh lá</option>
+                                <option value="Yellow">Vàng</option>
+                                <option value="Black">Đen</option>
+                                <option value="White">Trắng</option>
                             </select>
                             <select class="wc-select" name="color">
                                 <option>Số lượng</option>
@@ -122,7 +122,7 @@
                             </div>
                             <div class="single-item-caption">
                                 <a class="add-to-cart pull-left" href="{{route('cart',$rp->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                                <a class="beta-btn primary" href="{{route('product',$rp->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+                                <a class="beta-btn primary" href="{{route('product',$rp->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
