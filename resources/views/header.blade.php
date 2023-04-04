@@ -32,7 +32,9 @@
                 <div class="beta-comp">
                     @if (Auth::check())
                     <a href="{{route('favourite')}}" class="cart beta-select box-favourite">Yêu thích
-                        ({{count($favouriteNumber)}})
+                        (
+                            {!! count($favouriteNumber)==0? 0: count($favouriteNumber) !!}
+                        )
                     </a>                        
                     @endif
                 </div>
