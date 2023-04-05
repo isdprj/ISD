@@ -16,7 +16,13 @@
 
 <div class="container">
     <div id="content">
-        
+        <div class="row">
+            @if (Session::has('anno'))
+                <div class="alert alert-success">
+                    {{Session::get('anno')}}
+                </div>
+            @endif
+        </div>
         <form action="{{route('checkout')}}" method="post" class="beta-form-checkout">
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <div class="row">
@@ -67,15 +73,17 @@
                                     @foreach($product_cart as $pc)
                                 <!--  one item	 -->
                                     <div class="media">
-                                        <img width="35%" src="assets/image/product/{{$cart['item']['image']}}" alt="" class="pull-left">
+                                        <img width="35%" src="source/image/product/{{$pc['item']['image']}}" alt="" class="pull-left">
                                         <div class="media-body">
-                                            <p class="font-large">{{$cart['item']['name']}}</p>
+                                            <p class="font-large">{{$pc['item']['name']}}</p>
                                             {{-- <span class="color-gray your-order-info">Color: Red</span>
                                             <span class="color-gray your-order-info">Size: M</span> --}}
-                                            <span class="color-gray your-order-info">Đơn giá: {{number_format($cart['price'])}}</span>
-                                            <span class="color-gray your-order-info">Qty: {{$cart['qty']}}</span>
+                                            <span class="color-gray your-order-info">Đơn giá: {{number_format($pc['price'])}}</span>
+                                            <span class="color-gray your-order-info">Qty: {{$pc['qty']}}</span>
                                         </div>
                                     </div>
+                                    @endforeach
+                                    @endif
                                 <!-- end one item -->
                                 </div>
                                 <div class="clearfix"></div>
@@ -85,7 +93,7 @@
                                 <div class="pull-left"><p class="your-order-f18">Total:</p></div>
                                 <div class="pull-right"><h5 class="color-black">
                                     @if(Session::has('cart'))
-                                    {{number_format($totalPrc)}}
+                                    {{number_format(Session('cart')->totalPrc)}}
                                     @endif
                                     Đồng
                                 </h5></div>

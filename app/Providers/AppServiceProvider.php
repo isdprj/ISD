@@ -6,6 +6,7 @@ use App\Models\Cart;
 use Symfony\Component\HttpFoundation\Session\Session;
 use App\Models\ProductCategory;
 use Illuminate\Support\ServiceProvider;
+use App\Models\Favourite;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,12 +30,15 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('header', function($view){
             $shoeType = ProductCategory::get()->sortBy('id')->take(5);
             $ultiType = ProductCategory::get()->sortByDesc('id')->take(5);
+            $favouriteNumber = Favourite::get('id');
+
             $view->with([
                 'shoeType' => $shoeType,
-                'ultiType' => $ultiType
+                'ultiType' => $ultiType,
+                'favouriteNumber' => $favouriteNumber
             ]);
         });
-        view()->composer('header',function($view){
+        view()->composer(['header','page.checkout'],function($view){
             if(Session('cart')){
                 $oldCart = session()->get('cart');
                 $cart = new Cart($oldCart);

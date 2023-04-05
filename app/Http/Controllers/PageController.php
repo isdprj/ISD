@@ -24,8 +24,8 @@ class PageController extends Controller
         $slider = Slider::all();
         $newProduct = Product::get()->sortByDesc('updated_at')->take(4);
         $saleProduct = Product::where('promotion_price','<>',0)->paginate(4);
-        $favouriteNumber = Favourite::get('id');
-        return view('page.home',compact('slider','newProduct','saleProduct','favouriteNumber'));
+        
+        return view('page.home',compact('slider','newProduct','saleProduct'));
     }
 
     public function getProductCategory($type){
@@ -163,12 +163,11 @@ class PageController extends Controller
         return redirect()->back();
     }
     public function getFavourite(){
-        $favouriteNumber = Favourite::get('id');
         $favouriteProduct = DB::table('favourites')
                             ->join('products','favourites.id_product', '=', 'products.id')
                             ->join('users', 'favourites.id_user', '=', 'users.id')
                             ->get();
-        return view('page.favourite',compact('favouriteProduct','favouriteNumber'));
+        return view('page.favourite',compact('favouriteProduct'));
     }
 
     public function getSearch(Request $req){
@@ -181,9 +180,9 @@ class PageController extends Controller
     }
 
     public function getCheckout(){
-        $favouriteNumber = Favourite::get('id');
         
-        return view('page.checkout',compact('favouriteNumber'));
+        
+        return view('page.checkout');
     }
 
     public function postCheckout(Request $req){
@@ -199,7 +198,7 @@ class PageController extends Controller
 
         $bill = new Bill();
         $bill->id_customer = $customer->id;
-        $bill->date_order = date('Y-m-d');
+        $bill->date_oreder = date('Y-m-d');
         $bill->total = $cart->totalPrc;
         $bill->payment = $req->payment;
         $bill->note = $req->notes;
@@ -208,7 +207,7 @@ class PageController extends Controller
         foreach($cart->items as $key=>$value){
             
             $bill_detail = new BillDetail();
-            $bill_detail->id = $bill->id;
+            $bill_detail->id_bill = $bill->id;
             $bill_detail->id_product = $key;
             $bill_detail->quantity = $value['qty'];
             $bill_detail->unit_price = ($value['price']/$value['qty']);

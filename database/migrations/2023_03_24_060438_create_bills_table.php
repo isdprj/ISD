@@ -15,7 +15,7 @@ class CreateBillsTable extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->id()->unsigned();
-            $table->date('date_order');
+            $table->date('date_oreder');
             $table->double('total');
             $table->string('payment');
             $table->string('note',500);
