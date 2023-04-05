@@ -182,7 +182,7 @@ class PageController extends Controller
 
     public function getCheckout(){
         $favouriteNumber = Favourite::get('id');
-
+        
         return view('page.checkout',compact('favouriteNumber'));
     }
 
