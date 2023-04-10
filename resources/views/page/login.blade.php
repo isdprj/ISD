@@ -42,11 +42,11 @@
                         <label for="phone"> Mật khẩu* </label>
                         <input type="password" name="password" required>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label class="label-agree-term"><span></span><span></span>
                         <a href="{{ route('password.request') }}"> Quên Mật khẩu? </a>
                         </label>
-                    </div>
+                    </div> --}}
                     <div class="form-block">
                         <button type="submit" class="btn btn-primary"> Đăng nhập </button>
                     </div>
