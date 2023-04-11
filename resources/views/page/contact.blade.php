@@ -3,11 +3,11 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h6 class="inner-title">Contacts</h6>
+            <h6 class="inner-title">Liên hệ với chúng tôi</h6>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-                <a href="{{route('index')}}">Home</a> / <span>Contacts</span>
+                <a href="{{route('index')}}">Trang chủ</a> / <span>Liên hệ</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -23,7 +23,7 @@
         <div class="space50">&nbsp;</div>
         <div class="row">
             <div class="col-sm-8">
-                <h2>Contact Form</h2>
+                <h2>Mẫu liên hệ</h2>
                 <div class="space20">&nbsp;</div>
                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit ani m id est laborum.</p>
                 <div class="space20">&nbsp;</div>
@@ -46,7 +46,7 @@
                 </form>
             </div>
             <div class="col-sm-4">
-                <h2>Contact Information</h2>
+                <h2>Thông tin liên hệ</h2>
                 <div class="space20">&nbsp;</div>
 
                 <h6 class="contact-title">Address</h6>
