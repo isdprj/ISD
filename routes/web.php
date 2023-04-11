@@ -5,6 +5,7 @@ use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
+use App\Http\Controllers\SocialAccountController;
 
 
 /*
@@ -37,6 +38,11 @@ Route::get('contact', [PageController::class,'getContact'])->name('contact');
 Route::get('about', [PageController::class,'getAbout'])-> name('about');
 
 Route::get('login', [PageController::class, 'getLogin']) -> name('login');
+
+
+Route::get('login/{social}',[SocialAccountController::class, 'redirectToProvider'])->name('login');
+
+Route::get('login/{social}/callback',[SocialAccountController::class, 'handleProviderCallback'])->name('login');
 
 Route::get('register', [PageController::class,'getRegister'])->name('register');
 
