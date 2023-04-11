@@ -3,11 +3,11 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h6 class="inner-title">About us</h6>
+            <h6 class="inner-title">Về AHK</h6>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-                <a href="{{route('index')}}">Home</a> / <span>About us</span>
+                <a href="{{route('index')}}">Trang chủ</a> / <span>Giới thiệu</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -16,7 +16,7 @@
 <div class="container">
     <div id="content">
         <div class="our-history">
-            <h2 class="text-center wow fadeInDown">Our History</h2>
+            <h2 class="text-center wow fadeInDown">Lịch sử phát triển của AHK Sport</h2>
             <div class="space35">&nbsp;</div>
 
             <div class="history-slider">
@@ -157,7 +157,7 @@
         <div class="space50">&nbsp;</div>
         <hr />
         <div class="space50">&nbsp;</div>
-        <h2 class="text-center wow fadeInDown">Our Passion for What We Do Transfers Into Our Services</h2>
+        <h2 class="text-center wow fadeInDown">Định hướng mô hình AHK Sport đang hướng tới</h2>
         <div class="space20">&nbsp;</div>
         <p class="text-center wow fadeInLeft">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br /> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
         <div class="space35">&nbsp;</div>
