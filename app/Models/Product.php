@@ -24,4 +24,8 @@ class Product extends Model
         return $this->favourite()->selectRaw('id_product,count(*) as count')->groupBy('id_product');
 
     }
+    public function productVariation(){
+        return $this->hasMany(ProductVariation::class,'id_product','id');
+    }
+
 }

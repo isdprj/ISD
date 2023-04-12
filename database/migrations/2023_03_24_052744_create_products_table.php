@@ -20,7 +20,6 @@ class CreateProductsTable extends Migration
             $table->foreign('id_category')->references('id')->on('product_categories');
             $table->text('description');
             $table->text('stats')->nullable();
-            $table->json('variation')->nullable();
             $table->double('unit_price');
             $table->double('promotion_price');
             $table->string('image',200);
