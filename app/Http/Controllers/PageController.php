@@ -97,12 +97,12 @@ class PageController extends Controller
             'password'=>'required|min:8',
             're_password' => 'required|same:password'
         ],[
-            'email.required'=> 'Please type your email',
-            'email.email' => 'Invalid email format',
-            'email.unique' => 'Existed email',
-            'password.required' => 'Please type your password',
-            're_password.same' => 'Unmatched password',
-            'password.min'=> 'Password must be longer than 8 characters'
+            'email.required'=> 'Vui lòng nhập Email của bạn',
+            'email.email' => 'Bạn đã nhập sai định dạng Email. Vui lòng nhập lại Email!',
+            'email.unique' => 'Tài khoản với Email này đã tồn tại!',
+            'password.required' => 'Vui lòng nhập mật khẩu mong muốn',
+            're_password.same' => 'Bạn đã nhập mật khẩu không khớp. Vui lòng nhập lại Mật khẩu!',
+            'password.min'=> 'Mật khẩu của bạn phải có 8 ký tự trở lên!'
         ]
     );
         $user = new User();
@@ -113,7 +113,7 @@ class PageController extends Controller
         $user->address = $request->address;
         $user->is_admin = false;
         $user->save();
-        return redirect()->back()->with('echo', 'Account created successful');
+        return redirect()->back()->with('echo', 'Tài khoản của bạn đã được tạo thành công!');
     }
     public function postLogin(Request $request){
         $this->validate($request,
@@ -122,24 +122,24 @@ class PageController extends Controller
             'password' => 'required|min:8'
         ],
         [
-            'email.required' => 'Please type your email',
-            'email.email' => 'Invalid email format',
-            'password.required' => 'Please type your email',
-            'password.min' => 'Password must be longer than 8 characters'
+            'email.required' => 'Vui lòng nhập Email của bạn',
+            'email.email' => 'Bạn đã nhập sai định dạng Email. Vui lòng nhập lại Email!',
+            'password.required' => 'Vui lòng nhập Mật khẩu mong muốn',
+            'password.min' => 'Mật khẩu của bạn phải có 8 ký tự trở lên!'
         ]);
         $credentials = array('email' => $request ->email,
                              'password'=> $request -> password);
         if(Auth::attempt($credentials)){
-            return redirect('index')->with(['flag' => 'success','message' => 'Successful logged in']);
+            return redirect('index')->with(['flag' => 'success','message' => 'Bạn đã đăng nhập thành công!']);
         }
         else{
-            return redirect()->back()->with(['flag' => 'danger', 'message' => 'Login failed']);
+            return redirect()->back()->with(['flag' => 'danger', 'message' => 'Bạn đã đăng nhập thất bại!']);
         }
     }
 
     public function getLogout(){
         Auth::logout();
-        return redirect('index')->with('logoutMessage', 'You have logged out');
+        return redirect('index')->with('logoutMessage', 'Bạn đã đăng xuất thành công!');
     }
     public function like($pid){
         if(Auth::check()){
