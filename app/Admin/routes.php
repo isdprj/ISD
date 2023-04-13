@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Routing\Router;
-use App\Admin\Controllers\UserController;
+use Encore\Admin\Controllers\UserController;
 
 Admin::routes();
 
