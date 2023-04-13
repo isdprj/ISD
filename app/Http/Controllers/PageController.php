@@ -216,6 +216,10 @@ class PageController extends Controller
         Session::forget('cart');
         return redirect()->back()->with('anno', 'Đặt hàng thành công');
     }
+
+    public function getAccount(){
+        return view('page.account');
+    }
 }
 
 

@@ -20,13 +20,13 @@
             <div class="row">
                 <div class="col-sm-3">
                     <ul class="aside-menu">
-                        <li><a href="{{route('shoes')}}">+ Giày bóng đá</a></li>
+                        <li><a href="{{route('shoes')}}"><b>+ Giày bóng đá</b> </a></li>
                         @foreach($productType1 as $pt1)
-                        <li><a href="{{route('product_categories',$pt1->id)}}">- {{$pt1->name}}</a></li>
+                        <li><a href="{{route('product_categories',$pt1->id)}}"> &nbsp;- {{$pt1->name}}</a></li>
                         @endforeach
-                        <li><a href="{{route('ultility')}}">+ Phụ kiện</a></li>
+                        <li><a href="{{route('ultility')}}"><b>+ Phụ kiện</b> </a></li>
                         @foreach($productType2 as $pt2)
-                        <li><a href="{{route('product_categories',$pt2->id)}}">- {{$pt2->name}}</a></li>
+                        <li><a href="{{route('product_categories',$pt2->id)}}"> &nbsp;- {{$pt2->name}}</a></li>
                         @endforeach
                     </ul>
                 </div>

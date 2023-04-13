@@ -10,7 +10,7 @@
             <div class="pull-right auto-width-right">
                 <ul class="top-details menu-beta l-inline">
                     @if (Auth::check())
-                        <li><a href="#"><i class="fa fa-user"></i>Chào {{Auth::user()-> full_name}}</a></li>
+                        <li><a href="{{route('account')}}"><i class="fa fa-user"></i>Chào {{Auth::user()-> full_name}}</a></li>
                         <li><a href="{{route('logout')}}">Đăng xuất</a></li>
                     @else
                         <li><a href="{{route('register')}}">Đăng ký</a></li>
@@ -112,7 +112,7 @@
             <div class="visible-xs clearfix"></div>
             <nav class="main-menu">
                 <ul class="l-inline ov">
-                    <li><a href="{{route('index')}}">Trang chủ</a></li>
+                    <li><a href="{{route('index')}}"><i class="fa fa-home fa-lg"></i><b>Trang chủ</b></a></li>
                     {{-- <li><a href="{{route('product_categories')}}">Our Products</a></li> --}}
                     <li><a href="{{route('shoes')}}">Giày</a>
                         <ul class="sub-menu">
