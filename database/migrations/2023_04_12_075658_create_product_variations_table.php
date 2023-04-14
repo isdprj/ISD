@@ -15,7 +15,7 @@ class CreateProductVariationsTable extends Migration
     {
         Schema::create('product_variations', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('varname');
             $table->bigInteger('id_product')->unsigned();
             $table->foreign('id_product')->references('id')->on('products');
             $table->text('image');

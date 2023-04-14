@@ -56,9 +56,26 @@
                         <div class="single-item-options">
                             <select class="wc-select" name="variation">
                                 @foreach ($productVariation as $pv)
-                                <option value="{{$pv->name}}">{{$pv->name}}</option>
+                                <option value="{{$pv->varname}}">{{$pv->varname}}</option>
                                 @endforeach
                             </select>
+                            @if ($product->id_category < 6)
+                                <select class="wc-select" name = "size">
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                            @elseif ($product->id_category == 8) 
+                                <select class="wc-select" name="size">
+                                    <option value="s">S</option>
+                                    <option value="m">M</option>
+                                    <option value="l">L</option>
+                                    <option value="xl">XL</option>
+                            @endif
                             <a class="add-to-cart" href="{{route('cart',$product->id)}}"><i class="fa fa-shopping-cart"></i></a>
                             <div class="clearfix"></div>
                         </div>
