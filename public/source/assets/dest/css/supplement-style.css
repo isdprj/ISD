@@ -51,3 +51,11 @@
     display: inline-block;
     
 }
+
+.variation-img-list{
+    display: inline-block;
+}
+
+.variation-img{
+    width: 25%;
+}

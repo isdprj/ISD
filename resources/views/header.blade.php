@@ -66,8 +66,9 @@
                                 <div class="media">
                                     <a class="pull-left" href="#"><img src="source/image/product/{{$product['item']['image']}}" alt=""></a>
                                     <div class="media-body">
-                                        <span class="cart-item-title">{{$product['item']['image']}}</span>
-                                        {{-- <span class="cart-item-options">Size: XS; Colar: Navy</span> --}}
+                                        <span class="cart-item-title">{{$product['item']['name']}}</span>
+                                        {{-- <span class="cart-item-options">
+                                        </span> --}}
                                         <span class="cart-item-amount">{{$product['qty']}}*
                                             <span>
                                                 @if($product['item']['promotion_price']==0)
