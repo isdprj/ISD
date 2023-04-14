@@ -52,13 +52,14 @@
 
                         <div class="space20">&nbsp;</div>
 
-                        <p>Chọn mẫu:</p>
                         <div class="single-item-options">
+                            <p class="select-title">Chọn mẫu:&nbsp;</p>
                             <select class="wc-select" name="variation">
                                 @foreach ($productVariation as $pv)
                                 <option value="{{$pv->varname}}">{{$pv->varname}}</option>
                                 @endforeach
                             </select>
+                            <p class="select-title">Chon kich co:&nbsp;</p>
                             @if ($product->id_category < 6)
                                 <select class="wc-select" name = "size">
                                     <option value="36">36</option>
