@@ -52,7 +52,7 @@
                                         <a href="{{route('product',$pot->id)}}"><img src="source/image/product/{{$pot->image}}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <p class="single-item-title">{{$pot->name}}</p>
+                                        <a href="{{route('product',$pot->id)}}"><p class="single-item-title">{{$pot->name}}</p></a> 
                                         <p class="single-item-price">
                                             @if ($pot->promotion_price == 0)
                                             <span class="flash-sale"><i>{{$pot->unit_price}}</i> đ</span>

@@ -69,12 +69,14 @@
                                     <option value="41">41</option>
                                     <option value="42">42</option>
                                     <option value="43">43</option>
+                                </select>
                             @elseif ($product->id_category == 8) 
                                 <select class="wc-select" name="size">
                                     <option value="s">S</option>
                                     <option value="m">M</option>
                                     <option value="l">L</option>
                                     <option value="xl">XL</option>
+                                </select>
                             @endif
                             <a class="add-to-cart" href="{{route('cart',$product->id)}}"><i class="fa fa-shopping-cart"></i></a>
                             <div class="clearfix"></div>

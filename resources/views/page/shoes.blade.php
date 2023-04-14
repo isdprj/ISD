@@ -52,7 +52,7 @@
                                         <a href="{{route('product',$ps->id)}}"><img src="source/image/product/{{$ps->image}}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
-                                        <p class="single-item-title">{{$ps->name}}</p>
+                                        <a href="{{route('product',$ps->id)}}"><p class="single-item-title">{{$ps->name}}</p></a> 
                                         <p class="single-item-price">
                                             @if ($ps->promotion_price == 0)
                                             <span class="flash-sale"><i>{{$ps->unit_price}}</i> đ</span>
