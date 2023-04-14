@@ -14,9 +14,9 @@ return [
     |
     */
     'facebook' => [
-        'client_id' => '955564162124306',
-        'client_secret' => '94ce4783a6eab9dab529eec508526ea1',
-        'redirect' => 'http://localhost:8000/callback',
+        'client_id' => '1019603425716556',
+        'client_secret' => 'ba2a791bbabe48801c6fd326d0fe5804',
+        'redirect' => 'https://localhost:8000/callback',
     ],
     'google' => [
         'client_id' => '827662996737-tuqdat0u28o2v53la903ko4fiueitb10.apps.googleusercontent.com',

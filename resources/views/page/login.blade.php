@@ -30,7 +30,6 @@
                 @endif
 
                 <div class="col-sm-6">
-                    <h4> Đăng nhập </h4>
                     <div class="space20">&nbsp;</div>
 
                     
