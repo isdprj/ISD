@@ -1,6 +1,11 @@
 <?php
 
 return [
+    'admin'=> [ 'driver' => 'local', 
+                'root'   => storage_path('app'),
+                'visibility' => 'public', 
+                'url' => env('APP_URL').'/storage', 
+  ],
 
     /*
     |--------------------------------------------------------------------------

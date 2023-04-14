@@ -3,11 +3,11 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h6 class="inner-title">Xác thực Đặt hàng</h6>
+            <h6 class="inner-title">Thanh toán</h6>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb">
-                <a href="{{route('index')}}">Trang chủ</a> / <span>Xác thực Phương thức Thanh toán</span>
+                <a href="{{route('index')}}">Trang chủ</a> / <span>Thanh toán</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -27,7 +27,7 @@
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <div class="row">
                 <div class="col-sm-6">
-                    <h4>Billing Address</h4>
+                    <h4>Thông tin thanh toán</h4>
                     <div class="space20">&nbsp;</div>
 
                     <div class="form-block">
@@ -44,17 +44,17 @@
                     </div>
 
                     <div class="form-block">
-                        <label for="address">Địa chỉ* :</label>
-                        <input type="text" name="address" placeholder="Street Address" required>
+                        <label for="adress">Địa chỉ*</label>
+                        <input type="text" name="address" value="Street Address" required>
                     </div>
 
                     <div class="form-block">
-                        <label for="email">Email* :</label>
+                        <label for="email">Email*</label>
                         <input type="email" name="email" required>
                     </div>
 
                     <div class="form-block">
-                        <label for="phone">Phone* :</label>
+                        <label for="phone">Số điện thoại*</label>
                         <input type="text" name="phone" required>
                     </div>
                     
@@ -65,7 +65,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="your-order">
-                        <div class="your-order-head"><h5>Đơn hàng</h5></div>
+                        <div class="your-order-head"><h5>Giỏ hàng</h5></div>
                         <div class="your-order-body">
                             <div class="your-order-item">
                                 <div>
@@ -90,7 +90,7 @@
                             </div>
                             <div class="your-order-item">
                                 
-                                <div class="pull-left"><p class="your-order-f18">Tổng giá:</p></div>
+                                <div class="pull-left"><p class="your-order-f18">Tổng tiền:</p></div>
                                 <div class="pull-right"><h5 class="color-black">
                                     @if(Session::has('cart'))
                                     {{number_format(Session('cart')->totalPrc)}}
@@ -100,22 +100,23 @@
                                 <div class="clearfix"></div>
                             </div>
                         </div>
-                        <div class="your-order-head"><h5>Phương thức Thanh Toán</h5></div>
+                        <div class="your-order-head"><h5>Phương thức thanh toán</h5></div>
                         
                         <div class="your-order-body">
                             <ul class="payment_methods methods">
                                 <li class="payment_method_bacs">
                                     <input id="payment_method_bacs" type="radio" class="input-radio" name="payment" value="bacs" checked="checked" data-order_button_text="">
-                                    <label for="payment_method_bacs">Chuyển tiền Trực tiếp </label>
+                                    <label for="payment_method_bacs">Chuyển khoản trực tiếp </label>
                                     <div class="payment_box payment_method_bacs" style="display: block;">
-                                        Hãy thực hiện thanh toán bằng cách chuyển tiền trực tiếp vào tài khoản ngân hàng của chúng tôi. Vui lòng sử dụng ID đơn đặt hàng của bạn làm tham chiếu thanh toán. Đơn đặt hàng của bạn sẽ không được giao cho đến khi tiền trong tài khoản của chúng tôi được thanh toán.                                    </div>						
+                                    Thực hiện thanh toán của bạn trực tiếp vào tài khoản ngân hàng của chúng tôi. Vui lòng sử dụng ID đơn đặt hàng của bạn làm tham chiếu thanh toán. Lưu ý: Đơn hàng của bạn sẽ không được giao cho đến khi thông tin thanh toán của bạn được xác nhận thành công.
+                                    </div>						
                                 </li>
 
                                 <li class="payment_method_cheque">
                                     <input id="payment_method_cheque" type="radio" class="input-radio" name="payment" value="cheque" data-order_button_text="">
                                     <label for="payment_method_cheque">Thanh toán bằng Séc </label>
                                     <div class="payment_box payment_method_cheque" style="display: none;">
-                                        Vui lòng gửi Séc của bạn đến AHK, Phố cửa hàng, Thị trấn cửa hàng, Bang / Hạt cửa hàng, Mã bưu điện cửa hàng.
+                                        Vui lòng gửi séc của bạn đến Tên cửa hàng, Phố cửa hàng, Thị trấn cửa hàng, Bang / Hạt cửa hàng, Mã bưu điện cửa hàng.
                                     </div>						
                                 </li>
                                 
