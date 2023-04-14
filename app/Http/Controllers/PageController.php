@@ -51,7 +51,10 @@ class PageController extends Controller
     public function getProduct(Request $req){
         $product = Product::where('id',$req->id)->first();
         $relatedProduct = Product::where('id_category',$product->id_category)->paginate(3);
-        return view('page.product',compact('product','relatedProduct'));
+        $productVariation = DB::table('product_variations')
+                            ->join('products','product_variations.id_product', '=', 'products.id')
+                            ->get();
+        return view('page.product',compact('product','relatedProduct','productVariation'));
     }
 
     public function addCart(Request $req ,$id){
