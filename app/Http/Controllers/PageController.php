@@ -133,7 +133,7 @@ class PageController extends Controller
             return redirect('index')->with(['flag' => 'success','message' => 'Bạn đã đăng nhập thành công!']);
         }
         else{
-            return redirect()->back()->with(['flag' => 'danger', 'message' => 'Bạn đã đăng nhập thất bại!']);
+            return redirect()->back()->with(['flag' => 'danger', 'message' => 'Bạn đã nhập sai mật khẩu hoặc email! Vui lòng nhập lại đúng thông tin đăng nhập']);
         }
     }
 
