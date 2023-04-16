@@ -1,12 +1,14 @@
 <?php
 
+use App\Admin\Controllers\ProductController;
+use App\Admin\Controllers\UserController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\SocialAccountController;
-
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -83,3 +85,7 @@ Route::get('search',[PageController::class, 'getSearch'])->name('search');
 Route::get('checkout',[PageController::class,'getCheckout'])->name('checkout');
 
 Route::post('checkout',[PageController::class,'postCheckout'])->name('checkout');
+
+Route::resource('admin/users',UserController::class);
+
+Route::resource('admin/products',ProductController::class);
