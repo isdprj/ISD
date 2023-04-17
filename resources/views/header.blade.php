@@ -69,7 +69,8 @@
                                         <span class="cart-item-title">{{$product['item']['name']}}</span>
                                         @if ($product['item']['id_category'] < 6 )
                                         <span class="select-title">Kích cỡ:
-                                            <select class="wc-select" name = "size">
+                                            <select class="wc-select-size" name = "size">
+                                                <option value="null"></option>
                                                 <option value="36">36</option>
                                                 <option value="37">37</option>
                                                 <option value="38">38</option>
@@ -83,7 +84,8 @@
                                             @elseif($product['item']['id_category'] == 8)
                                             <span class="select-title">Kích cỡ:
 
-                                                <select class="wc-select" name="size">
+                                                <select class="wc-select-size" name="size">
+                                                    <option value="null"></option>
                                                     <option value="s">S</option>
                                                     <option value="m">M</option>
                                                     <option value="l">L</option>
