@@ -78,8 +78,8 @@
                                             <p class="font-large">{{$pc['item']['name']}}</p>
                                             {{-- <span class="color-gray your-order-info">Color: Red</span>
                                             <span class="color-gray your-order-info">Size: M</span> --}}
-                                            <span class="color-gray your-order-info">Đơn giá: {{number_format($pc['price'])}}</span>
-                                            <span class="color-gray your-order-info">Số lượng: {{$pc['qty']}}</span>
+                                            <span class="color-gray your-order-info">Đơn giá: <b>{{number_format($pc['price'])}}</b> </span>
+                                            <span class="color-gray your-order-info">Số lượng: <b>{{$pc['qty']}}</b> </span>
                                         </div>
                                     </div>
                                     @endforeach

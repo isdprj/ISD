@@ -1,7 +1,7 @@
 <div id="footer" class="color-div">
     <div class="container">
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <div class="widget">
                     <h4 class="widget-title">Social</h4>
                     <div id="social-lists"><div>
@@ -13,20 +13,13 @@
                 </div>
                 </div>
             </div>
-            <div class="col-sm-2">
-                {{-- <div class="widget"> --}}
-                    {{-- <h4 class="widget-title">Information</h4>
-                    <div>
-                        <ul>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web Design</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web development</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Marketing</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Tips</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Resources</a></li>
-                            <li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Illustrations</a></li>
-                        </ul>
-                    </div> --}}
-                {{-- </div> --}}
+            <div class="col-sm-3">
+                 <div class="widget"> 
+                    <h4 class="widget-title">Location</h4>
+                     <div>
+                        <div class="map-sizing wow flipInX"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3678.0141923553406!2d89.551518!3d22.801938!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff8ff8ef7ea2b7%3A0x1f1e9fc1cf4bd626!2sPranon+Pvt.+Limited!5e0!3m2!1sen!2s!4v1407828576904" ></iframe></div>
+                    </div>                    
+                </div>
             </div>
             <div class="col-sm-4">
              <div class="col-sm-10">

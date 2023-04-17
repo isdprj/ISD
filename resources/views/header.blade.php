@@ -67,18 +67,52 @@
                                     <a class="pull-left" href="#"><img src="source/image/product/{{$product['item']['image']}}" alt=""></a>
                                     <div class="media-body">
                                         <span class="cart-item-title">{{$product['item']['name']}}</span>
-                                        {{-- <span class="cart-item-options">
-                                        </span> --}}
-                                        <span class="cart-item-amount">{{$product['qty']}}*
-                                            <span>
-                                                @if($product['item']['promotion_price']==0)
-                                                    {{number_format($product['item']['unit_price'])}}
-                                                @else 
-                                                    {{number_format($product['item']['promotion_price'])}} 
-                                                @endif
-                                                đ
-                                            </span>
+                                        @if ($product['item']['id_category'] < 6 )
+                                        <span class="select-title">Kích cỡ:
+                                            <select class="wc-select" name = "size">
+                                                <option value="36">36</option>
+                                                <option value="37">37</option>
+                                                <option value="38">38</option>
+                                                <option value="39">39</option>
+                                                <option value="40">40</option>
+                                                <option value="41">41</option>
+                                                <option value="42">42</option>
+                                                <option value="43">43</option>
+                                            </select>                                           
                                         </span>
+                                            @elseif($product['item']['id_category'] == 8)
+                                            <span class="select-title">Kích cỡ:
+
+                                                <select class="wc-select" name="size">
+                                                    <option value="s">S</option>
+                                                    <option value="m">M</option>
+                                                    <option value="l">L</option>
+                                                    <option value="xl">XL</option>
+                                                </select>                                           
+                                            </span>
+                                            @endif
+                                            {{-- <span class="cart-item-options"> 
+                                        </span> --}}
+                                        <p class="mg-4">Số lượng:
+                                            <span class="cart-item-amount">
+                                                <b>{{$product['qty']}}</b>
+                                                
+                                            </span>
+
+                                        </p>
+                                        <p class="cart-item-amount mg-4">Đơn giá:
+                                            <span>
+                                                <b>
+                                                    @if($product['item']['promotion_price']==0)
+                                                    {{number_format($product['item']['unit_price'])}}
+                                                    @else 
+                                                    {{number_format($product['item']['promotion_price'])}} 
+                                                    @endif
+                                                    <i>đ</i>
+
+                                                </b>
+                                            </span>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -87,9 +121,10 @@
 
 
                             <div class="cart-caption">
-                                <div class="cart-total text-right">Tổng cộng:
+                                <div class="cart-total text-right"><b>Tổng cộng:</b> 
                                     <span class="cart-total-value">
-                                        {{number_format(Session('cart')->totalPrc)}} đ
+                                        {{number_format(Session('cart')->totalPrc)}} 
+                                        <i>đ</i>
                                     </span>
                                 </div>
                                 <div class="clearfix"></div>
