@@ -14,7 +14,7 @@ class CreateProductVariationsTable extends Migration
     public function up()
     {
         Schema::create('product_variations', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->string('varname');
             $table->bigInteger('id_product')->unsigned();
             $table->foreign('id_product')->references('id')->on('products');

@@ -14,7 +14,7 @@ class CreateBillDetailsTable extends Migration
     public function up()
     {
         Schema::create('bill_details', function (Blueprint $table) {
-            $table->id()->unsigned();
+            $table->id()->unsigned()->autoIncrement();
             $table->bigInteger('id_bill')->unsigned();
             $table->foreign('id_bill')->references('id')->on('bills');
             $table->bigInteger('id_product')->unsigned();
