@@ -3,10 +3,12 @@
 namespace App\Admin\Controllers;
 
 use App\Models\Product;
+use Doctrine\DBAL\Query;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use Illuminate\Database\QueryException;
 
 class ProductController extends AdminController
 {
@@ -78,15 +80,48 @@ class ProductController extends AdminController
         $form = new Form(new Product());
 
         $form->text('name', __('Name'));
-        $form->number('id_category', __('Id category'));
+        $id_category = [
+            1 => '1 - Adidas',
+            2 => '2 - Nike',
+            3 => '3 - Mizuno',
+            4 => '4 - Kamito',
+            5 => '5 - Puma',
+            6 => '6 - Găng tay',
+            7 => '7 - Túi',
+            8 => '8 - Quần áo',
+            9 => '9 - Băng keo',
+            10 => '10 - Tất'
+        ];
+        $form->select('id_category', __('Id category'))->options($id_category);
         $form->textarea('description', __('Description'));
         $form->textarea('stats', __('Stats'));
         $form->decimal('unit_price', __('Unit price'));
         $form->decimal('promotion_price', __('Promotion price'));
-        $form->image('image', __('Image'));
+        $form->text('image', __('Image'));
         $form->text('unit', __('Unit'));
         $form->number('quantity', __('Quantity'));
- 
+        $form->saving(function (Form $form){
+            try{
+
+                $product = new Product();
+                $product->name = $form->name;
+                $product->id_category = $form->id_category;
+                $product->description = $form->description;
+                $product->stats = $form->stat;
+                $product->unit_price = $form->unit_price;
+                $product->promotion_price = $form->promotion_price;
+                $product->image = $form->image;
+                $product->unit = $form->unit;
+                $product->quantity = $form->quantity;
+                $product->save();
+            } catch(QueryException $e){
+                $errorMessage = $e->getMessage();
+                return redirect()->back()->withErrors($errorMessage)->withInput();
+            }
+        });
+        $form->saved(function(){
+            return redirect()->back()->with('success', 'Product added successfully');
+        });
         return $form;
     }
 }
