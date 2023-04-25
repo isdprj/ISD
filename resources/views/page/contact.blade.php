@@ -25,48 +25,45 @@
             <div class="col-sm-8">
                 <h2>Mẫu liên hệ</h2>
                 <div class="space20">&nbsp;</div>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit ani m id est laborum.</p>
+                <p>Cảm ơn bạn đã liên hệ với chúng tôi! Để đảm bảo hiệu quả, vui lòng để lại thông tin ở bên dưới. <br>
+                    Chúng tôi sẽ sớm liên hệ với bạn.</p>
                 <div class="space20">&nbsp;</div>
                 <form action="#" method="post" class="contact-form">	
                     <div class="form-block">
-                        <input name="your-name" type="text" placeholder="Your Name (required)">
+                        <input name="your-name" type="text" placeholder="Họ và tên (bắt buộc)">
                     </div>
                     <div class="form-block">
-                        <input name="your-email" type="email" placeholder="Your Email (required)">
+                        <input name="your-email" type="email" placeholder="Email (bắt buộc)">
                     </div>
                     <div class="form-block">
-                        <input name="your-subject" type="text" placeholder="Subject">
+                        <input name="your-subject" type="text" placeholder="Thông tin">
                     </div>
                     <div class="form-block">
-                        <textarea name="your-message" placeholder="Your Message"></textarea>
+                        <textarea name="your-message" placeholder="Yêu cầu hỗ trợ"></textarea>
                     </div>
                     <div class="form-block">
-                        <button type="submit" class="beta-btn primary">Send Message <i class="fa fa-chevron-right"></i></button>
+                        <button type="submit" class="beta-btn primary">Gửi yêu cầu <i class="fa fa-chevron-right"></i></button>
                     </div>
                 </form>
             </div>
             <div class="col-sm-4">
                 <h2>Thông tin liên hệ</h2>
+                </br>
                 <div class="space20">&nbsp;</div>
-
-                <h6 class="contact-title">Address</h6>
+                <h6 class="contact-title">Địa chỉ</h6>
+                </br>
                 <p>
-                    Suite 127 / 267 – 277 Brussel St,<br>
-                    62 Croydon, NYC <br>
-                    Newyork
+                    Khu đô thị Mễ Trì, Mễ Trì Hạ<br>
+                    Quận Nam Từ Liêm <br>
+                    Thành phố Hà Nội
                 </p>
+                </br>
                 <div class="space20">&nbsp;</div>
-                <h6 class="contact-title">Business Enquiries</h6>
+                <h6 class="contact-title">Ứng tuyển</h6>
+                </br>
                 <p>
-                    Doloremque laudantium, totam rem aperiam, <br>
-                    inventore veritatio beatae. <br>
-                    <a href="mailto:biz@betadesign.com">biz@betadesign.com</a>
-                </p>
-                <div class="space20">&nbsp;</div>
-                <h6 class="contact-title">Employment</h6>
-                <p>
-                    We’re always looking for talented persons to <br>
-                    join our team. <br>
+                Chúng tôi luôn tìm kiếm những người tài năng để <br>
+                    gia nhập đội ngũ của chúng tôi. <br>
                     <a href="hr@betadesign.com">hr@betadesign.com</a>
                 </p>
             </div>
