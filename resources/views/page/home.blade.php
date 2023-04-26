@@ -178,7 +178,7 @@
                         <div class="news-section">
                             <div class="news-box">
                                 <div class="news-img">
-                                    <a href="#"><img src="source/image/product/1.jpg" alt=""></a>
+                                    <a href="https://www.24h.com.vn/bong-da/man-city-arsenal-dai-chien-ai-se-khong-may-nhap-hoi-nhung-a-quan-vi-dai-nhat-c48a1461451.html"><img src="source/image/product/1.jpg" alt=""></a>
                                 </div>
                                 <div class="news-title">
                                     <a href="https://www.24h.com.vn/bong-da/man-city-arsenal-dai-chien-ai-se-khong-may-nhap-hoi-nhung-a-quan-vi-dai-nhat-c48a1461451.html">Man City - Arsenal đại chiến: Ai sẽ không may "nhập hội" những Á quân vĩ đại nhất?</a>
@@ -191,7 +191,7 @@
                         <div class="news-section">
                             <div class="news-box">
                                 <div class="news-img"> 
-                                    <a href=""><img src="source/image/product/2.jpg" alt=""></a>   
+                                    <a href="https://www.24h.com.vn/bong-da/tuong-thuat-bong-da-west-ham-liverpool-lu-doan-do-tiep-da-thang-hoa-ngoai-hang-anh-c48a1461612.html"><img src="source/image/product/2.jpg" alt=""></a>   
                                 </div>
                                 <div class="news-title">
                                     <a href="https://www.24h.com.vn/bong-da/tuong-thuat-bong-da-west-ham-liverpool-lu-doan-do-tiep-da-thang-hoa-ngoai-hang-anh-c48a1461612.html">Tường thuật bóng đá West Ham - Liverpool: Kỳ vọng vào Salah (Ngoại hạng Anh)</a>
@@ -204,11 +204,11 @@
                         <div class="news-section">
                             <div class="news-box">
                                 <div class="news-img">
-                                    <a href=""><img src="source/image/product/3.jpg" alt=""></a>
+                                    <a href="https://www.24h.com.vn/bong-da/tuong-thuat-bong-da-chelsea-brentford-nguy-co-tiep-tuc-tham-hoa-ngoai-hang-anh-c48a1461594.html"><img src="source/image/product/3.jpg" alt=""></a>
 
                                 </div>
                                 <div class="news-title">
-                                    <a href="https://www.24h.com.vn/bong-da/tuong-thuat-bong-da-chelsea-brentford-nguy-co-tiep-tuc-tham-hoa-ngoai-hang-anh-c48a1461594.html">Tường thuật bóng đá Chelsea - Brentford: Lampard xác nhận tin xấu 2 trụ cột (Ngoại hạng Anh)</a> 
+                                    <a href= "https://www.24h.com.vn/bong-da/tuong-thuat-bong-da-chelsea-brentford-nguy-co-tiep-tuc-tham-hoa-ngoai-hang-anh-c48a1461594.html">Tường thuật bóng đá Chelsea - Brentford: Lampard xác nhận tin xấu 2 trụ cột (Ngoại hạng Anh)</a> 
                                 </div>
                                 <div class="news-content">"(Chelsea - Brentford, 1h45, 27/4, vòng 33 Ngoại hạng Anh) HLV Lampard có những chia sẻ không mấy tích cực về lực lượng Chelsea trước ngày đấu Brentford.</div>
                             </div>
