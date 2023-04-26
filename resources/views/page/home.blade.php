@@ -41,7 +41,7 @@
                     <div class="beta-products-list">
                         <h4><b>Sản phẩm hot</b></h4>
                         <div class="beta-products-details">
-                            <p class="pull-left">{{count($newProduct)}} new products</p>
+                            <p class="pull-left">{{count($newProduct)}} sản phẩm</p>
                             <div class="clearfix"></div>
                         </div>
 
@@ -71,7 +71,7 @@
                                     </div>
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" href="{{route('cart',$new->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="{{route('product',$new->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+                                        <a class="beta-btn primary" href="{{route('product',$new->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                         @if(Auth::check())
                                         @if(!session('liked.'.$new->id))
                                         <a href="{{route('like',$new->id)}}" class="btn alert-danger flex-fill favourite">
@@ -108,7 +108,7 @@
                     <div class="beta-products-list">
                         <h4><b>Các sản phẩm đang được giảm giá</b></h4>
                         <div class="beta-products-details">
-                            <p class="pull-left">{{count($saleProduct)}} on sale</p>
+                            <p class="pull-left">{{count($saleProduct)}} sản phẩm</p>
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
@@ -130,7 +130,7 @@
                                     </div>
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" href="{{route('cart',$sp->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="{{route('product',$sp->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+                                        <a class="beta-btn primary" href="{{route('product',$sp->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                         @if(Auth::check())
                                         @if(!session('liked.'.$sp->id))
                                         <a href="{{route('like',$sp->id)}}" class="btn alert-danger flex-fill favourite">
