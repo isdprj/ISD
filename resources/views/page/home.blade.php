@@ -178,12 +178,12 @@
                         <div class="news-section">
                             <div class="news-box">
                                 <div class="news-img">
-                                    <a href="#"><img src="source/assets/dest/images/products/1.jpg" alt=""></a>
+                                    <a href="#"><img src="source/image/product/1.jpg" alt=""></a>
                                 </div>
                                 <div class="news-title">
-                                    <a href="#">Title 1</a>
+                                    <a href="#">Man City - Arsenal đại chiến: Ai sẽ không may "nhập hội" những Á quân vĩ đại nhất?</a>
                                 </div>
-                                <div class="news-content">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                                <div class="news-content">"Ai thua cuộc chiến Man City - Arsenal sẽ nhập hội những đội Á quân vĩ đại nhất."</div>
                             </div>
                         </div>
                     </div>
@@ -191,12 +191,12 @@
                         <div class="news-section">
                             <div class="news-box">
                                 <div class="news-img"> 
-                                    <a href=""><img src="source/assets/dest/images/products/1.jpg" alt=""></a>   
+                                    <a href=""><img src="source/image/product/2.jpg" alt=""></a>   
                                 </div>
                                 <div class="news-title">
-                                    <a href="#">Title 1</a>
+                                    <a href="#">Tường thuật bóng đá West Ham - Liverpool: Kỳ vọng vào Salah (Ngoại hạng Anh)</a>
                                 </div>
-                                <div class="news-content">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                                <div class="news-content">"(West Ham - Liverpool, 1h45, 27/4, vòng 33 Ngoại hạng Anh) Salah đang có phong độ cao ở thời gian gần đây trong màu áo Liverpool.</div>
                             </div>
                         </div>
                     </div>
@@ -204,13 +204,13 @@
                         <div class="news-section">
                             <div class="news-box">
                                 <div class="news-img">
-                                    <a href=""><img src="source/assets/dest/images/products/1.jpg" alt=""></a>
+                                    <a href=""><img src="source/image/product/3.jpg" alt=""></a>
 
                                 </div>
                                 <div class="news-title">
-                                    <a href="#">Title 1</a> 
+                                    <a href="#">Tường thuật bóng đá Chelsea - Brentford: Lampard xác nhận tin xấu 2 trụ cột (Ngoại hạng Anh)</a> 
                                 </div>
-                                <div class="news-content">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                                <div class="news-content">"(Chelsea - Brentford, 1h45, 27/4, vòng 33 Ngoại hạng Anh) HLV Lampard có những chia sẻ không mấy tích cực về lực lượng Chelsea trước ngày đấu Brentford.</div>
                             </div>
                         </div>
                     </div>
