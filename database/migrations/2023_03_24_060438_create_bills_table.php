@@ -14,7 +14,7 @@ class CreateBillsTable extends Migration
     public function up()
     {
         Schema::create('bills', function (Blueprint $table) {
-            $table->id()->unsigned();
+            $table->id()->unsigned()->autoIncrement();
             $table->date('date_oreder');
             $table->double('total');
             $table->string('payment');

@@ -13,7 +13,17 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
-
+    'facebook' => [
+        'client_id' => '1019603425716556',
+        'client_secret' => 'ba2a791bbabe48801c6fd326d0fe5804',
+        'redirect' => 'https://localhost:8000/callback',
+    ],
+    'google' => [
+        'client_id' => '827662996737-tuqdat0u28o2v53la903ko4fiueitb10.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect' => 'https://localhost:8000/callback',
+    ],
+    
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),

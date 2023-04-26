@@ -1514,12 +1514,17 @@ float:left
 margin-left:20px
 }
 
-.wc-select {
-width:90px;
-height:35px;
+.wc-select-size {
+width:40px;
+height:24px;
 margin-right:10px
 }
 
+.wc-select-variation {
+    width:80px;
+    height:24px;
+    margin-right:10px
+    }
 .beta-dropdown {
 display:none
 }

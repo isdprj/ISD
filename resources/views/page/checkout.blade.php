@@ -3,11 +3,11 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h6 class="inner-title">Checkout</h6>
+            <h6 class="inner-title">Thanh toán</h6>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb">
-                <a href="{{route('index')}}">Home</a> / <span>Checkout</span>
+                <a href="{{route('index')}}">Trang chủ</a> / <span>Thanh toán</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -27,7 +27,7 @@
             <input type="hidden" name="_token" value="{{csrf_token()}}">
             <div class="row">
                 <div class="col-sm-6">
-                    <h4>Billing Address</h4>
+                    <h4>Thông tin thanh toán</h4>
                     <div class="space20">&nbsp;</div>
 
                     <div class="form-block">
@@ -44,28 +44,28 @@
                     </div>
 
                     <div class="form-block">
-                        <label for="adress">Address*</label>
+                        <label for="adress">Địa chỉ*</label>
                         <input type="text" name="address" value="Street Address" required>
                     </div>
 
                     <div class="form-block">
-                        <label for="email">Email address*</label>
+                        <label for="email">Email*</label>
                         <input type="email" name="email" required>
                     </div>
 
                     <div class="form-block">
-                        <label for="phone">Phone*</label>
+                        <label for="phone">Số điện thoại*</label>
                         <input type="text" name="phone" required>
                     </div>
                     
                     <div class="form-block">
-                        <label for="notes">Order notes</label>
+                        <label for="notes">Ghi chú</label>
                         <textarea name="notes"></textarea>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="your-order">
-                        <div class="your-order-head"><h5>Your Order</h5></div>
+                        <div class="your-order-head"><h5>Giỏ hàng</h5></div>
                         <div class="your-order-body">
                             <div class="your-order-item">
                                 <div>
@@ -78,8 +78,8 @@
                                             <p class="font-large">{{$pc['item']['name']}}</p>
                                             {{-- <span class="color-gray your-order-info">Color: Red</span>
                                             <span class="color-gray your-order-info">Size: M</span> --}}
-                                            <span class="color-gray your-order-info">Đơn giá: {{number_format($pc['price'])}}</span>
-                                            <span class="color-gray your-order-info">Qty: {{$pc['qty']}}</span>
+                                            <span class="color-gray your-order-info">Đơn giá: <b>{{number_format($pc['price'])}}</b> </span>
+                                            <span class="color-gray your-order-info">Số lượng: <b>{{$pc['qty']}}</b> </span>
                                         </div>
                                     </div>
                                     @endforeach
@@ -90,7 +90,7 @@
                             </div>
                             <div class="your-order-item">
                                 
-                                <div class="pull-left"><p class="your-order-f18">Total:</p></div>
+                                <div class="pull-left"><p class="your-order-f18">Tổng tiền:</p></div>
                                 <div class="pull-right"><h5 class="color-black">
                                     @if(Session::has('cart'))
                                     {{number_format(Session('cart')->totalPrc)}}
@@ -100,31 +100,31 @@
                                 <div class="clearfix"></div>
                             </div>
                         </div>
-                        <div class="your-order-head"><h5>Payment Method</h5></div>
+                        <div class="your-order-head"><h5>Phương thức thanh toán</h5></div>
                         
                         <div class="your-order-body">
                             <ul class="payment_methods methods">
                                 <li class="payment_method_bacs">
                                     <input id="payment_method_bacs" type="radio" class="input-radio" name="payment" value="bacs" checked="checked" data-order_button_text="">
-                                    <label for="payment_method_bacs">Direct Bank Transfer </label>
+                                    <label for="payment_method_bacs">Chuyển khoản trực tiếp </label>
                                     <div class="payment_box payment_method_bacs" style="display: block;">
-                                        Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.
+                                    Thực hiện thanh toán của bạn trực tiếp vào tài khoản ngân hàng của chúng tôi. Vui lòng sử dụng ID đơn đặt hàng của bạn làm tham chiếu thanh toán. Lưu ý: Đơn hàng của bạn sẽ không được giao cho đến khi thông tin thanh toán của bạn được xác nhận thành công.
                                     </div>						
                                 </li>
 
                                 <li class="payment_method_cheque">
                                     <input id="payment_method_cheque" type="radio" class="input-radio" name="payment" value="cheque" data-order_button_text="">
-                                    <label for="payment_method_cheque">Cheque Payment </label>
+                                    <label for="payment_method_cheque">Thanh toán bằng Séc </label>
                                     <div class="payment_box payment_method_cheque" style="display: none;">
-                                        Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.
+                                        Vui lòng gửi séc của bạn đến Tên cửa hàng, Phố cửa hàng, Thị trấn cửa hàng, Bang / Hạt cửa hàng, Mã bưu điện cửa hàng.
                                     </div>						
                                 </li>
                                 
                                 <li class="payment_method_paypal">
                                     <input id="payment_method_paypal" type="radio" class="input-radio" name="payment" value="paypal" data-order_button_text="Proceed to PayPal">
-                                    <label for="payment_method_paypal">PayPal</label>
+                                    <label for="payment_method_paypal">Thanh toán bằng PayPal </label>
                                     <div class="payment_box payment_method_paypal" style="display: none;">
-                                        Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account
+                                        Thanh toán qua PayPal; bạn có thể thanh toán bằng thẻ tín dụng nếu bạn không có tài khoản PayPal
                                     </div>						
                                 </li>
                             </ul>

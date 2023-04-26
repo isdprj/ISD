@@ -46,3 +46,38 @@
     opacity: 0.8;
     font-weight: 700;
 }
+
+.social-login{
+    display: inline-block;
+    
+}
+
+.variation-img-list{
+    display: inline-block;
+}
+
+.variation-img{
+    width: 25%;
+}
+
+.select-title{
+    margin-top: 6px;
+    display: inline-block;
+}
+
+/* .cart-item-amount {
+    font-weight: 500;
+    font-size: 1rem;
+} */
+
+.media-body{
+    min-height: 100px;
+}
+.mg-4{
+    margin: 4px 0;
+}
+
+.map-sizing{
+    height: 10%;
+    width: 8%;
+}

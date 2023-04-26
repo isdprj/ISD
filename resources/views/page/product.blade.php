@@ -41,39 +41,44 @@
 
                         <div class="clearfix"></div>
                         <div class="space20">&nbsp;</div>
-
+                        <div class="variation-img-list">
+                            @foreach ($productVariation as $pv)
+                                <img src="source/image/product/{{$pv->image}}" alt="" class="variation-img">
+                            @endforeach
+                        </div>
                         <div class="single-item-desc">
                             <p>{{$product->description}}</p>
                         </div>
 
                         <div class="space20">&nbsp;</div>
 
-                        <p>Chọn mẫu:</p>
                         <div class="single-item-options">
-                            <select class="wc-select" name="size">
-                                <option>Kích cỡ</option>
-                                <option value="XS">XS</option>
-                                <option value="S">S</option>
-                                <option value="M">M</option>
-                                <option value="L">L</option>
-                                <option value="XL">XL</option>
+                            <p class="select-title">Chọn mẫu:&nbsp;</p>
+                            <select class="wc-select" name="variation">
+                                @foreach ($productVariation as $pv)
+                                <option value="{{$pv->varname}}">{{$pv->varname}}</option>
+                                @endforeach
                             </select>
-                            <select class="wc-select" name="color">
-                                <option>Màu</option>
-                                <option value="Red">Đỏ</option>
-                                <option value="Green">Xanh lá</option>
-                                <option value="Yellow">Vàng</option>
-                                <option value="Black">Đen</option>
-                                <option value="White">Trắng</option>
-                            </select>
-                            <select class="wc-select" name="color">
-                                <option>Số lượng</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
+                            <p class="select-title">Kích cỡ:&nbsp;</p>
+                            @if ($product->id_category < 6)
+                                <select class="wc-select" name = "size">
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
+                                </select>
+                            @elseif ($product->id_category == 8) 
+                                <select class="wc-select" name="size">
+                                    <option value="s">S</option>
+                                    <option value="m">M</option>
+                                    <option value="l">L</option>
+                                    <option value="xl">XL</option>
+                                </select>
+                            @endif
                             <a class="add-to-cart" href="{{route('cart',$product->id)}}"><i class="fa fa-shopping-cart"></i></a>
                             <div class="clearfix"></div>
                         </div>

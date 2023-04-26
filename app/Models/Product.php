@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     protected $table = "products";
+    protected $fillable = ['name', 'id_category', 'description', 'stats', 'unit_price', 'promotion_price', 'image', 'unit', 'quantity'];
     use HasFactory;
 
     public function productCategory(){
@@ -24,4 +25,8 @@ class Product extends Model
         return $this->favourite()->selectRaw('id_product,count(*) as count')->groupBy('id_product');
 
     }
+    public function productVariation(){
+        return $this->hasMany(ProductVariation::class,'id_product','id');
+    }
+
 }

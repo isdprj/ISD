@@ -1,11 +1,14 @@
 <?php
 
+use App\Admin\Controllers\ProductController;
+use App\Admin\Controllers\UserController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
-
+use App\Http\Controllers\SocialAccountController;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +41,11 @@ Route::get('about', [PageController::class,'getAbout'])-> name('about');
 
 Route::get('login', [PageController::class, 'getLogin']) -> name('login');
 
+
+Route::get('login/{social}',[SocialAccountController::class, 'redirectToProvider'])->name('login');
+
+Route::get('login/{social}/callback',[SocialAccountController::class, 'handleProviderCallback'])->name('login');
+
 Route::get('register', [PageController::class,'getRegister'])->name('register');
 
 Route::post('register',[PageController::class,'postRegister'])->name('register');
@@ -60,7 +68,8 @@ Route::get('reset-password/{token}', [ResetPasswordController::class, 'create'])
 
 Route::post('reset-password', [ResetPasswordController::class, 'store'])
                 ->middleware('guest');
-
+                
+Route::get('account',[PageController::class,'getAccount'])->name('account');
 Route::get('cart/{id}', [PageController::class, 'addCart'])->name('cart');
 
 Route::get('del-cart/{id}',[PageController::class, 'delCart'])->name('del-cart');
@@ -76,3 +85,7 @@ Route::get('search',[PageController::class, 'getSearch'])->name('search');
 Route::get('checkout',[PageController::class,'getCheckout'])->name('checkout');
 
 Route::post('checkout',[PageController::class,'postCheckout'])->name('checkout');
+
+Route::resource('admin/users',UserController::class);
+
+Route::resource('admin/products',ProductController::class);
