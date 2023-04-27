@@ -6,8 +6,15 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Admin\\Controllers\\AuthController' => $baseDir . '/app/Admin/Controllers/AuthController.php',
+    'App\\Admin\\Controllers\\ExampleController' => $baseDir . '/app/Admin/Controllers/ExampleController.php',
+    'App\\Admin\\Controllers\\HomeController' => $baseDir . '/app/Admin/Controllers/HomeController.php',
+    'App\\Admin\\Controllers\\ProductController' => $baseDir . '/app/Admin/Controllers/ProductController.php',
+    'App\\Admin\\Controllers\\UserController' => $baseDir . '/app/Admin/Controllers/UserController.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\Admin\\MainController' => $baseDir . '/app/Http/Controllers/Admin/MainController.php',
+    'App\\Http\\Controllers\\Admin\\User\\LoginController' => $baseDir . '/app/Http/Controllers/Admin/User/LoginController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/ForgotPasswordController.php',
     'App\\Http\\Controllers\\PageController' => $baseDir . '/app/Http/Controllers/PageController.php',
@@ -30,6 +37,7 @@ return array(
     'App\\Models\\Cart' => $baseDir . '/app/Models/Cart.php',
     'App\\Models\\Customer' => $baseDir . '/app/Models/Customer.php',
     'App\\Models\\Favourite' => $baseDir . '/app/Models/Favourite.php',
+    'App\\Models\\Menu' => $baseDir . '/app/Models/Menu.php',
     'App\\Models\\News' => $baseDir . '/app/Models/News.php',
     'App\\Models\\PasswordReset' => $baseDir . '/app/Models/PasswordReset.php',
     'App\\Models\\Product' => $baseDir . '/app/Models/Product.php',

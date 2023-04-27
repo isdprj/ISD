@@ -62,11 +62,11 @@
                     </div>
                     <div class="form-block">
                         <label for="phone">Mật khẩu*</label>
-                        <input type="text" name="password" required>
+                        <input type="password" name="password" required>
                     </div>
                     <div class="form-block">
                         <label for="phone">Xác nhận mật khẩu*</label>
-                        <input type="text" name="re_password" required>
+                        <input type="password" name="re_password" required>
                     </div>
                     <div class="form-block">
                         <button type="submit" class="btn btn-primary">Đăng ký</button>
