@@ -7,7 +7,7 @@
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-                <a href="{{route('index')}}">Home</a> / <span>Product</span>
+                <a href="{{route('index')}}">Trang chủ</a> / <span>Sản phẩm</span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -34,7 +34,7 @@
                     <div class="beta-products-list">
                         <h4>Tất cả sản phẩm</h4>
                         <div class="beta-products-details">
-                            <p class="pull-left">{{count($productUltility)}} found</p>
+                            <p class="pull-left">Số lượng: {{count($productUltility)}}</p>
                             <div class="clearfix"></div>
                         </div>
 
@@ -64,7 +64,7 @@
                                     </div>
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" href="{{route('cart',$pu->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="{{route('product',$pu->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+                                        <a class="beta-btn primary" href="{{route('product',$pu->id)}}">Chi tiết<i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>

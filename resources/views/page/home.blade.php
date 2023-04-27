@@ -41,7 +41,7 @@
                     <div class="beta-products-list">
                         <h4><b>Sản phẩm hot</b></h4>
                         <div class="beta-products-details">
-                            <p class="pull-left">{{count($newProduct)}} new products</p>
+                            <p class="pull-left">{{count($newProduct)}} sản phẩm</p>
                             <div class="clearfix"></div>
                         </div>
 
@@ -71,7 +71,7 @@
                                     </div>
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" href="{{route('cart',$new->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="{{route('product',$new->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+                                        <a class="beta-btn primary" href="{{route('product',$new->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                         @if(Auth::check())
                                         @if(!session('liked.'.$new->id))
                                         <a href="{{route('like',$new->id)}}" class="btn alert-danger flex-fill favourite">
@@ -108,7 +108,7 @@
                     <div class="beta-products-list">
                         <h4><b>Các sản phẩm đang được giảm giá</b></h4>
                         <div class="beta-products-details">
-                            <p class="pull-left">{{count($saleProduct)}} on sale</p>
+                            <p class="pull-left">{{count($saleProduct)}} sản phẩm</p>
                             <div class="clearfix"></div>
                         </div>
                         <div class="row">
@@ -130,7 +130,7 @@
                                     </div>
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" href="{{route('cart',$sp->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="{{route('product',$sp->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+                                        <a class="beta-btn primary" href="{{route('product',$sp->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                         @if(Auth::check())
                                         @if(!session('liked.'.$sp->id))
                                         <a href="{{route('like',$sp->id)}}" class="btn alert-danger flex-fill favourite">
@@ -178,12 +178,13 @@
                         <div class="news-section">
                             <div class="news-box">
                                 <div class="news-img">
-                                    <a href="#"><img src="source/assets/dest/images/products/1.jpg" alt=""></a>
+                                    <a href="https://www.24h.com.vn/bong-da/man-city-arsenal-dai-chien-ai-se-khong-may-nhap-hoi-nhung-a-quan-vi-dai-nhat-c48a1461451.html"><img src="source/image/product/1.jpg" alt=""></a>
                                 </div>
                                 <div class="news-title">
-                                    <a href="#">Title 1</a>
+                                    <a href="https://www.24h.com.vn/bong-da/man-city-arsenal-dai-chien-ai-se-khong-may-nhap-hoi-nhung-a-quan-vi-dai-nhat-c48a1461451.html">Man City - Arsenal đại chiến: Ai sẽ không may "nhập hội" những Á quân vĩ đại nhất?</a>
                                 </div>
-                                <div class="news-content">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                                </br>
+                                <div class="news-content">"Ai thua cuộc chiến Man City - Arsenal sẽ nhập hội những đội Á quân vĩ đại nhất."</div>
                             </div>
                         </div>
                     </div>
@@ -191,12 +192,13 @@
                         <div class="news-section">
                             <div class="news-box">
                                 <div class="news-img"> 
-                                    <a href=""><img src="source/assets/dest/images/products/1.jpg" alt=""></a>   
+                                    <a href="https://www.24h.com.vn/bong-da/tuong-thuat-bong-da-west-ham-liverpool-lu-doan-do-tiep-da-thang-hoa-ngoai-hang-anh-c48a1461612.html"><img src="source/image/product/2.jpg" alt=""></a>   
                                 </div>
                                 <div class="news-title">
-                                    <a href="#">Title 1</a>
+                                    <a href="https://www.24h.com.vn/bong-da/tuong-thuat-bong-da-west-ham-liverpool-lu-doan-do-tiep-da-thang-hoa-ngoai-hang-anh-c48a1461612.html">Tường thuật bóng đá West Ham - Liverpool: Kỳ vọng vào Salah (Ngoại hạng Anh)</a>
                                 </div>
-                                <div class="news-content">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                                </br>
+                                <div class="news-content">"(West Ham - Liverpool, 1h45, 27/4, vòng 33 Ngoại hạng Anh) Salah đang có phong độ cao ở thời gian gần đây trong màu áo Liverpool.</div>
                             </div>
                         </div>
                     </div>
@@ -204,13 +206,14 @@
                         <div class="news-section">
                             <div class="news-box">
                                 <div class="news-img">
-                                    <a href=""><img src="source/assets/dest/images/products/1.jpg" alt=""></a>
+                                    <a href="https://www.24h.com.vn/bong-da/tuong-thuat-bong-da-chelsea-brentford-nguy-co-tiep-tuc-tham-hoa-ngoai-hang-anh-c48a1461594.html"><img src="source/image/product/3.jpg" alt=""></a>
 
                                 </div>
                                 <div class="news-title">
-                                    <a href="#">Title 1</a> 
+                                    <a href= "https://www.24h.com.vn/bong-da/tuong-thuat-bong-da-chelsea-brentford-nguy-co-tiep-tuc-tham-hoa-ngoai-hang-anh-c48a1461594.html">Tường thuật bóng đá Chelsea - Brentford: Lampard xác nhận tin xấu 2 trụ cột (Ngoại hạng Anh)</a> 
                                 </div>
-                                <div class="news-content">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                                </br>
+                                <div class="news-content">"(Chelsea - Brentford, 1h45, 27/4, vòng 33 Ngoại hạng Anh) HLV Lampard có những chia sẻ không mấy tích cực về lực lượng Chelsea trước ngày đấu Brentford.</div>
                             </div>
                         </div>
                     </div>

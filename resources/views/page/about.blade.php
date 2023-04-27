@@ -44,7 +44,7 @@
                                 Thái Bình, Việt Nam
                             </p>
                             <div class="space20">&nbsp;</div>
-                            <p>Khởi nguồn từ niềm đam mê bất tận với các môn thể thao nói chung và môn bóng đá nói riêng. Năm 2020, khi còn ngồi trên ghế nhà trường, founder Vũ Tuấn Hùng đã ấp ủ dự định mở cửa hàng kinh doanh các dụng cụ phục vụ cho bộ môn bóng đá. Cậu sinh viên năm 2 khi ấy với số vốn ít ỏi đã khởi nghiệp từ việc kinh doanh trên mạng xã hội facebook.
+                            <p>Khởi nguồn từ niềm đam mê bất tận với các môn thể thao nói chung và môn bóng đá nói riêng. Năm 2017, khi còn ngồi trên ghế nhà trường, founder Vũ Tuấn Hùng đã ấp ủ dự định mở cửa hàng kinh doanh các dụng cụ phục vụ cho bộ môn bóng đá. Cậu sinh viên năm 2 khi ấy với số vốn ít ỏi đã khởi nghiệp từ việc kinh doanh trên mạng xã hội facebook.
                             Nhờ vào sự am hiểu về bóng đá, việc buôn bán đã gặt hái được một số thành tích nhất định và tạo nên sự tin cậy cho khách hàng. Với mục tiêu dài hạn là thành lập một hệ thống kinh doanh dụng cụ bóng đá, Founder Vũ Tuấn Hùng không ngừng tìm tòi, học hỏi. Để nâng cao kinh nghiệm thực chiến, anh đã phỏng vấn và trúng tuyển vào vị trí quản lý một 
                             chi nhánh của một hệ thống bán đồ thể thao nổi tiếng bậc nhất Việt Nam lúc bấy giờ
                             </p>
@@ -54,7 +54,7 @@
                     <div> 
                         <div class="row">
                         <div class="col-sm-5">
-                            <img src="https://top1hanoi.com/StoreData/images/PageData/giay-bong-da-tai-ha-noi(1).jpg" alt="">
+                            <img src="https://stdecor.net/upload/post/thiet-ke-shop-giay-the-thao-1-2553.jpg" alt="">
                         </div>
                         <div class="col-sm-7">
                             <h5 class="other-title">AHK Sport ra đời</h5>
@@ -146,7 +146,7 @@
         <div class="row">
             <div class="col-sm-2 col-sm-push-2">
                 <div class="beta-counter">
-                    <p class="beta-counter-icon"><i class="fa fa-user"></i></p>
+                    <p class="beta-counter-icon"><i class="fa fa-users"></i></p>
                     <p class="beta-counter-value timer numbers" data-to="19855" data-speed="2000">5000+</p>
                     <p class="beta-counter-title">Khách hàng</p>
                 </div>
@@ -154,15 +154,15 @@
 
             <div class="col-sm-2 col-sm-push-2">
                 <div class="beta-counter">
-                    <p class="beta-counter-icon"><i class="fa fa-picture-o"></i></p>
-                    <p class="beta-counter-value timer numbers" data-to="3568" data-speed="2000">300</p>
-                    <p class="beta-counter-title">Nhân viên</p>
+                    <p class="beta-counter-icon"><i class="fa fa-building-o"></i></p>
+                    <p class="beta-counter-value timer numbers" data-to="3568" data-speed="2000">5</p>
+                    <p class="beta-counter-title">Chi nhánh</p>
                 </div>
             </div>
 
             <div class="col-sm-2 col-sm-push-2">
                 <div class="beta-counter">
-                    <p class="beta-counter-icon"><i class="fa fa-clock-o"></i></p>
+                    <p class="beta-counter-icon"><i class="fa fa-briefcase"></i></p>
                     <p class="beta-counter-value timer numbers" data-to="258934" data-speed="2000">20</p>
                     <p class="beta-counter-title">Đối tác</p>
                 </div>
@@ -170,7 +170,7 @@
 
             <div class="col-sm-2 col-sm-push-2">
                 <div class="beta-counter">
-                    <p class="beta-counter-icon"><i class="fa fa-pencil"></i></p>
+                    <p class="beta-counter-icon"><i class="fa fa-globe"></i></p>
                     <p class="beta-counter-value timer numbers" data-to="150" data-speed="2000">50</p>
                     <p class="beta-counter-title">Dự án cộng đồng</p>
                 </div>

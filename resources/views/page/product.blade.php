@@ -59,7 +59,7 @@
                                 <option value="{{$pv->varname}}">{{$pv->varname}}</option>
                                 @endforeach
                             </select>
-                            <p class="select-title">Chon kich co:&nbsp;</p>
+                            <p class="select-title">Kích cỡ:&nbsp;</p>
                             @if ($product->id_category < 6)
                                 <select class="wc-select" name = "size">
                                     <option value="36">36</option>
