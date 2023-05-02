@@ -7,4 +7,4 @@
 
 <script src="/source/assets/dest/js/main.js"></script>
 
-{{-- @yield('footer') --}}
+@yield('footer')

@@ -46,6 +46,10 @@ class Helper
             : '<span class="btn btn-success btn-xs">YES</span>';
     }
 
+    public static function isAdmin($is_admin = 0): string{
+        return $is_admin == 0 ? '<a href="#" class ="btn btn-danger btn-xs">User</a>':'<a class="btn btn-success btn-xs">Admin</a>';
+    }
+
     public static function menus($menus, $parent_id = 0) :string
     {
         $html = '';

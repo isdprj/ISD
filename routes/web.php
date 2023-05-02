@@ -1,15 +1,15 @@
 <?php
 
-use App\Admin\Controllers\ProductController;
-use App\Admin\Controllers\UserController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\SocialAccountController;
 use App\Http\Controllers\Admin\User\LoginController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -87,10 +87,6 @@ Route::get('checkout',[PageController::class,'getCheckout'])->name('checkout');
 
 Route::post('checkout',[PageController::class,'postCheckout'])->name('checkout');
 
-Route::resource('admin/users',UserController::class);
-
-Route::resource('admin/products',ProductController::class);
-
 Route::get('admin/user/login', [LoginController::class, 'index'])->name('login');
 
 Route::post('admin/users/login/store', [LoginController::class, 'store']);
@@ -122,21 +118,26 @@ Route::middleware(['auth'])->group(function () {
             Route::DELETE('destroy', [ProductController::class, 'destroy']);
         });
 
-        #Slider
-        Route::prefix('sliders')->group(function () {
-            Route::get('add', [SliderController::class, 'create']);
-            Route::post('add', [SliderController::class, 'store']);
-            Route::get('list', [SliderController::class, 'index']);
-            Route::get('edit/{slider}', [SliderController::class, 'show']);
-            Route::post('edit/{slider}', [SliderController::class, 'update']);
-            Route::DELETE('destroy', [SliderController::class, 'destroy']);
+        Route::prefix('users')->group(function(){
+            Route::get('list', [UserController::class, 'index']);
+            Route::post('list', [UserController::class, 'update']);
         });
 
-        #Upload
-        Route::post('upload/services', [\App\Http\Controllers\Admin\UploadController::class, 'store']);
+        // #Slider
+        // Route::prefix('sliders')->group(function () {
+        //     Route::get('add', [SliderController::class, 'create']);
+        //     Route::post('add', [SliderController::class, 'store']);
+        //     Route::get('list', [SliderController::class, 'index']);
+        //     Route::get('edit/{slider}', [SliderController::class, 'show']);
+        //     Route::post('edit/{slider}', [SliderController::class, 'update']);
+        //     Route::DELETE('destroy', [SliderController::class, 'destroy']);
+        // });
 
-        #Cart
-        Route::get('customers', [\App\Http\Controllers\Admin\CartController::class, 'index']);
-        Route::get('customers/view/{customer}', [\App\Http\Controllers\Admin\CartController::class, 'show']);
+        #Upload
+        // Route::post('upload/services', [\App\Http\Controllers\Admin\UploadController::class, 'store']);
+
+        // #Cart
+        // Route::get('customers', [\App\Http\Controllers\Admin\CartController::class, 'index']);
+        // Route::get('customers/view/{customer}', [\App\Http\Controllers\Admin\CartController::class, 'show']);
     });
 });
