@@ -1,6 +1,17 @@
 @extends('admin.main')
 
 @section('content')
+        <!-- SidebarSearch Form -->
+        <div class="form-inline">
+            <div class="input-group" data-widget="sidebar-search">
+                <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-sidebar">
+                        <i class="fas fa-search fa-fw"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
     <table class="table">
         <thead>
         <tr>
@@ -9,12 +20,12 @@
             <th>Danh Mục</th>
             <th>Giá Gốc</th>
             <th>Giá Khuyến Mãi</th>
-            <th>Giá Gốc</th>
             <th>Mô tả</th>
             <th>Thông số</th>
             <th>Đơn vị</th>
             <th>Số lượng</th>
-            <th>Update</th>
+            <th>Cập nhập</th>
+            <th>Tùy chỉnh</th>
             <th style="width: 100px">&nbsp;</th>
         </tr>
         </thead>

@@ -15,7 +15,7 @@
         </div>
 
         <!-- SidebarSearch Form -->
-        <div class="form-inline">
+        {{-- <div class="form-inline">
             <div class="input-group" data-widget="sidebar-search">
                 <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
                 <div class="input-group-append">
@@ -24,13 +24,11 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <!-- Add icons to the links using the .nav-icon class
-                     with font-awesome or any other icon font library -->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-bars"></i>
@@ -78,6 +76,32 @@
 
                     </ul>
                 </li>
+                @foreach ($menus as $menu)
+                    
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-store-alt"></i>
+                        <p> {{$menu->name}}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    {{-- <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/admin/products/add" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thêm Sản Phẩm</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/products/list" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh Sách Sản Phẩm</p>
+                            </a>
+                        </li>
+                        
+                    </ul> --}}
+                </li>
+                @endforeach
 
                 {{-- <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -99,7 +123,6 @@
                                 <p>Danh Sách Slider</p>
                             </a>
                         </li> --}}
-
                     {{-- </ul>
                 </li> --}}
 
