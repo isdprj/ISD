@@ -11,7 +11,7 @@ class UserService{
     public function update($request, $user)
     {       
         try {
-            $user->fill($request->input())->except('full_name','phone_number','address');
+            $user->fill($request->only('is_admin'));
             $user->save();
             Session::flash('success', 'Cập nhật thành công');
         } catch (Exception $err) {
