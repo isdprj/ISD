@@ -9,7 +9,8 @@
                 <th>Email</th>
                 <th>Số điện thoại</th>
                 <th>Địa chỉ</th>
-                <th>Vai trò</th>   
+                <th>Vai trò</th>
+                <th>Đổi</th>   
                 </tr>
         </thead>
         <tbody>
@@ -20,9 +21,10 @@
                 <td>{{$user->email}}</td>
                 <td>{{$user->phone_number}}</td>
                 <td>{{$user->address}}</td>
+                <td>{!! \App\Helpers\Helper::isAdmin($user->is_admin) !!}</td>
                 <td>
-                    <a href="/admin/users/list" onclick="changeRole({{$user->id}}, '/admin/users/list')">
-                    {!! \App\Helpers\Helper::isAdmin($user->is_admin) !!}
+                    <a class="btn btn-primary btn-sm" href="/admin/users/edit/{{ $user->id }}">
+                        <i class="fas fa-edit"></i>
                     </a>
                 </td> 
             </tr>

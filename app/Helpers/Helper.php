@@ -47,7 +47,7 @@ class Helper
     }
 
     public static function isAdmin($is_admin = 0): string{
-        return $is_admin == 0 ? '<a href="#" class ="btn btn-danger btn-xs">User</a>':'<a class="btn btn-success btn-xs">Admin</a>';
+        return $is_admin == 0 ? '<span class ="btn btn-danger btn-xs">User</span>':'<span class="btn btn-success btn-xs">Admin</span>';
     }
 
     public static function menus($menus, $parent_id = 0) :string

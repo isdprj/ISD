@@ -87,7 +87,7 @@ Route::get('checkout',[PageController::class,'getCheckout'])->name('checkout');
 
 Route::post('checkout',[PageController::class,'postCheckout'])->name('checkout');
 
-Route::get('admin/user/login', [LoginController::class, 'index'])->name('login');
+Route::get('admin/users/login', [LoginController::class, 'index']);
 
 Route::post('admin/users/login/store', [LoginController::class, 'store']);
 
@@ -120,7 +120,8 @@ Route::middleware(['auth'])->group(function () {
 
         Route::prefix('users')->group(function(){
             Route::get('list', [UserController::class, 'index']);
-            Route::post('list', [UserController::class, 'update']);
+            Route::get('edit/{user}', [UserController::class, 'show']);
+            Route::post('edit/{user}', [UserController::class, 'update']);
         });
 
         // #Slider

@@ -131,9 +131,8 @@
                                 <div class="clearfix"></div>
                             </div>
                         </div>
-                    </div>
-                        @endforeach
-                        
+                        @endforeach   
+                        </div>
                     </div>
                 </div> <!-- .beta-products-list -->
             </div>

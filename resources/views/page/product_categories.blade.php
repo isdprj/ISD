@@ -47,10 +47,11 @@
                                         <div class="ribbon sale">Sale</div>
                                     </div>
                                     @endif
-                                <div class="single-item">
                                     <div class="single-item-header">
                                         <a href="{{route('product',$pot->id)}}"><img src="source/image/product/{{$pot->image}}" alt=""></a>
                                     </div>
+                                </div>    
+                                <div class="single-item">
                                     <div class="single-item-body">
                                         <a href="{{route('product',$pot->id)}}"><p class="single-item-title">{{$pot->name}}</p></a> 
                                         <p class="single-item-price">
@@ -72,7 +73,6 @@
                             @endforeach
                         </div>
                     </div> <!-- .beta-products-list -->
-                    </div>
                     <div class="space50">&nbsp;</div>
                 </div>
             </div> <!-- end section with sidebar and main content -->

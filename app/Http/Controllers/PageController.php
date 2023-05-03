@@ -116,7 +116,7 @@ class PageController extends Controller
         $user->address = $request->address;
         $user->is_admin = false;
         $user->save();
-        return redirect()->back()->with('echo', 'Tài khoản của bạn đã được tạo thành công!');
+        return redirect()->route('login')->with('echo', 'Tài khoản của bạn đã được tạo thành công! Hãy đăng nhập ngay');
     }
     public function postLogin(Request $request){
         $this->validate($request,

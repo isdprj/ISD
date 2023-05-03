@@ -79,7 +79,7 @@
                     </ul>
                 </li>
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-images"></i>
                         <p> Slider
@@ -98,10 +98,10 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh Sách Slider</p>
                             </a>
-                        </li>
+                        </li> --}}
 
-                    </ul>
-                </li>
+                    {{-- </ul>
+                </li> --}}
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">

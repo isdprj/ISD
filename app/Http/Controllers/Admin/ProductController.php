@@ -45,10 +45,12 @@ class ProductController extends Controller
     }
     
     public function show(Product $product)
-    {
+    {   
+        $productCategory = ProductCategory::get()->sortBy('id');
         return view('admin.product.edit', [
             'title' => 'Chỉnh Sửa Sản Phẩm',
             'product' => $product,
+            'productCategory' =>$productCategory
             // 'menus' => $this->productService->getMenu()
         ]);
     }
