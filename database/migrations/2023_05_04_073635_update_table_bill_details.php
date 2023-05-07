@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateTableProduct extends Migration
+class UpdateTableBillDetails extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class UpdateTableProduct extends Migration
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->text('stats')->nullable();
-        });
+        {
+            Schema::table('bills', function (Blueprint $table) {
+                $table->text('status')->nullable();
+            });
+        }
     }
 
     /**

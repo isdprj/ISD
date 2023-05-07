@@ -12,7 +12,7 @@ class UserService{
     {       
         try {
             $user->fill($request->only('is_admin'));
-            $user->save();
+            $user->update();
             Session::flash('success', 'Cập nhật thành công');
         } catch (Exception $err) {
             Session::flash('error', 'Có lỗi vui lòng thử lại');

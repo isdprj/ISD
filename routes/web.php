@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\User\LoginController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\UserController;
 
 /*
@@ -121,7 +122,13 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix('users')->group(function(){
             Route::get('list', [UserController::class, 'index']);
             Route::get('edit/{user}', [UserController::class, 'show']);
-            Route::post('edit/{user}', [UserController::class, 'update']);
+            Route::put('edit/{user}', [UserController::class, 'update']);
+        });
+
+        Route::prefix('orders')->group(function(){
+            Route::get('list', [OrderController::class, 'index']);
+            Route::get('detail/{id}',[OrderController::class,'show']);
+            Route::put('detail/{id}',[OrderController::class,'update']);
         });
 
         // #Slider

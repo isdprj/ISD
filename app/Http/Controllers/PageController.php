@@ -205,6 +205,7 @@ class PageController extends Controller
         $bill->total = $cart->totalPrc;
         $bill->payment = $req->payment;
         $bill->note = $req->notes;
+        $bill->status = 'Đang xử lí';
         $bill->save();
 
         foreach($cart->items as $key=>$value){
