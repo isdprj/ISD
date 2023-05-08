@@ -40,7 +40,7 @@
                 </div>
                 <div class="beta-comp">
                     <form role="search" method="get" id="searchform" action="{{route('search')}}">
-                        <input type="text" value="" name="key" id="s" placeholder="Search for..." />
+                        <input type="text" value="" name="key" id="s" placeholder="Tìm kiếm..." />
                         <button class="fa fa-search" type="submit" id="searchsubmit"></button>
                     </form>
                 </div>

@@ -12,7 +12,7 @@
 
               <div class="card">
 
-                  <div class="card-header">Reset Password</div>
+                  <div class="card-header">Đặt lại mật khẩu</div>
 
                   <div class="card-body">
 
@@ -24,7 +24,7 @@
 
                           <div class="form-group row">
 
-                              <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                              <label for="email_address" class="col-md-4 col-form-label text-md-right">Địa chỉ E-Mail</label>
 
                               <div class="col-md-6">
 
@@ -42,7 +42,7 @@
 
                           <div class="form-group row">
 
-                              <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                              <label for="password" class="col-md-4 col-form-label text-md-right">Mật khẩu</label>
 
                               <div class="col-md-6">
 
@@ -60,7 +60,7 @@
 
                           <div class="form-group row">
 
-                              <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
+                              <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Xác nhận lại mật khẩu</label>
 
                               <div class="col-md-6">
 
