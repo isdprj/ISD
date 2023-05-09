@@ -174,7 +174,7 @@
                     </div>
                 </div> <!-- best sellers widget -->
                 {{-- <div class="widget">
-                    <h3 class="widget-title">New Products</h3>
+                    <h3 class="widget-title">Sản phẩm mới</h3>
                     <div class="widget-body">
                         <div class="beta-sales beta-lists">
                             <div class="media beta-sales-item">
