@@ -36,7 +36,7 @@
                         <input name="your-email" type="email" placeholder="Email (bắt buộc)">
                     </div>
                     <div class="form-block">
-                        <input name="your-subject" type="text" placeholder="Thông tin">
+                        <input name="your-subject" type="text" placeholder="Địa chỉ">
                     </div>
                     <div class="form-block">
                         <textarea name="your-message" placeholder="Yêu cầu hỗ trợ"></textarea>
