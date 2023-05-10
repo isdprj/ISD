@@ -34,7 +34,7 @@
                     <div class="beta-products-list">
                         <h4>Tất cả sản phẩm</h4>
                         <div class="beta-products-details">
-                            <p class="pull-left">Có {{count($productOfType)}} sản phẩm</p>
+                            <p class="pull-left">Số lượng: {{count($productOfType)}}</p>
                             <div class="clearfix"></div>
                         </div>
 
@@ -67,10 +67,11 @@
                                         <a class="beta-btn primary" href="{{route('product',$pot->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
+                                    </br>
                                 </div>
                             </div>
-                            @endforeach
                         </div>
+                            @endforeach
                     </div> <!-- .beta-products-list -->
                     </div>
                     <div class="space50">&nbsp;</div>
