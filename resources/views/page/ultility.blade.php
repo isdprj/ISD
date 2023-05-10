@@ -67,6 +67,7 @@
                                         <a class="beta-btn primary" href="{{route('product',$pu->id)}}">Chi tiết<i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
+                                    </br>
                                 </div>
                             </div>
                         </div>
