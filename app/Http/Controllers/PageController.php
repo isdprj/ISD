@@ -15,7 +15,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Models\Favourite;
+use Exception;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 
 class PageController extends Controller
@@ -221,7 +223,32 @@ class PageController extends Controller
     }
 
     public function getAccount(){
-        return view('page.account');
+        $id = Auth::id();
+        $user = Auth::user();
+        return view('page.account',compact('user','id'));
+    }
+    public function postAccount(Request $req, User $user){
+        $id = Auth::id();
+        $user = User::get($id);
+        try{
+            $user->fillAndSave($req->only('name','email','address','phone_number'));
+            Session::flash('success', 'Cập nhật thành công');
+
+        }
+        catch (Exception $e){
+            Session::flash('error', 'Có lỗi vui lòng thử lại');
+            Log::info($e->getMessage());
+        }
+    }
+
+    public function getOrder($id){
+        $id = Auth::id();
+        $bills = DB::table('customers')
+                        ->join('bills','bills.id_customer', '=', 'customers.id')
+                        ->join('users','customer.id_user','=',$id)
+                        ->first();
+        return view('page.order',compact('bills'));
+
     }
 }
 

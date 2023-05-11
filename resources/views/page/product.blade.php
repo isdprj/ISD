@@ -32,10 +32,10 @@
                         <div class="single-item-body">
                             <p class="single-item-title">{{$product->name}}</p>
                             @if ($product->promotion_price == 0)
-                            <span class="flash-sale"><i>{{number_format($product->unit_price)}}</i> đ</span>
-                            @else
-                            <span class="flash-del"><i>{{number_format($product->unit_price)}}</i> đ</span>
-                            <span class="flash-sale"><i>{{number_format($product->promotion_price)}}</i> đ</span>
+                                <span class="flash-sale"><i>{{number_format($product->unit_price)}}</i> đ</span>
+                            @else 
+                                <span class="flash-del"><i>{{number_format($product->unit_price)}}</i> đ</span>
+                                <span class="flash-sale"><i>{{number_format($product->promotion_price)}}</i> đ</span>
                             @endif
                         </div>
 
@@ -43,7 +43,7 @@
                         <div class="space20">&nbsp;</div>
                         <div class="variation-img-list">
                             @foreach ($productVariation as $pv)
-                            <img src="source/image/product/{{$pv->image}}" alt="" class="variation-img">
+                                <img src="source/image/product/{{$pv->image}}" alt="" class="variation-img">
                             @endforeach
                         </div>
                         <div class="single-item-desc">
@@ -60,26 +60,27 @@
                                 @endforeach
                             </select>
                             <p class="select-title">Kích cỡ:&nbsp;</p>
-                            @if ($product->id_category < 6) <select class="wc-select" name="size">
-                                <option value="36">36</option>
-                                <option value="37">37</option>
-                                <option value="38">38</option>
-                                <option value="39">39</option>
-                                <option value="40">40</option>
-                                <option value="41">41</option>
-                                <option value="42">42</option>
-                                <option value="43">43</option>
+                            @if ($product->id_category < 6)
+                                <select class="wc-select" name = "size">
+                                    <option value="36">36</option>
+                                    <option value="37">37</option>
+                                    <option value="38">38</option>
+                                    <option value="39">39</option>
+                                    <option value="40">40</option>
+                                    <option value="41">41</option>
+                                    <option value="42">42</option>
+                                    <option value="43">43</option>
                                 </select>
-                                @elseif ($product->id_category == 8)
+                            @elseif ($product->id_category == 8) 
                                 <select class="wc-select" name="size">
                                     <option value="s">S</option>
                                     <option value="m">M</option>
                                     <option value="l">L</option>
                                     <option value="xl">XL</option>
                                 </select>
-                                @endif
-                                <a class="add-to-cart" href="{{route('cart',$product->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                                <div class="clearfix"></div>
+                            @endif
+                            <a class="add-to-cart" href="{{route('cart',$product->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                            <div class="clearfix"></div>
                         </div>
                     </div>
                 </div>
@@ -103,38 +104,35 @@
                     <h4>Sản phẩm liên quan</h4>
 
                     <div class="row">
-                            @foreach ($relatedProduct as $rp)
-                            <div class="col-sm-4">
-                                <div class="single-item">
-                                    @if ($rp->promotion_price > 0)
-                                    <div class="ribbon-wrapper">
-                                        <div class="ribbon sale">Sale</div>
-                                    </div>
-                                    @endif
-                                    <div class="single-item">
-                                        <div class="single-item-header">
-                                            <a href="{{route('product',$rp->id)}}"><img src="source/image/product/{{$rp->image}}" alt=""></a>
-                                        </div>
-                                        <div class="single-item-body">
-                                            <p class="single-item-title">{{$rp->name}}</p>
-                                            @if ($product->promotion_price == 0)
-                                            <span class="flash-sale"><i>{{number_format($rp->unit_price)}}</i> đ</span>
-                                            @else
-                                            <span class="flash-del"><i>{{number_format($rp->unit_price)}}</i> đ</span>
-                                            <span class="flash-sale"><i>{{number_format($rp->promotion_price)}}</i> đ</span>
-                                            @endif
-                                            </p>
-                                        </div>
-                                        <div class="single-item-caption">
-                                            <a class="add-to-cart pull-left" href="{{route('cart',$rp->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                                            <a class="beta-btn primary" href="{{route('product',$rp->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        </br>
-                                    </div>
-                                </div>
+                        <div class="col-sm-4">
+                        @foreach ($relatedProduct as $rp)
+                            @if ($rp->promotion_price > 0)
+                            <div class="ribbon-wrapper">
+                            <div class="ribbon sale">Sale</div>
                             </div>
-                            @endforeach
+                            @endif                            
+                        <div class="single-item">
+                            <div class="single-item-header">
+                                <a href="{{route('product',$rp->id)}}"><img src="source/image/product/{{$rp->image}}" alt=""></a>
+                            </div>
+                            <div class="single-item-body">
+                                <p class="single-item-title">{{$rp->name}}</p>
+                                @if ($product->promotion_price == 0)
+                                <span class="flash-sale"><i>{{number_format($rp->unit_price)}}</i> đ</span>
+                            @else 
+                                <span class="flash-del"><i>{{number_format($rp->unit_price)}}</i> đ</span>
+                                <span class="flash-sale"><i>{{number_format($rp->promotion_price)}}</i> đ</span>
+                            @endif
+                                </p>
+                            </div>
+                            <div class="single-item-caption">
+                                <a class="add-to-cart pull-left" href="{{route('cart',$rp->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                                <a class="beta-btn primary" href="{{route('product',$rp->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        @endforeach   
+                        </div>
                     </div>
                 </div> <!-- .beta-products-list -->
             </div>
