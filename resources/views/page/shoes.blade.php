@@ -3,7 +3,7 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h6 class="inner-title">Danh mục sản phẩm</h6>
+            <h4 class="inner-title"> <b>Danh mục sản phẩm</b> </h4>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
@@ -67,6 +67,7 @@
                                         <a class="beta-btn primary" href="{{route('product',$ps->id)}}">Chi tiết<i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
+                                    </br>
                                 </div>
                             </div>
                         </div>

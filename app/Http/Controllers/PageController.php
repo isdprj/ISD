@@ -118,7 +118,7 @@ class PageController extends Controller
         $user->address = $request->address;
         $user->is_admin = false;
         $user->save();
-        return redirect()->route('login')->with('echo', 'Tài khoản của bạn đã được tạo thành công! Hãy đăng nhập ngay');
+        return redirect()->back()->with('echo', 'Tài khoản của bạn đã được tạo thành công!');
     }
     public function postLogin(Request $request){
         $this->validate($request,
@@ -207,7 +207,6 @@ class PageController extends Controller
         $bill->total = $cart->totalPrc;
         $bill->payment = $req->payment;
         $bill->note = $req->notes;
-        $bill->status = 'Đang xử lí';
         $bill->save();
 
         foreach($cart->items as $key=>$value){

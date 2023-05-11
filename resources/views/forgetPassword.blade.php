@@ -9,7 +9,7 @@
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb">
-                <a href="index.html">Home</a> / <span>Thay đổi mật khẩu</span>
+                <a href="index.html">Trang chủ</a> / <span>Thay đổi mật khẩu</span>
             </div>
             <div class="clearfix">
                 @if (Session::has('message'))
@@ -19,7 +19,7 @@
             <form action="{{ route('forget.password.post') }}" method="POST">
                 @csrf
                 <div class="form-group row">
-                    <label for="email_address" class ="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                    <label for="email_address" class ="col-md-4 col-form-label text-md-right">địa chỉ E-mail</label>
                     <div class="col-md-6">
                         <input type="text" id="email_address"
                         @if ($errors->has('email'))
@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-md-6 offset-md-4">
                     <button type="submit" class="btn btn-primary">
-                        Send Password Reset Link
+                        Gửi liên kết đặt lại mật khẩu
                     </button>
         </div>
             </div>

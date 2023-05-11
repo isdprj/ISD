@@ -7,7 +7,6 @@ use Symfony\Component\HttpFoundation\Session\Session;
 use App\Models\ProductCategory;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Favourite;
-use App\Models\Menu;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -49,11 +48,6 @@ class AppServiceProvider extends ServiceProvider
                 'totalPrice'=>$cart->totalPrc,
                 'totalQty'=>$cart->totalQty]);
             }
-        });   
-        view()->composer('admin.sidebar', function($view){
-            $menus = Menu::get()->sortBy('id');
-            $view->with(['menus' => $menus]);
-
-        });     
+        });        
     }
 }

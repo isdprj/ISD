@@ -4,7 +4,7 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h6 class="inner-title">Đăng ký</h6>
+            <h4 class="inner-title"> <b> Đăng ký <b> </h4>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb">
@@ -36,7 +36,7 @@
                     </div>
                 @endif
                 <div class="col-sm-6">  
-                    <h4>Đăng ký</h4>
+                    <h6>Đăng ký</h6>
                     <div class="space20">&nbsp;</div>
 
                     
@@ -62,11 +62,11 @@
                     </div>
                     <div class="form-block">
                         <label for="phone">Mật khẩu*</label>
-                        <input type="password" name="password" required>
+                        <input type="text" name="password" required>
                     </div>
                     <div class="form-block">
                         <label for="phone">Xác nhận mật khẩu*</label>
-                        <input type="password" name="re_password" required>
+                        <input type="text" name="re_password" required>
                     </div>
                     <div class="form-block">
                         <button type="submit" class="btn btn-primary">Đăng ký</button>

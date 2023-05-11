@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bill extends Model
 {
-    protected $table = "bills"; 
+    protected $table = "bills";
     use HasFactory;
     public function billDetail(){
         return $this -> hasMany(BillDetail::class, 'id_bill', 'id');

@@ -3,11 +3,11 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h6 class="inner-title">Sản phẩm yêu thích</h6>
+            <h4 class="inner-title"><b>Sản phẩm yêu thích</b></h4>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
-                <a href="{{route('index')}}">Trang chủ</a> / <span>Sản phẩm yêu thích</span>
+                <a href="{{route('index')}}">Trang chủ</a> / <span> Sản phẩm yêu thích </span>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -20,7 +20,7 @@
 <div class="row">
     <div class="col-sm-9">
         <div class="beta-products-list">
-            <h4>Tất cả sản phẩm yêu thích</h4>
+            <h6> <Tất cả sản phẩm yêu thích></h6>
             <div class="beta-products-details">
                 <p class="pull-left">Có {{count($favouriteProduct)}} sản phẩm</p>
                 <div class="clearfix"></div>
@@ -52,7 +52,7 @@
                         </div>
                         <div class="single-item-caption">
                             <a class="add-to-cart pull-left" href="{{route('cart',$fp->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                            <a class="beta-btn primary" href="{{route('product',$fp->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+                            <a class="beta-btn primary" href="{{route('product',$fp->id)}}">Chi tiết<i class="fa fa-chevron-right"></i></a>
                             <div class="clearfix"></div>
                         </div>
                     </div>
