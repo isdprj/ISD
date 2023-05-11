@@ -6,45 +6,35 @@
             <th style="width: 100px">Mã đơn</th>
             <th>Ngày đặt</th>
             <th>Mặt hàng</th>
-            <th>Số lượng</th>
             <th>Giá</th>
+            <th>Số lượng</th>
             <th>Tình trạng</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
+        @foreach ($bills as $bill)
         <tr>
-            <td>ID</td>
-            <td>{{ $bills->id }}</td>
-        </tr>
-        <tr>
-            <td>Danh sách mặt hàng</td>
-            <td>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Tên mặt hàng</th>
-                            <th>Giá</th>
-                            <th>Giá gốc</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        @foreach ($detailProduct as $dt)
-                        <tr>
-                            <td>{{$dt->name}}</td>
-                            @if ($dt->promotion_price > 0)
-                                <td>{{number_format($dt->promotion_price)}}</td>
-                            @endif
-                            <td>{{number_format($dt->unit_price)}} đ</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+            <td>{{ $bill->id }}</td>
+            <td>{{date($bill->date_oreder)}}</td>
                 
+            
+            @foreach ($detailProduct as $dt)
+            <td>{{$dt->name}}</td>
+            <td>
+                @if ($dt->promotion_price > 0)
+                {{number_format($dt->promotion_price)}}đ
+                @else
+                {{number_format($dt->unit_price)}}đ
+                @endif
             </td>
+            <td>{{$dt->quantity}}</td>
+            <td>{{$bill->status}}</td>
+            <td><button class="btn btn-danger">Hủy</button></td>
+            @endforeach      
+            
         </tr>
+        @endforeach
     </tbody>
 </table>
 @endsection

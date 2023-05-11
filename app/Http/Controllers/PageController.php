@@ -199,6 +199,7 @@ class PageController extends Controller
         $customer->address = $req->address;
         $customer->phone_number = $req->phone;
         $customer->note = $req->notes;
+        $customer->id_user = Auth::id();
         $customer->save();
 
         $bill = new Bill();
@@ -208,6 +209,7 @@ class PageController extends Controller
         $bill->payment = $req->payment;
         $bill->note = $req->notes;
         $bill->status = 'Đang xử lí';
+        $bill->id_user = Auth::id();
         $bill->save();
 
         foreach($cart->items as $key=>$value){
@@ -244,15 +246,13 @@ class PageController extends Controller
 
     public function getOrder(){
         $id = Auth::id();
-        $bills = DB::table('customers')
-                        ->join('bills','bills.id_customer', '=', 'customers.id')
-                        ->join('users','customers.id_user','=','users.id')
-                        ->first();
+        $bills = DB::table('bills')->where('id_user',$id)->get();
         $detailProduct = DB::table('products')
                         ->join('bill_details','bill_details.id_product', '=', 'products.id')
-                        ->where('bill_details.id_bill','=',$id)
+                        ->join('bills','bill_details.id_bill','=','bills.id')
+                        ->where('bills.id_user',$id)
                         ->get();
-        return view('page.order',compact('bills'));
+        return view('page.order',compact('bills','detailProduct'));
 
     }
 }

@@ -1,4 +1,6 @@
 @extends('base')
+
+@section('head')
 @section('content')
 <div class="inner-header">
     <div class="container">
@@ -57,8 +59,8 @@
                                             @if ($ps->promotion_price == 0)
                                             <span class="flash-sale"><i>{{$ps->unit_price}}</i> đ</span>
                                             @else 
-                                            <span class="flash-del"><i>{{$ps->unit_price}}</i> đ</span>
-                                            <span class="flash-sale"><i>{{$ps->promotion_price}}</i> đ</span>
+                                            <span class="flash-del"><i>{{number_format($ps->unit_price)}}</i> đ</span>
+                                            <span class="flash-sale"><i>{{number_format($ps->promotion_price)}}</i> đ</span>
                                             @endif
                                         </p>
                                     </div>

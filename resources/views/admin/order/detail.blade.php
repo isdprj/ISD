@@ -61,33 +61,23 @@
             @endif
         </tr>
         <tr>
-            <form action="/admin/orders/detail/{id}" method="PUT">
-            <td>Tình trạng</td>
+            
+                <td>Tình trạng</td>
                 <td>
-
-                    <select name="status">
-                        <option value="{{$bills->status}}">{{$bills->status}}</option>
-                        <option value="Đã tiếp nhận">Đã tiếp nhận</option>
-                        <option value="Đang chuẩn bị hàng">Đang chuẩn bị hàng</option>
-                        <option value="Đang đóng gói">Đang đóng gói</option>
-                        <option value="Đang vận chuyển">Đang vận chuyển</option>
-                        <option value="Hoàn tất">Hoàn tất</option>
-                    </select>
-                    <button type="submit">Lưu</button>
-                    
+                    <form action="/admin/orders/detail/{{$bills->id}}" method="PUT">
+                        <select name="status">
+                                <option value="{{$bills->status}}">{{$bills->status}}</option>
+                                <option value="Đã tiếp nhận">Đã tiếp nhận</option>
+                                <option value="Đang chuẩn bị hàng">Đang chuẩn bị hàng</option>
+                                <option value="Đang đóng gói">Đang đóng gói</option>
+                                <option value="Đang vận chuyển">Đang vận chuyển</option>
+                                <option value="Hoàn tất">Hoàn tất</option>
+                        </select>
+                        <button type="submit">Lưu</button>
+                    </form>
                 </td>
-            </tr>
-            {{-- <tr>
-                <td>Trình trạng thanh toán</td>
-                <td><form action="/admin/orders/detail/{id}" method="PUT"></form>
-                    <select style="padding:0 30px; text-align: center;" name="payment-status">
-                        <option value="Chưa thanh toán">Chưa thanh toán</option>
-                        <option value="Đã thanh toán">Đã thanh toán</option>
-                    </select>
-                    <button  type="submit">Lưu</button>
-                </td>
-            </tr> --}}
-        </form>
+            
+        </tr>
     </tbody>
 </table>
 @endsection
