@@ -65,6 +65,29 @@
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" href="{{route('cart',$ps->id)}}"><i class="fa fa-shopping-cart"></i></a>
                                         <a class="beta-btn primary" href="{{route('product',$ps->id)}}">Chi tiết<i class="fa fa-chevron-right"></i></a>
+                                        @if(Auth::check())
+                                        @if(!session('liked.'.$ps->id))
+                                        <a href="{{route('like',$ps->id)}}" class="btn alert-danger flex-fill favourite">
+                                            @if($ps->like)                                            
+                                            <i class="fa fa-heart"></i>
+                                            @else
+                                            <i class="ti-heart "></i>
+                                            @endif
+                                        </a>
+                                        @else
+                                        <a href="{{route('unlike',$ps->id)}}" class="btn alert-danger flex-fill favourite">
+                                            @if($ps->unlike)
+                                            <i class="ti-heart "></i>
+                                            @else
+                                            <i class="fa fa-heart"></i>
+                                            @endif
+                                        </a>
+                                        @endif
+                                        @else
+                                        <a href="{{route('login')}}" class="btn alert-danger flex-fill favourite">
+                                            <i class="ti-heart "></i>
+                                        </a>                                             
+                                        @endif
                                         <div class="clearfix"></div>
                                     </div>
                                     </br>

@@ -34,7 +34,7 @@
                     <div class="beta-products-list">
                         <h6>Tất cả sản phẩm</h6>
                         <div class="beta-products-details">
-                            <p class="pull-left">Có {{count($productSearch)}} sản phẩm</p>
+                            <p class="pull-left">Số lượng: {{count($productSearch)}}</p>
                             <div class="clearfix"></div>
                         </div>
 
@@ -47,36 +47,60 @@
                                         <div class="ribbon sale">Sale</div>
                                     </div>
                                     @endif
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="{{route('product',$pse->id)}}"><img src="source/image/product/{{$pse->image}}" alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">{{$pse->name}}</p>
-                                        <p class="single-item-price">
-                                            @if ($pse->promotion_price == 0)
-                                            <span class="flash-sale"><i>{{$pse->unit_price}}</i> đ</span>
-                                            @else 
-                                            <span class="flash-del"><i>{{$pse->unit_price}}</i> đ</span>
-                                            <span class="flash-sale"><i>{{$pse->promotion_price}}</i> đ</span>
+                                    <div class="single-item">
+                                        <div class="single-item-header">
+                                            <a href="{{route('product',$pse->id)}}"><img src="source/image/product/{{$pse->image}}" alt=""></a>
+                                        </div>
+                                        <div class="single-item-body">
+                                            <p class="single-item-title">{{$pse->name}}</p>
+                                            <p class="single-item-price">
+                                                @if ($pse->promotion_price == 0)
+                                                <span class="flash-sale"><i>{{$pse->unit_price}}</i> đ</span>
+                                                @else
+                                                <span class="flash-del"><i>{{$pse->unit_price}}</i> đ</span>
+                                                <span class="flash-sale"><i>{{$pse->promotion_price}}</i> đ</span>
+                                                @endif
+                                            </p>
+                                        </div>
+                                        <div class="single-item-caption">
+                                            <a class="add-to-cart pull-left" href="{{route('cart',$pse->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                                            <a class="beta-btn primary" href="{{route('product',$pse->id)}}">Chi tiết<i class="fa fa-chevron-right"></i></a>
+                                            @if(Auth::check())
+                                        @if(!session('liked.'.$pse->id))
+                                        <a href="{{route('like',$pse->id)}}" class="btn alert-danger flex-fill favourite">
+                                            @if($pse->like)                                            
+                                            <i class="fa fa-heart"></i>
+                                            @else
+                                            <i class="ti-heart "></i>
                                             @endif
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="{{route('cart',$pse->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="{{route('product',$pse->id)}}">Chi tiết<i class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
+                                        </a>
+                                        @else
+                                        <a href="{{route('unlike',$pse->id)}}" class="btn alert-danger flex-fill favourite">
+                                            @if($pse->unlike)
+                                            <i class="ti-heart "></i>
+                                            @else
+                                            <i class="fa fa-heart"></i>
+                                            @endif
+                                        </a>
+                                        @endif
+                                        @else
+                                        <a href="{{route('login')}}" class="btn alert-danger flex-fill favourite">
+                                            <i class="ti-heart "></i>
+                                        </a>                                             
+                                        @endif
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        </br>
                                     </div>
                                 </div>
                             </div>
                             @endforeach
-                        </div>
-                    </div> <!-- .beta-products-list -->
+                        </div> <!-- .beta-products-list -->
                     </div>
                     <div class="space50">&nbsp;</div>
                 </div>
             </div> <!-- end section with sidebar and main content -->
         </div> <!-- .main-content -->
     </div> <!-- #content -->
-</div> 
+</div>
 @endsection

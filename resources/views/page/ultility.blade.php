@@ -47,33 +47,58 @@
                                         <div class="ribbon sale">Sale</div>
                                     </div>
                                     @endif
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="{{route('product',$pu->id)}}"><img src="source/image/product/{{$pu->image}}" alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <a href="{{route('product',$pu->id)}}"><p class="single-item-title">{{$pu->name}}</p></a> 
-                                        <p class="single-item-price">
-                                            @if ($pu->promotion_price == 0)
-                                            <span class="flash-sale"><i>{{$pu->unit_price}}</i> đ</span>
-                                            @else 
-                                            <span class="flash-del"><i>{{$pu->unit_price}}</i> đ</span>
-                                            <span class="flash-sale"><i>{{$pu->promotion_price}}</i> đ</span>
+                                    <div class="single-item">
+                                        <div class="single-item-header">
+                                            <a href="{{route('product',$pu->id)}}"><img src="source/image/product/{{$pu->image}}" alt=""></a>
+                                        </div>
+                                        <div class="single-item-body">
+                                            <a href="{{route('product',$pu->id)}}">
+                                                <p class="single-item-title">{{$pu->name}}</p>
+                                            </a>
+                                            <p class="single-item-price">
+                                                @if ($pu->promotion_price == 0)
+                                                <span class="flash-sale"><i>{{$pu->unit_price}}</i> đ</span>
+                                                @else
+                                                <span class="flash-del"><i>{{$pu->unit_price}}</i> đ</span>
+                                                <span class="flash-sale"><i>{{$pu->promotion_price}}</i> đ</span>
+                                                @endif
+                                            </p>
+                                        </div>
+                                        <div class="single-item-caption">
+                                            <a class="add-to-cart pull-left" href="{{route('cart',$pu->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                                            <a class="beta-btn primary" href="{{route('product',$pu->id)}}">Chi tiết<i class="fa fa-chevron-right"></i></a>
+                                            @if(Auth::check())
+                                            @if(!session('liked.'.$pu->id))
+                                            <a href="{{route('like',$pu->id)}}" class="btn alert-danger flex-fill favourite">
+                                                @if($pu->like)
+                                                <i class="fa fa-heart"></i>
+                                                @else
+                                                <i class="ti-heart "></i>
+                                                @endif
+                                            </a>
+                                            @else
+                                            <a href="{{route('unlike',$pu->id)}}" class="btn alert-danger flex-fill favourite">
+                                                @if($pu->unlike)
+                                                <i class="ti-heart "></i>
+                                                @else
+                                                <i class="fa fa-heart"></i>
+                                                @endif
+                                            </a>
                                             @endif
-                                        </p>
+                                            @else
+                                            <a href="{{route('login')}}" class="btn alert-danger flex-fill favourite">
+                                                <i class="ti-heart "></i>
+                                            </a>
+                                            @endif
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        </br>
                                     </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="{{route('cart',$pu->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="{{route('product',$pu->id)}}">Chi tiết<i class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    </br>
                                 </div>
                             </div>
-                        </div>
                             @endforeach
-                        
-                    </div> <!-- .beta-products-list -->
+
+                        </div> <!-- .beta-products-list -->
                     </div>
                     <div class="space50">&nbsp;</div>
                 </div>
