@@ -81,3 +81,7 @@
     height: 10%;
     width: 8%;
 }
+
+.pull-left{
+    left: 0;
+}

@@ -20,8 +20,8 @@
             <div class="row">
                 <div class="col-sm-3">
                     <ul class="a    ">
-                        <li><a href="">Thông tin người dùng</a></li>
-                        <li><a href="">Danh sách đơn hàng</a></li>
+                        <li><a href="{{route('account')}}">Thông tin người dùng</a></li>
+                        <li><a href="{{route('order')}}">Danh sách đơn hàng</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-9">
@@ -51,7 +51,7 @@
                                 <input type="text" name="address" value="{{$user->address}}" class="form-control">
                             </div>
                         </div>
-                        <button type="submit">Lưu</button>
+                        <button class="btn btn-success btn-xs pull-left" type="submit">Lưu thông tin</button>
                         </div>
                     </form>
                 </div>

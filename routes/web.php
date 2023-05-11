@@ -149,3 +149,5 @@ Route::middleware(['auth'])->group(function () {
         // Route::get('customers/view/{customer}', [\App\Http\Controllers\Admin\CartController::class, 'show']);
     });
 });
+
+Route::get('order',[PageController::class,'getOrder'])->name('order');

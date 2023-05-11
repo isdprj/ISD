@@ -242,12 +242,16 @@ class PageController extends Controller
         }
     }
 
-    public function getOrder($id){
+    public function getOrder(){
         $id = Auth::id();
         $bills = DB::table('customers')
                         ->join('bills','bills.id_customer', '=', 'customers.id')
-                        ->join('users','customer.id_user','=',$id)
+                        ->join('users','customers.id_user','=','users.id')
                         ->first();
+        $detailProduct = DB::table('products')
+                        ->join('bill_details','bill_details.id_product', '=', 'products.id')
+                        ->where('bill_details.id_bill','=',$id)
+                        ->get();
         return view('page.order',compact('bills'));
 
     }
