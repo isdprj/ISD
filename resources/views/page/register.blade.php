@@ -36,36 +36,36 @@
                     </div>
                 @endif
                 <div class="col-sm-6">  
-                    <h6>Đăng ký</h6>
+                    <h6><b>Đăng ký biểu mẫu</b></h6>
                     <div class="space20">&nbsp;</div>
 
                     
                     <div class="form-block">
-                        <label for="email">Địa chỉ email*</label>
+                        <label for="email"><b>Địa chỉ email*</b></label>
                         <input type="email" name="email" required>
                     </div>
 
                     <div class="form-block">
-                        <label for="your_last_name">Họ và tên*</label>
+                        <label for="your_last_name"><b>Họ và tên*</b></label>
                         <input type="text" name="fullname" required>
                     </div>
 
                     <div class="form-block">
-                        <label for="address">Địa chỉ*</label>
+                        <label for="address"><b>Địa chỉ*</b></label>
                         <input type="text" name="address" placeholder="Đường, Xã/ Phường, Quận/ Thị Xã, Thành Phố/ Tỉnh" required>
                     </div>
 
 
                     <div class="form-block">
-                        <label for="phone">Số điện thoại*</label>
+                        <label for="phone"><b>Số điện thoại*</b></label>
                         <input type="text" name="phone" required>
                     </div>
                     <div class="form-block">
-                        <label for="phone">Mật khẩu*</label>
+                        <label for="phone"><b>Mật khẩu*</b></label>
                         <input type="text" name="password" required>
                     </div>
                     <div class="form-block">
-                        <label for="phone">Xác nhận mật khẩu*</label>
+                        <label for="phone"><b>Xác nhận mật khẩu*</b></label>
                         <input type="text" name="re_password" required>
                     </div>
                     <div class="form-block">

@@ -144,31 +144,31 @@
                     <div class="widget-body">
                         <div class="beta-sales beta-lists">
                             <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/1.png" alt=""></a>
+                                <a class="pull-left" href="product.html"><img src="source/image/product/shoes_adidas1.1.png" alt=""></a>
                                 <div class="media-body">
-                                    Sample Product
-                                    <span class="beta-sales-price">$34.55</span>
+                                    Sản phẩm mẫu
+                                    <span class="beta-sales-price">1.390.000đ</span>
                                 </div>
                             </div>
                             <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/2.png" alt=""></a>
+                                <a class="pull-left" href="product.html"><img src="source/image/product/clothes2.2.png" alt=""></a>
                                 <div class="media-body">
-                                    Sample Product
-                                    <span class="beta-sales-price">$34.55</span>
+                                    Sản phẩm mẫu
+                                    <span class="beta-sales-price">199.000đ</span>
                                 </div>
                             </div>
                             <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/3.png" alt=""></a>
+                                <a class="pull-left" href="product.html"><img src="source/image/product/shoes_kamito2.3.png" alt=""></a>
                                 <div class="media-body">
-                                    Sample Product
-                                    <span class="beta-sales-price">$34.55</span>
+                                    Sản phẩm mẫu
+                                    <span class="beta-sales-price">599.000đ</span>
                                 </div>
                             </div>
                             <div class="media beta-sales-item">
-                                <a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/4.png" alt=""></a>
+                                <a class="pull-left" href="product.html"><img src="source/image/product/balo3.1.png" alt=""></a>
                                 <div class="media-body">
-                                    Sample Product
-                                    <span class="beta-sales-price">$34.55</span>
+                                    Sản phẩm mẫu
+                                    <span class="beta-sales-price">139.000đ </span>
                                 </div>
                             </div>
                         </div>

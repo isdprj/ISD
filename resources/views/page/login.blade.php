@@ -5,7 +5,7 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h6 class="inner-title"> Đăng nhập </h6>
+            <h4 class="inner-title"> <b>Đăng nhập</b> </h4>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb">
@@ -34,11 +34,11 @@
 
                     
                     <div class="form-block">
-                        <label for="email"> Email* </label>
+                        <label for="email"> <b>Email*</b> </label>
                         <input type="email" name="email" required>
                     </div>
                     <div class="form-block">
-                        <label for="phone"> Mật khẩu* </label>
+                        <label for="phone"> <b>Mật khẩu*</b> </label>
                         <input type="text" name="password" required>
                     </div>
                     {{-- <div class="form-group">
