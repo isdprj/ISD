@@ -31,8 +31,7 @@ class OrderController extends Controller
     public function show($id)
     {
         $title = 'Chi tiết đơn hàng';
-        $details = BillDetail::where('id', $id)->first();
-        $bills = DB::table('bills')->where('id',$id)->first();
+        $bills = Bill::where('id',$id)->first();
         $detailProduct = DB::table('products')
                         ->join('bill_details','bill_details.id_product', '=', 'products.id')
                         ->where('bill_details.id_bill','=',$id)
@@ -40,23 +39,22 @@ class OrderController extends Controller
         $customers = DB::table('customers')
                         ->join('bills','bills.id_customer', '=', 'customers.id')
                         ->first();
-        return view('admin.order.detail', compact('detailProduct','customers','details','title','bills'));
+        return view('admin.order.detail', compact('detailProduct','customers','title','bills'));
     }
 
-    public function update(Request $req,$id){
-        $bills = DB::table('bills')->join('bill_details','bill_details.id_bill','=','bills.id')
-                                    ->where('bill_details.id','=',$id)
-                                    ->get();
-        try{
-            $bills->fill($req->only('status','payment status'));
-            $bills->update();
-            Session::flash('success', 'Cập nhật thành công');
-        }
-        catch(Exception $e){
-            Session::flash('error', 'Có lỗi vui lòng thử lại');
-            Log::info($e->getMessage());
-        }
-        return redirect()->back();
+    public function update(Request $req, $id){
+        $bills = Bill::where('id',$id)->first();
+            try{
+                $bills->fill($req->only('status'));
+                $bills->update();
+                Session::flash('success', 'Cập nhật thành công');
+            }
+            catch(Exception $e){
+                Session::flash('error', 'Có lỗi vui lòng thử lại');
+                Log::info($e->getMessage());
+            }
+        
+        return redirect('admin/orders/list');
     }
     
 }

@@ -12,7 +12,7 @@
     <tbody>
         <tr>
             <td>ID</td>
-            <td>{{ $details->id_bill }}</td>
+            <td>{{ $bills->id }}</td>
         </tr>
         <tr>
             <td>Tên khách hàng</td>
@@ -52,7 +52,7 @@
         </tr>
         <tr>
             <td>Ngày đặt</td>
-            <td>{{date($details->created_at)}}</td>
+            <td>{{date($bills->created_at)}}</td>
         </tr>
         <tr>
             <td>Phương thức thanh toán</td>
@@ -65,7 +65,7 @@
             <td>Tình trạng</td>
                 <td>
 
-                    <select style="padding:0 20px;text-align:center;" name="status">
+                    <select name="status">
                         <option value="{{$bills->status}}">{{$bills->status}}</option>
                         <option value="Đã tiếp nhận">Đã tiếp nhận</option>
                         <option value="Đang chuẩn bị hàng">Đang chuẩn bị hàng</option>

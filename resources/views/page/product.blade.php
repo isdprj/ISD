@@ -106,11 +106,11 @@
                     <div class="row">
                         <div class="col-sm-4">
                         @foreach ($relatedProduct as $rp)
-                        @if ($rp->promotion_price > 0)
-                        <div class="ribbon-wrapper">
+                            @if ($rp->promotion_price > 0)
+                            <div class="ribbon-wrapper">
                             <div class="ribbon sale">Sale</div>
-                        </div>
-                        @endif                            
+                            </div>
+                            @endif                            
                         <div class="single-item">
                             <div class="single-item-header">
                                 <a href="{{route('product',$rp->id)}}"><img src="source/image/product/{{$rp->image}}" alt=""></a>
