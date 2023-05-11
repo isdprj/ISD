@@ -3,7 +3,7 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h4 class="inner-title"> <b>Danh mục sản phẩm</b> </h4>
+            <h6 class="inner-title">Danh mục sản phẩm</h6>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-sm-9">
                     <div class="beta-products-list">
-                        <h6>Tất cả sản phẩm</h6>
+                        <h4>Tất cả sản phẩm</h4>
                         <div class="beta-products-details">
                             <p class="pull-left">Số lượng: {{count($productUltility)}}</p>
                             <div class="clearfix"></div>
@@ -67,7 +67,6 @@
                                         <a class="beta-btn primary" href="{{route('product',$pu->id)}}">Chi tiết<i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
-                                    </br>
                                 </div>
                             </div>
                         </div>

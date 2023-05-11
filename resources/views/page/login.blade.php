@@ -39,7 +39,7 @@
                     </div>
                     <div class="form-block">
                         <label for="phone"> Mật khẩu* </label>
-                        <input type="text" name="password" required>
+                        <input type="password" name="password" required>
                     </div>
                     {{-- <div class="form-group">
                         <label class="label-agree-term"><span></span><span></span>

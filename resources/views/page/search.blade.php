@@ -3,7 +3,7 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h4 class="inner-title"> <b>Kết quả tìm kiếm</b> </h4>
+            <h6 class="inner-title">Kết quả tìm kiếm</h6>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb font-large">
@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-sm-9">
                     <div class="beta-products-list">
-                        <h6>Tất cả sản phẩm</h6>
+                        <h4>Tất cả sản phẩm</h4>
                         <div class="beta-products-details">
                             <p class="pull-left">Có {{count($productSearch)}} sản phẩm</p>
                             <div class="clearfix"></div>
@@ -64,7 +64,7 @@
                                     </div>
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" href="{{route('cart',$pse->id)}}"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="{{route('product',$pse->id)}}">Chi tiết<i class="fa fa-chevron-right"></i></a>
+                                        <a class="beta-btn primary" href="{{route('product',$pse->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
