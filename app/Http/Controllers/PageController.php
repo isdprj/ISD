@@ -118,7 +118,7 @@ class PageController extends Controller
         $user->address = $request->address;
         $user->is_admin = false;
         $user->save();
-        return redirect()->back()->with('echo', 'Tài khoản của bạn đã được tạo thành công!');
+        return redirect()->route('login')->with('echo', 'Tài khoản của bạn đã được tạo thành công! Hãy đăng nhập ngay');
     }
     public function postLogin(Request $request){
         $this->validate($request,
@@ -199,6 +199,7 @@ class PageController extends Controller
         $customer->address = $req->address;
         $customer->phone_number = $req->phone;
         $customer->note = $req->notes;
+        $customer->id_user = Auth::id();
         $customer->save();
 
         $bill = new Bill();
@@ -207,6 +208,8 @@ class PageController extends Controller
         $bill->total = $cart->totalPrc;
         $bill->payment = $req->payment;
         $bill->note = $req->notes;
+        $bill->status = 'Đang xử lí';
+        $bill->id_user = Auth::id();
         $bill->save();
 
         foreach($cart->items as $key=>$value){
@@ -241,13 +244,15 @@ class PageController extends Controller
         }
     }
 
-    public function getOrder($id){
+    public function getOrder(){
         $id = Auth::id();
-        $bills = DB::table('customers')
-                        ->join('bills','bills.id_customer', '=', 'customers.id')
-                        ->join('users','customer.id_user','=',$id)
-                        ->first();
-        return view('page.order',compact('bills'));
+        $bills = DB::table('bills')->where('id_user',$id)->get();
+        $detailProduct = DB::table('products')
+                        ->join('bill_details','bill_details.id_product', '=', 'products.id')
+                        ->join('bills','bill_details.id_bill','=','bills.id')
+                        ->where('bills.id_user',$id)
+                        ->get();
+        return view('page.order',compact('bills','detailProduct'));
 
     }
 }

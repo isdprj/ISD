@@ -18,165 +18,30 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `isd`
+-- Database: `isd`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `admin_menu`
---
-
-CREATE TABLE `admin_menu` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `parent_id` int(11) NOT NULL DEFAULT 0,
-  `order` int(11) NOT NULL DEFAULT 0,
-  `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `icon` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `uri` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `permission` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `admin_operation_log`
---
-
-CREATE TABLE `admin_operation_log` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `method` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ip` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `input` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `admin_permissions`
---
-
-CREATE TABLE `admin_permissions` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `http_method` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `http_path` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `admin_roles`
---
-
-CREATE TABLE `admin_roles` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `admin_role_menu`
---
-
-CREATE TABLE `admin_role_menu` (
-  `role_id` int(11) NOT NULL,
-  `menu_id` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `admin_role_permissions`
---
-
-CREATE TABLE `admin_role_permissions` (
-  `role_id` int(11) NOT NULL,
-  `permission_id` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `admin_role_users`
---
-
-CREATE TABLE `admin_role_users` (
-  `role_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `admin_users`
---
-
-CREATE TABLE `admin_users` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `username` varchar(190) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `admin_user_permissions`
---
-
-CREATE TABLE `admin_user_permissions` (
-  `user_id` int(11) NOT NULL,
-  `permission_id` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `bills`
+-- Table structure for table `bills`
 --
 
 CREATE TABLE `bills` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `date_oreder` date NOT NULL,
   `total` double NOT NULL,
-  `payment` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `note` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payment` varchar(255) NOT NULL,
+  `note` varchar(500) NOT NULL,
   `id_customer` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `status` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `bill_details`
+-- Table structure for table `bill_details`
 --
 
 CREATE TABLE `bill_details` (
@@ -192,17 +57,17 @@ CREATE TABLE `bill_details` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `customers`
+-- Table structure for table `customers`
 --
 
 CREATE TABLE `customers` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone_number` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `note` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `phone_number` varchar(20) NOT NULL,
+  `note` varchar(200) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -210,23 +75,23 @@ CREATE TABLE `customers` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uuid` varchar(255) NOT NULL,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `favourite`
+-- Table structure for table `favourite`
 --
 
 CREATE TABLE `favourite` (
@@ -285,12 +150,12 @@ CREATE TABLE `menus` (
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -305,25 +170,19 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (9, '2023_03_24_061707_create_customers_table', 5),
 (10, '2023_03_24_060438_create_bills_table', 6),
 (11, '2023_03_24_064831_create_bill_details_table', 7),
-(12, '2023_03_24_072833_create_favourite_table', 8),
-(13, '2016_01_04_173148_create_admin_tables', 9),
-(14, '2023_04_01_064721_create_favourites_table', 9),
-(15, '2023_04_10_135020_create_social_accounts_table', 9),
-(16, '2023_04_12_075658_create_product_variations_table', 9),
-(17, '2023_04_26_112717_create_menus_table', 9),
-(18, '2023_05_04_073635_update_table_bill_details', 9);
+(12, '2023_03_24_072833_create_favourite_table', 8);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `news`
+-- Table structure for table `news`
 --
 
 CREATE TABLE `news` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `content` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `content` varchar(255) NOT NULL,
+  `image` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -331,28 +190,28 @@ CREATE TABLE `news` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `personal_access_tokens`
+-- Table structure for table `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_type` varchar(255) NOT NULL,
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `abilities` text DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -361,25 +220,25 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) NOT NULL,
   `id_category` bigint(20) UNSIGNED NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text NOT NULL,
   `unit_price` double NOT NULL,
   `promotion_price` double DEFAULT NULL,
-  `image` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `unit` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(200) NOT NULL,
+  `unit` varchar(200) NOT NULL,
   `quantity` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `name`, `id_category`, `description`, `unit_price`, `promotion_price`, `image`, `unit`, `quantity`, `created_at`, `updated_at`) VALUES
@@ -422,20 +281,20 @@ INSERT INTO `products` (`id`, `name`, `id_category`, `description`, `unit_price`
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product_categories`
+-- Table structure for table `product_categories`
 --
 
 CREATE TABLE `product_categories` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `product_categories`
+-- Dumping data for table `product_categories`
 --
 
 INSERT INTO `product_categories` (`id`, `name`, `description`, `image`, `created_at`, `updated_at`) VALUES
@@ -444,43 +303,28 @@ INSERT INTO `product_categories` (`id`, `name`, `description`, `image`, `created
 (3, 'Mizuno', '', '', '2023-03-26 03:44:30', '2023-03-26 03:44:30'),
 (4, 'Kamito', '', '', '2023-03-26 03:44:30', '2023-03-26 03:44:30'),
 (5, 'Puma', '', '', '2023-03-26 03:45:43', '2023-03-26 03:45:43'),
-(6, 'Tất thể thao', '', '', '2023-03-26 03:45:43', '2023-03-26 03:45:43'),
-(7, 'Băng keo', '', '', '2023-03-26 03:46:43', '2023-03-26 03:46:43'),
-(8, 'Quần áo', '', '', '2023-03-26 03:46:43', '2023-03-26 03:46:43'),
-(9, 'Túi đeo/Balo', '', '', '2023-03-26 03:48:09', '2023-03-26 03:48:09'),
-(10, 'Găng tay', '', '', '2023-03-26 03:48:09', '2023-03-26 03:48:09');
+(6, 'Socks', '', '', '2023-03-26 03:45:43', '2023-03-26 03:45:43'),
+(7, 'Brassard', '', '', '2023-03-26 03:46:43', '2023-03-26 03:46:43'),
+(8, 'Clothes', '', '', '2023-03-26 03:46:43', '2023-03-26 03:46:43'),
+(9, 'Bags', '', '', '2023-03-26 03:48:09', '2023-03-26 03:48:09'),
+(10, 'Gloves', '', '', '2023-03-26 03:48:09', '2023-03-26 03:48:09');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product_variations`
---
-
-CREATE TABLE `product_variations` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `varname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `id_product` bigint(20) UNSIGNED NOT NULL,
-  `image` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `sliders`
+-- Table structure for table `sliders`
 --
 
 CREATE TABLE `sliders` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `link` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link` varchar(100) NOT NULL,
+  `image` varchar(100) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `sliders`
+-- Dumping data for table `sliders`
 --
 
 INSERT INTO `sliders` (`id`, `link`, `image`, `created_at`, `updated_at`) VALUES
@@ -491,120 +335,38 @@ INSERT INTO `sliders` (`id`, `link`, `image`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `social_accounts`
---
-
-CREATE TABLE `social_accounts` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `provider_user_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `provider` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `full_name` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone_number` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `full_name` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `phone_number` varchar(11) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
   `is_admin` tinyint(1) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `token` varchar(255) NOT NULL,
   `is_Verified` tinyint(4) NOT NULL DEFAULT 0,
   `email_verified_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
---
-
-INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `phone_number`, `address`, `remember_token`, `is_admin`, `created_at`, `updated_at`, `token`, `is_Verified`, `email_verified_at`) VALUES
-(1, 'Lê Hồng Ngọc', 'hongngocle492@gmail.com', '$2y$10$hHa.6bGzC6oAFIsk4JMIm.WLh1KCcu1mVCMydD57u7xamV9mWfwlu', '93642212', 'Hanoi University', NULL, 0, '2023-05-10 06:52:42', '2023-05-10 06:52:42', NULL, 0, NULL);
-
---
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `admin_menu`
---
-ALTER TABLE `admin_menu`
-  ADD PRIMARY KEY (`id`);
-
---
--- Chỉ mục cho bảng `admin_operation_log`
---
-ALTER TABLE `admin_operation_log`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `admin_operation_log_user_id_index` (`user_id`);
-
---
--- Chỉ mục cho bảng `admin_permissions`
---
-ALTER TABLE `admin_permissions`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `admin_permissions_name_unique` (`name`),
-  ADD UNIQUE KEY `admin_permissions_slug_unique` (`slug`);
-
---
--- Chỉ mục cho bảng `admin_roles`
---
-ALTER TABLE `admin_roles`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `admin_roles_name_unique` (`name`),
-  ADD UNIQUE KEY `admin_roles_slug_unique` (`slug`);
-
---
--- Chỉ mục cho bảng `admin_role_menu`
---
-ALTER TABLE `admin_role_menu`
-  ADD KEY `admin_role_menu_role_id_menu_id_index` (`role_id`,`menu_id`);
-
---
--- Chỉ mục cho bảng `admin_role_permissions`
---
-ALTER TABLE `admin_role_permissions`
-  ADD KEY `admin_role_permissions_role_id_permission_id_index` (`role_id`,`permission_id`);
-
---
--- Chỉ mục cho bảng `admin_role_users`
---
-ALTER TABLE `admin_role_users`
-  ADD KEY `admin_role_users_role_id_user_id_index` (`role_id`,`user_id`);
-
---
--- Chỉ mục cho bảng `admin_users`
---
-ALTER TABLE `admin_users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `admin_users_username_unique` (`username`);
-
---
--- Chỉ mục cho bảng `admin_user_permissions`
---
-ALTER TABLE `admin_user_permissions`
-  ADD KEY `admin_user_permissions_user_id_permission_id_index` (`user_id`,`permission_id`);
-
---
--- Chỉ mục cho bảng `bills`
+-- Indexes for table `bills`
 --
 ALTER TABLE `bills`
   ADD PRIMARY KEY (`id`),
   ADD KEY `bills_id_customer_foreign` (`id_customer`);
 
 --
--- Chỉ mục cho bảng `bill_details`
+-- Indexes for table `bill_details`
 --
 ALTER TABLE `bill_details`
   ADD PRIMARY KEY (`id`),
@@ -612,20 +374,20 @@ ALTER TABLE `bill_details`
   ADD KEY `bill_details_id_product_foreign` (`id_product`);
 
 --
--- Chỉ mục cho bảng `customers`
+-- Indexes for table `customers`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Chỉ mục cho bảng `favourite`
+-- Indexes for table `favourite`
 --
 ALTER TABLE `favourite`
   ADD PRIMARY KEY (`id`),
@@ -633,40 +395,25 @@ ALTER TABLE `favourite`
   ADD KEY `favourite_id_product_foreign` (`id_product`);
 
 --
--- Chỉ mục cho bảng `favourites`
---
-ALTER TABLE `favourites`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `favourites_id_user_foreign` (`id_user`),
-  ADD KEY `favourites_id_product_foreign` (`id_product`);
-
---
--- Chỉ mục cho bảng `menus`
---
-ALTER TABLE `menus`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `menus_slug_unique` (`slug`);
-
---
--- Chỉ mục cho bảng `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `news`
+-- Indexes for table `news`
 --
 ALTER TABLE `news`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Chỉ mục cho bảng `personal_access_tokens`
+-- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -674,46 +421,33 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Chỉ mục cho bảng `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
   ADD KEY `products_id_category_foreign` (`id_category`);
 
 --
--- Chỉ mục cho bảng `product_categories`
+-- Indexes for table `product_categories`
 --
 ALTER TABLE `product_categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `product_variations`
---
-ALTER TABLE `product_variations`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `product_variations_id_product_foreign` (`id_product`);
-
---
--- Chỉ mục cho bảng `sliders`
+-- Indexes for table `sliders`
 --
 ALTER TABLE `sliders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `social_accounts`
---
-ALTER TABLE `social_accounts`
-  ADD PRIMARY KEY (`id`);
-
---
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
@@ -753,25 +487,25 @@ ALTER TABLE `bills`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `bill_details`
+-- AUTO_INCREMENT for table `bill_details`
 --
 ALTER TABLE `bill_details`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `customers`
+-- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `favourite`
+-- AUTO_INCREMENT for table `favourite`
 --
 ALTER TABLE `favourite`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
@@ -792,98 +526,73 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT cho bảng `news`
+-- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `personal_access_tokens`
+-- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT cho bảng `product_categories`
+-- AUTO_INCREMENT for table `product_categories`
 --
 ALTER TABLE `product_categories`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT cho bảng `product_variations`
---
-ALTER TABLE `product_variations`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT cho bảng `sliders`
+-- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `social_accounts`
---
-ALTER TABLE `social_accounts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `bills`
+-- Constraints for table `bills`
 --
 ALTER TABLE `bills`
   ADD CONSTRAINT `bills_id_customer_foreign` FOREIGN KEY (`id_customer`) REFERENCES `customers` (`id`);
 
 --
--- Các ràng buộc cho bảng `bill_details`
+-- Constraints for table `bill_details`
 --
 ALTER TABLE `bill_details`
   ADD CONSTRAINT `bill_details_id_bill_foreign` FOREIGN KEY (`id_bill`) REFERENCES `bills` (`id`),
   ADD CONSTRAINT `bill_details_id_product_foreign` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`);
 
 --
--- Các ràng buộc cho bảng `favourite`
+-- Constraints for table `favourite`
 --
 ALTER TABLE `favourite`
   ADD CONSTRAINT `favourite_id_product_foreign` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`),
   ADD CONSTRAINT `favourite_id_user_foreign` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
 
 --
--- Các ràng buộc cho bảng `favourites`
---
-ALTER TABLE `favourites`
-  ADD CONSTRAINT `favourites_id_product_foreign` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`),
-  ADD CONSTRAINT `favourites_id_user_foreign` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
-
---
--- Các ràng buộc cho bảng `products`
+-- Constraints for table `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_id_category_foreign` FOREIGN KEY (`id_category`) REFERENCES `product_categories` (`id`);
-
---
--- Các ràng buộc cho bảng `product_variations`
---
-ALTER TABLE `product_variations`
-  ADD CONSTRAINT `product_variations_id_product_foreign` FOREIGN KEY (`id_product`) REFERENCES `products` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

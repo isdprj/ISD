@@ -4,7 +4,7 @@
 <div class="inner-header">
     <div class="container">
         <div class="pull-left">
-            <h4 class="inner-title"> <b> Đăng ký <b> </h4>
+            <h6 class="inner-title">Đăng ký</h6>
         </div>
         <div class="pull-right">
             <div class="beta-breadcrumb">

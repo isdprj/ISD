@@ -12,7 +12,7 @@
 
 .news-img{
     top: 0;
-    justify-self: center     ;
+    justify-self: center;
 }
 
 .news-title{
@@ -80,4 +80,8 @@
 .map-sizing{
     height: 10%;
     width: 8%;
+}
+
+.pull-left{
+    left: 0;
 }

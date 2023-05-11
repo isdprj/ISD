@@ -29,17 +29,17 @@
     </div>
 
     <div>
-        <label for="password">Mật khẩu</label>
+        <label for="password">Password</label>
         <input type="password" id="password" name="password">
     </div>
 
     <div>
-        <label for="password_confirmation">Xác nhận mật khẩu</label>
+        <label for="password_confirmation">Password Confirmation</label>
         <input type="password" id="password_confirmation" name="password_confirmation">
     </div>
 
     <div>
-        <button>Cài đặt lại mật khẩu/button>
+        <button>Reset Password</button>
     </div>
 </form>
     <div class="space50">&nbsp;</div>

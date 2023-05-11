@@ -5,7 +5,7 @@
 
     @if ($errors->any())
         <div>
-            <div>Đã xảy ra sự cố!</div>
+            <div>Something went wrong!</div>
 
             <ul>
                 @foreach ($errors->all() as $error)
@@ -29,7 +29,7 @@
         </div>
 
         <div>
-            <button>Liên kết đặt lại mật khẩu email</button>
+            <button>Email Password Reset Link</button>
         </div>
     </form>
 
